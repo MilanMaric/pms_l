@@ -1,0 +1,10 @@
+php artisan infyom:scaffold Activity --fromTable --tableName=Activity
+php artisan infyom:scaffold Document --fromTable --tableName=Document
+php artisan infyom:scaffold Person --fromTable --tableName=Person
+php artisan infyom:scaffold Income --fromTable --tableName=Income
+php artisan infyom:scaffold Project --fromTable --tableName=Project
+php artisan infyom:scaffold WorksOnProject --fromTable --tableName=Works_On_Project
+php artisan infyom:scaffold WorksOnTask --fromTable --tableName=Works_On_Task
+php artisan infyom:scaffold Revision --fromTable --tableName=Revision
+php artisan infyom:scaffold Expense --fromTable --tableName=Expense
+php artisan infyom:scaffold Task --fromTable --tableName=Task
