@@ -44,3 +44,51 @@ Route::group(['prefix' => 'api', 'namespace' => 'API'], function () {
         require config('infyom.laravel_generator.path.api_routes');
     });
 });
+
+
+Route::resource('activities', 'ActivityController');
+
+Route::resource('documents', 'DocumentController');
+
+Route::resource('people', 'PersonController');
+
+Route::resource('incomes', 'IncomeController');
+
+Route::resource('projects', 'ProjectController');
+
+Route::resource('worksOnProjects', 'Works_On_ProjectController');
+
+Route::resource('worksOnTasks', 'Works_On_TaskController');
+Route::resource('worksOnProjects', 'WorksOnProjectController');
+
+Route::resource('worksOnTasks', 'WorksOnTaskController');
+
+
+Route::resource('revisions', 'RevisionController');
+
+Route::resource('expenses', 'ExpenseController');
+
+Route::resource('tasks', 'TaskController');
+
+Route::resource('activities', 'ActivityController');
+
+Route::resource('documents', 'DocumentController');
+
+Route::resource('people', 'PersonController');
+
+Route::resource('incomes', 'IncomeController');
+
+Route::resource('projects', 'ProjectController');
+
+Route::resource('worksOnProjects', 'WorksOnProjectController');
+
+Route::resource('worksOnTasks', 'WorksOnTaskController');
+
+Route::resource('revisions', 'RevisionController');
+
+Route::resource('expenses', 'ExpenseController');
+
+Route::resource('tasks', 'TaskController');
+Route::auth();
+
+Route::get('/home', 'HomeController@index');
