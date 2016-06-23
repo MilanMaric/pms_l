@@ -47,3 +47,5 @@ Route::group(['prefix' => 'api', 'namespace' => 'API'], function () {
 
 
 Route::resource('activities', 'ActivityController');
+
+Route::resource('documents', 'DocumentController');
