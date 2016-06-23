@@ -59,3 +59,9 @@ Route::resource('projects', 'ProjectController');
 Route::resource('worksOnProjects', 'Works_On_ProjectController');
 
 Route::resource('worksOnTasks', 'Works_On_TaskController');
+
+Route::resource('revisions', 'RevisionController');
+
+Route::resource('expenses', 'ExpenseController');
+
+Route::resource('tasks', 'TaskController');
