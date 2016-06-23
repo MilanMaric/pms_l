@@ -26,12 +26,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *          type="string"
  *      ),
  *      @SWG\Property(
- *          property="privileges",
- *          description="privileges",
- *          type="integer",
- *          format="int32"
- *      ),
- *      @SWG\Property(
  *          property="Address",
  *          description="Address",
  *          type="string"
@@ -47,14 +41,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *          type="string"
  *      ),
  *      @SWG\Property(
- *          property="created_by",
- *          description="created_by",
- *          type="integer",
- *          format="int32"
- *      ),
- *      @SWG\Property(
- *          property="updated_by",
- *          description="updated_by",
+ *          property="user_id",
+ *          description="user_id",
  *          type="integer",
  *          format="int32"
  *      )
@@ -65,7 +53,7 @@ class Person extends Model
     use SoftDeletes;
 
     public $table = 'Person';
-    
+
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
 
@@ -77,13 +65,11 @@ class Person extends Model
     public $fillable = [
         'Name',
         'LastName',
-        'privileges',
         'Address',
         'PhoneNumber',
         'MobileNumber',
         'deleted_at',
-        'created_by',
-        'updated_by'
+        'user_id'
     ];
 
     /**
@@ -95,13 +81,11 @@ class Person extends Model
         'Id' => 'integer',
         'Name' => 'string',
         'LastName' => 'string',
-        'privileges' => 'integer',
         'Address' => 'string',
         'PhoneNumber' => 'string',
         'MobileNumber' => 'string',
         'deleted_at' => 'datetime',
-        'created_by' => 'integer',
-        'updated_by' => 'integer'
+        'user_id' => 'integer'
     ];
 
     /**
@@ -110,6 +94,16 @@ class Person extends Model
      * @var array
      */
     public static $rules = [
-        
+
     ];
+
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
+
+    public function worksOnProject()
+    {
+        return $this->belongsToMany('App\Models\Works_On_Project');
+    }
 }

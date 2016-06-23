@@ -16,8 +16,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *          format="int32"
  *      ),
  *      @SWG\Property(
- *          property="ProjectId",
- *          description="ProjectId",
+ *          property="project_id",
+ *          description="project_id",
  *          type="integer",
  *          format="int32"
  *      ),
@@ -48,18 +48,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *          description="Hours",
  *          type="integer",
  *          format="int32"
- *      ),
- *      @SWG\Property(
- *          property="created_by",
- *          description="created_by",
- *          type="integer",
- *          format="int32"
- *      ),
- *      @SWG\Property(
- *          property="updated_by",
- *          description="updated_by",
- *          type="integer",
- *          format="int32"
  *      )
  * )
  */
@@ -78,7 +66,7 @@ class Task extends Model
     protected $primaryKey = 'Id';
 
     public $fillable = [
-        'ProjectId',
+        'project_id',
         'Description',
         'Start',
         'End',
@@ -87,9 +75,7 @@ class Task extends Model
         'ManHour',
         'PercentageDone',
         'Hours',
-        'deleted_at',
-        'created_by',
-        'updated_by'
+        'deleted_at'
     ];
 
     /**
@@ -99,7 +85,7 @@ class Task extends Model
      */
     protected $casts = [
         'Id' => 'integer',
-        'ProjectId' => 'integer',
+        'project_id' => 'integer',
         'Description' => 'string',
         'Start' => 'datetime',
         'End' => 'datetime',
@@ -108,9 +94,7 @@ class Task extends Model
         'ManHour' => 'integer',
         'PercentageDone' => 'integer',
         'Hours' => 'integer',
-        'deleted_at' => 'datetime',
-        'created_by' => 'integer',
-        'updated_by' => 'integer'
+        'deleted_at' => 'datetime'
     ];
 
     /**

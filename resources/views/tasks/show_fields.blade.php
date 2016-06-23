@@ -4,10 +4,10 @@
     <p>{!! $task->Id !!}</p>
 </div>
 
-<!-- Projectid Field -->
+<!-- Project Id Field -->
 <div class="form-group">
-    {!! Form::label('ProjectId', 'Projectid:') !!}
-    <p>{!! $task->ProjectId !!}</p>
+    {!! Form::label('project_id', 'Project Id:') !!}
+    <p>{!! $task->project_id !!}</p>
 </div>
 
 <!-- Description Field -->
@@ -74,17 +74,5 @@
 <div class="form-group">
     {!! Form::label('deleted_at', 'Deleted At:') !!}
     <p>{!! $task->deleted_at !!}</p>
-</div>
-
-<!-- Created By Field -->
-<div class="form-group">
-    {!! Form::label('created_by', 'Created By:') !!}
-    <p>{!! $task->created_by !!}</p>
-</div>
-
-<!-- Updated By Field -->
-<div class="form-group">
-    {!! Form::label('updated_by', 'Updated By:') !!}
-    <p>{!! $task->updated_by !!}</p>
 </div>
 

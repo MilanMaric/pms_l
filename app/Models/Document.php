@@ -26,8 +26,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *          type="string"
  *      ),
  *      @SWG\Property(
- *          property="ProjectId",
- *          description="ProjectId",
+ *          property="project_id",
+ *          description="project_id",
  *          type="integer",
  *          format="int32"
  *      ),
@@ -38,27 +38,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *          format="date"
  *      ),
  *      @SWG\Property(
- *          property="BlobFajl",
- *          description="BlobFajl",
+ *          property="file",
+ *          description="file",
  *          type="string"
- *      ),
- *      @SWG\Property(
- *          property="Size",
- *          description="Size",
- *          type="integer",
- *          format="int32"
- *      ),
- *      @SWG\Property(
- *          property="created_by",
- *          description="created_by",
- *          type="integer",
- *          format="int32"
- *      ),
- *      @SWG\Property(
- *          property="updated_by",
- *          description="updated_by",
- *          type="integer",
- *          format="int32"
  *      )
  * )
  */
@@ -79,12 +61,10 @@ class Document extends Model
     public $fillable = [
         'Title',
         'Description',
-        'ProjectId',
+        'project_id',
         'Date',
-        'BlobFajl',
-        'Size',
-        'created_by',
-        'updated_by'
+        'file',
+        'deleted_at'
     ];
 
     /**
@@ -96,12 +76,10 @@ class Document extends Model
         'Id' => 'integer',
         'Title' => 'string',
         'Description' => 'string',
-        'ProjectId' => 'integer',
+        'project_id' => 'integer',
         'Date' => 'date',
-        'BlobFajl' => 'string',
-        'Size' => 'integer',
-        'created_by' => 'integer',
-        'updated_by' => 'integer'
+        'file' => 'string',
+        'deleted_at' => 'datetime'
     ];
 
     /**

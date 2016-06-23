@@ -27,14 +27,14 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *          format="int32"
  *      ),
  *      @SWG\Property(
- *          property="ProjectId",
- *          description="ProjectId",
+ *          property="project_id",
+ *          description="project_id",
  *          type="integer",
  *          format="int32"
  *      ),
  *      @SWG\Property(
- *          property="ActivityId",
- *          description="ActivityId",
+ *          property="activity_id",
+ *          description="activity_id",
  *          type="integer",
  *          format="int32"
  *      ),
@@ -43,18 +43,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *          description="Date",
  *          type="string",
  *          format="date"
- *      ),
- *      @SWG\Property(
- *          property="created_by",
- *          description="created_by",
- *          type="integer",
- *          format="int32"
- *      ),
- *      @SWG\Property(
- *          property="updated_by",
- *          description="updated_by",
- *          type="integer",
- *          format="int32"
  *      )
  * )
  */
@@ -75,12 +63,10 @@ class Expense extends Model
     public $fillable = [
         'Description',
         'Amount',
-        'ProjectId',
-        'ActivityId',
+        'project_id',
+        'activity_id',
         'Date',
-        'deleted_at',
-        'created_by',
-        'updated_by'
+        'deleted_at'
     ];
 
     /**
@@ -92,12 +78,10 @@ class Expense extends Model
         'Id' => 'integer',
         'Description' => 'string',
         'Amount' => 'integer',
-        'ProjectId' => 'integer',
-        'ActivityId' => 'integer',
+        'project_id' => 'integer',
+        'activity_id' => 'integer',
         'Date' => 'date',
-        'deleted_at' => 'datetime',
-        'created_by' => 'integer',
-        'updated_by' => 'integer'
+        'deleted_at' => 'datetime'
     ];
 
     /**

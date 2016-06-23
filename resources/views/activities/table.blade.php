@@ -2,12 +2,10 @@
     <thead>
         <th>Description</th>
         <th>Date</th>
-        <th>Taskid</th>
+        <th>Task Id</th>
         <th>Created At</th>
         <th>Updated At</th>
         <th>Deleted At</th>
-        <th>Created By</th>
-        <th>Updated By</th>
         <th colspan="3">Action</th>
     </thead>
     <tbody>
@@ -15,12 +13,10 @@
         <tr>
             <td>{!! $activity->Description !!}</td>
             <td>{!! $activity->Date !!}</td>
-            <td>{!! $activity->TaskId !!}</td>
+            <td>{!! $activity->task_id !!}</td>
             <td>{!! $activity->created_at !!}</td>
             <td>{!! $activity->updated_at !!}</td>
             <td>{!! $activity->deleted_at !!}</td>
-            <td>{!! $activity->created_by !!}</td>
-            <td>{!! $activity->updated_by !!}</td>
             <td>
                 {!! Form::open(['route' => ['activities.destroy', $activity->id], 'method' => 'delete']) !!}
                 <div class='btn-group'>

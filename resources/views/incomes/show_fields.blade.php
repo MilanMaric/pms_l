@@ -4,10 +4,10 @@
     <p>{!! $income->Id !!}</p>
 </div>
 
-<!-- Projectid Field -->
+<!-- Project Id Field -->
 <div class="form-group">
-    {!! Form::label('ProjectId', 'Projectid:') !!}
-    <p>{!! $income->ProjectId !!}</p>
+    {!! Form::label('project_id', 'Project Id:') !!}
+    <p>{!! $income->project_id !!}</p>
 </div>
 
 <!-- Description Field -->
@@ -22,10 +22,10 @@
     <p>{!! $income->Amount !!}</p>
 </div>
 
-<!-- Activityid Field -->
+<!-- Activity Id Field -->
 <div class="form-group">
-    {!! Form::label('ActivityId', 'Activityid:') !!}
-    <p>{!! $income->ActivityId !!}</p>
+    {!! Form::label('activity_id', 'Activity Id:') !!}
+    <p>{!! $income->activity_id !!}</p>
 </div>
 
 <!-- Date Field -->
@@ -50,17 +50,5 @@
 <div class="form-group">
     {!! Form::label('deleted_at', 'Deleted At:') !!}
     <p>{!! $income->deleted_at !!}</p>
-</div>
-
-<!-- Created By Field -->
-<div class="form-group">
-    {!! Form::label('created_by', 'Created By:') !!}
-    <p>{!! $income->created_by !!}</p>
-</div>
-
-<!-- Updated By Field -->
-<div class="form-group">
-    {!! Form::label('updated_by', 'Updated By:') !!}
-    <p>{!! $income->updated_by !!}</p>
 </div>
 

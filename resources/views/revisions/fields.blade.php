@@ -22,10 +22,16 @@
     {!! Form::text('description', null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- Documentid Field -->
+<!-- File Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('DocumentId', 'Documentid:') !!}
-    {!! Form::number('DocumentId', null, ['class' => 'form-control']) !!}
+    {!! Form::label('file', 'File:') !!}
+    {!! Form::text('file', null, ['class' => 'form-control']) !!}
+</div>
+
+<!-- Document Id Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('document_id', 'Document Id:') !!}
+    {!! Form::number('document_id', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Created At Field -->
@@ -44,18 +50,6 @@
 <div class="form-group col-sm-6">
     {!! Form::label('deleted_at', 'Deleted At:') !!}
     {!! Form::date('deleted_at', null, ['class' => 'form-control']) !!}
-</div>
-
-<!-- Created By Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('created_by', 'Created By:') !!}
-    {!! Form::number('created_by', null, ['class' => 'form-control']) !!}
-</div>
-
-<!-- Updated By Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('updated_by', 'Updated By:') !!}
-    {!! Form::number('updated_by', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Submit Field -->

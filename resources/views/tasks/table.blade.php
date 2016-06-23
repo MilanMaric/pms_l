@@ -1,6 +1,6 @@
 <table class="table table-responsive" id="tasks-table">
     <thead>
-        <th>Projectid</th>
+        <th>Project Id</th>
         <th>Description</th>
         <th>Start</th>
         <th>End</th>
@@ -12,14 +12,12 @@
         <th>Created At</th>
         <th>Updated At</th>
         <th>Deleted At</th>
-        <th>Created By</th>
-        <th>Updated By</th>
         <th colspan="3">Action</th>
     </thead>
     <tbody>
     @foreach($tasks as $task)
         <tr>
-            <td>{!! $task->ProjectId !!}</td>
+            <td>{!! $task->project_id !!}</td>
             <td>{!! $task->Description !!}</td>
             <td>{!! $task->Start !!}</td>
             <td>{!! $task->End !!}</td>
@@ -31,8 +29,6 @@
             <td>{!! $task->created_at !!}</td>
             <td>{!! $task->updated_at !!}</td>
             <td>{!! $task->deleted_at !!}</td>
-            <td>{!! $task->created_by !!}</td>
-            <td>{!! $task->updated_by !!}</td>
             <td>
                 {!! Form::open(['route' => ['tasks.destroy', $task->id], 'method' => 'delete']) !!}
                 <div class='btn-group'>

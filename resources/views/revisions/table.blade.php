@@ -3,12 +3,11 @@
         <th>Date</th>
         <th>Number</th>
         <th>Description</th>
-        <th>Documentid</th>
+        <th>File</th>
+        <th>Document Id</th>
         <th>Created At</th>
         <th>Updated At</th>
         <th>Deleted At</th>
-        <th>Created By</th>
-        <th>Updated By</th>
         <th colspan="3">Action</th>
     </thead>
     <tbody>
@@ -17,12 +16,11 @@
             <td>{!! $revision->Date !!}</td>
             <td>{!! $revision->Number !!}</td>
             <td>{!! $revision->description !!}</td>
-            <td>{!! $revision->DocumentId !!}</td>
+            <td>{!! $revision->file !!}</td>
+            <td>{!! $revision->document_id !!}</td>
             <td>{!! $revision->created_at !!}</td>
             <td>{!! $revision->updated_at !!}</td>
             <td>{!! $revision->deleted_at !!}</td>
-            <td>{!! $revision->created_by !!}</td>
-            <td>{!! $revision->updated_by !!}</td>
             <td>
                 {!! Form::open(['route' => ['revisions.destroy', $revision->id], 'method' => 'delete']) !!}
                 <div class='btn-group'>

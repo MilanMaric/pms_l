@@ -2,14 +2,12 @@
     <thead>
         <th>Title</th>
         <th>Description</th>
-        <th>Projectid</th>
+        <th>Project Id</th>
         <th>Date</th>
-        <th>Blobfajl</th>
-        <th>Size</th>
+        <th>File</th>
         <th>Created At</th>
         <th>Updated At</th>
-        <th>Created By</th>
-        <th>Updated By</th>
+        <th>Deleted At</th>
         <th colspan="3">Action</th>
     </thead>
     <tbody>
@@ -17,14 +15,12 @@
         <tr>
             <td>{!! $document->Title !!}</td>
             <td>{!! $document->Description !!}</td>
-            <td>{!! $document->ProjectId !!}</td>
+            <td>{!! $document->project_id !!}</td>
             <td>{!! $document->Date !!}</td>
-            <td>{!! $document->BlobFajl !!}</td>
-            <td>{!! $document->Size !!}</td>
+            <td>{!! $document->file !!}</td>
             <td>{!! $document->created_at !!}</td>
             <td>{!! $document->updated_at !!}</td>
-            <td>{!! $document->created_by !!}</td>
-            <td>{!! $document->updated_by !!}</td>
+            <td>{!! $document->deleted_at !!}</td>
             <td>
                 {!! Form::open(['route' => ['documents.destroy', $document->id], 'method' => 'delete']) !!}
                 <div class='btn-group'>

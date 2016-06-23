@@ -10,20 +10,20 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *      definition="WorksOnTask",
  *      required={},
  *      @SWG\Property(
- *          property="TaskId",
- *          description="TaskId",
+ *          property="task_id",
+ *          description="task_id",
  *          type="integer",
  *          format="int32"
  *      ),
  *      @SWG\Property(
- *          property="PersonId",
- *          description="PersonId",
+ *          property="person_id",
+ *          description="person_id",
  *          type="integer",
  *          format="int32"
  *      ),
  *      @SWG\Property(
- *          property="ActivityId",
- *          description="ActivityId",
+ *          property="activity_id",
+ *          description="activity_id",
  *          type="integer",
  *          format="int32"
  *      ),
@@ -32,18 +32,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *          description="StartDate",
  *          type="string",
  *          format="date"
- *      ),
- *      @SWG\Property(
- *          property="created_by",
- *          description="created_by",
- *          type="integer",
- *          format="int32"
- *      ),
- *      @SWG\Property(
- *          property="updated_by",
- *          description="updated_by",
- *          type="integer",
- *          format="int32"
  *      )
  * )
  */
@@ -61,13 +49,11 @@ class WorksOnTask extends Model
 
 
     public $fillable = [
-        'TaskId',
-        'PersonId',
-        'ActivityId',
+        'task_id',
+        'person_id',
+        'activity_id',
         'StartDate',
-        'deleted_at',
-        'created_by',
-        'updated_by'
+        'deleted_at'
     ];
 
     /**
@@ -76,13 +62,11 @@ class WorksOnTask extends Model
      * @var array
      */
     protected $casts = [
-        'TaskId' => 'integer',
-        'PersonId' => 'integer',
-        'ActivityId' => 'integer',
+        'task_id' => 'integer',
+        'person_id' => 'integer',
+        'activity_id' => 'integer',
         'StartDate' => 'date',
-        'deleted_at' => 'datetime',
-        'created_by' => 'integer',
-        'updated_by' => 'integer'
+        'deleted_at' => 'datetime'
     ];
 
     /**

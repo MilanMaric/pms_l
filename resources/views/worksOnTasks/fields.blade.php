@@ -1,19 +1,19 @@
-<!-- Taskid Field -->
+<!-- Task Id Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('TaskId', 'Taskid:') !!}
-    {!! Form::number('TaskId', null, ['class' => 'form-control']) !!}
+    {!! Form::label('task_id', 'Task Id:') !!}
+    {!! Form::number('task_id', null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- Personid Field -->
+<!-- Person Id Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('PersonId', 'Personid:') !!}
-    {!! Form::number('PersonId', null, ['class' => 'form-control']) !!}
+    {!! Form::label('person_id', 'Person Id:') !!}
+    {!! Form::number('person_id', null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- Activityid Field -->
+<!-- Activity Id Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('ActivityId', 'Activityid:') !!}
-    {!! Form::number('ActivityId', null, ['class' => 'form-control']) !!}
+    {!! Form::label('activity_id', 'Activity Id:') !!}
+    {!! Form::number('activity_id', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Startdate Field -->
@@ -38,18 +38,6 @@
 <div class="form-group col-sm-6">
     {!! Form::label('deleted_at', 'Deleted At:') !!}
     {!! Form::date('deleted_at', null, ['class' => 'form-control']) !!}
-</div>
-
-<!-- Created By Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('created_by', 'Created By:') !!}
-    {!! Form::number('created_by', null, ['class' => 'form-control']) !!}
-</div>
-
-<!-- Updated By Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('updated_by', 'Updated By:') !!}
-    {!! Form::number('updated_by', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Submit Field -->

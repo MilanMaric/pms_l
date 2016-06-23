@@ -1,28 +1,24 @@
 <table class="table table-responsive" id="worksOnTasks-table">
     <thead>
-        <th>Taskid</th>
-        <th>Personid</th>
-        <th>Activityid</th>
+        <th>Task Id</th>
+        <th>Person Id</th>
+        <th>Activity Id</th>
         <th>Startdate</th>
         <th>Created At</th>
         <th>Updated At</th>
         <th>Deleted At</th>
-        <th>Created By</th>
-        <th>Updated By</th>
         <th colspan="3">Action</th>
     </thead>
     <tbody>
     @foreach($worksOnTasks as $worksOnTask)
         <tr>
-            <td>{!! $worksOnTask->TaskId !!}</td>
-            <td>{!! $worksOnTask->PersonId !!}</td>
-            <td>{!! $worksOnTask->ActivityId !!}</td>
+            <td>{!! $worksOnTask->task_id !!}</td>
+            <td>{!! $worksOnTask->person_id !!}</td>
+            <td>{!! $worksOnTask->activity_id !!}</td>
             <td>{!! $worksOnTask->StartDate !!}</td>
             <td>{!! $worksOnTask->created_at !!}</td>
             <td>{!! $worksOnTask->updated_at !!}</td>
             <td>{!! $worksOnTask->deleted_at !!}</td>
-            <td>{!! $worksOnTask->created_by !!}</td>
-            <td>{!! $worksOnTask->updated_by !!}</td>
             <td>
                 {!! Form::open(['route' => ['worksOnTasks.destroy', $worksOnTask->id], 'method' => 'delete']) !!}
                 <div class='btn-group'>

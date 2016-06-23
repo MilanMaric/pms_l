@@ -16,12 +16,6 @@
     <p>{!! $person->LastName !!}</p>
 </div>
 
-<!-- Privileges Field -->
-<div class="form-group">
-    {!! Form::label('privileges', 'Privileges:') !!}
-    <p>{!! $person->privileges !!}</p>
-</div>
-
 <!-- Address Field -->
 <div class="form-group">
     {!! Form::label('Address', 'Address:') !!}
@@ -58,15 +52,9 @@
     <p>{!! $person->deleted_at !!}</p>
 </div>
 
-<!-- Created By Field -->
+<!-- User Id Field -->
 <div class="form-group">
-    {!! Form::label('created_by', 'Created By:') !!}
-    <p>{!! $person->created_by !!}</p>
-</div>
-
-<!-- Updated By Field -->
-<div class="form-group">
-    {!! Form::label('updated_by', 'Updated By:') !!}
-    <p>{!! $person->updated_by !!}</p>
+    {!! Form::label('user_id', 'User Id:') !!}
+    <p>{!! $person->user_id !!}</p>
 </div>
 

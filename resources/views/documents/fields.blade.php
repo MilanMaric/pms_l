@@ -16,10 +16,10 @@
     {!! Form::text('Description', null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- Projectid Field -->
+<!-- Project Id Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('ProjectId', 'Projectid:') !!}
-    {!! Form::number('ProjectId', null, ['class' => 'form-control']) !!}
+    {!! Form::label('project_id', 'Project Id:') !!}
+    {!! Form::number('project_id', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Date Field -->
@@ -28,16 +28,10 @@
     {!! Form::date('Date', null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- Blobfajl Field -->
+<!-- File Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('BlobFajl', 'Blobfajl:') !!}
-    {!! Form::text('BlobFajl', null, ['class' => 'form-control']) !!}
-</div>
-
-<!-- Size Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('Size', 'Size:') !!}
-    {!! Form::number('Size', null, ['class' => 'form-control']) !!}
+    {!! Form::label('file', 'File:') !!}
+    {!! Form::text('file', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Created At Field -->
@@ -52,16 +46,10 @@
     {!! Form::date('updated_at', null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- Created By Field -->
+<!-- Deleted At Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('created_by', 'Created By:') !!}
-    {!! Form::number('created_by', null, ['class' => 'form-control']) !!}
-</div>
-
-<!-- Updated By Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('updated_by', 'Updated By:') !!}
-    {!! Form::number('updated_by', null, ['class' => 'form-control']) !!}
+    {!! Form::label('deleted_at', 'Deleted At:') !!}
+    {!! Form::date('deleted_at', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Submit Field -->

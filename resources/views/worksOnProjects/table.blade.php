@@ -1,26 +1,22 @@
 <table class="table table-responsive" id="worksOnProjects-table">
     <thead>
-        <th>Personid</th>
-        <th>Projectid</th>
-        <th>Role</th>
+        <th>Person Id</th>
+        <th>Project Id</th>
+        <th>Role Id</th>
         <th>Created At</th>
         <th>Updated At</th>
         <th>Deleted At</th>
-        <th>Created By</th>
-        <th>Updated By</th>
         <th colspan="3">Action</th>
     </thead>
     <tbody>
     @foreach($worksOnProjects as $worksOnProject)
         <tr>
-            <td>{!! $worksOnProject->PersonId !!}</td>
-            <td>{!! $worksOnProject->ProjectId !!}</td>
-            <td>{!! $worksOnProject->role !!}</td>
+            <td>{!! $worksOnProject->person_id !!}</td>
+            <td>{!! $worksOnProject->project_id !!}</td>
+            <td>{!! $worksOnProject->role_id !!}</td>
             <td>{!! $worksOnProject->created_at !!}</td>
             <td>{!! $worksOnProject->updated_at !!}</td>
             <td>{!! $worksOnProject->deleted_at !!}</td>
-            <td>{!! $worksOnProject->created_by !!}</td>
-            <td>{!! $worksOnProject->updated_by !!}</td>
             <td>
                 {!! Form::open(['route' => ['worksOnProjects.destroy', $worksOnProject->id], 'method' => 'delete']) !!}
                 <div class='btn-group'>

@@ -1,19 +1,19 @@
-<!-- Taskid Field -->
+<!-- Task Id Field -->
 <div class="form-group">
-    {!! Form::label('TaskId', 'Taskid:') !!}
-    <p>{!! $worksOnTask->TaskId !!}</p>
+    {!! Form::label('task_id', 'Task Id:') !!}
+    <p>{!! $worksOnTask->task_id !!}</p>
 </div>
 
-<!-- Personid Field -->
+<!-- Person Id Field -->
 <div class="form-group">
-    {!! Form::label('PersonId', 'Personid:') !!}
-    <p>{!! $worksOnTask->PersonId !!}</p>
+    {!! Form::label('person_id', 'Person Id:') !!}
+    <p>{!! $worksOnTask->person_id !!}</p>
 </div>
 
-<!-- Activityid Field -->
+<!-- Activity Id Field -->
 <div class="form-group">
-    {!! Form::label('ActivityId', 'Activityid:') !!}
-    <p>{!! $worksOnTask->ActivityId !!}</p>
+    {!! Form::label('activity_id', 'Activity Id:') !!}
+    <p>{!! $worksOnTask->activity_id !!}</p>
 </div>
 
 <!-- Startdate Field -->
@@ -38,17 +38,5 @@
 <div class="form-group">
     {!! Form::label('deleted_at', 'Deleted At:') !!}
     <p>{!! $worksOnTask->deleted_at !!}</p>
-</div>
-
-<!-- Created By Field -->
-<div class="form-group">
-    {!! Form::label('created_by', 'Created By:') !!}
-    <p>{!! $worksOnTask->created_by !!}</p>
-</div>
-
-<!-- Updated By Field -->
-<div class="form-group">
-    {!! Form::label('updated_by', 'Updated By:') !!}
-    <p>{!! $worksOnTask->updated_by !!}</p>
 </div>
 

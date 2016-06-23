@@ -42,18 +42,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *          description="Budget",
  *          type="integer",
  *          format="int32"
- *      ),
- *      @SWG\Property(
- *          property="created_by",
- *          description="created_by",
- *          type="integer",
- *          format="int32"
- *      ),
- *      @SWG\Property(
- *          property="updated_by",
- *          description="updated_by",
- *          type="integer",
- *          format="int32"
  *      )
  * )
  */
@@ -77,9 +65,7 @@ class Project extends Model
         'EndDate',
         'Description',
         'Budget',
-        'deleted_at',
-        'created_by',
-        'updated_by'
+        'deleted_at'
     ];
 
     /**
@@ -94,9 +80,7 @@ class Project extends Model
         'EndDate' => 'date',
         'Description' => 'string',
         'Budget' => 'integer',
-        'deleted_at' => 'datetime',
-        'created_by' => 'integer',
-        'updated_by' => 'integer'
+        'deleted_at' => 'datetime'
     ];
 
     /**

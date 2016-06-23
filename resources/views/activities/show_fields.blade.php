@@ -16,10 +16,10 @@
     <p>{!! $activity->Date !!}</p>
 </div>
 
-<!-- Taskid Field -->
+<!-- Task Id Field -->
 <div class="form-group">
-    {!! Form::label('TaskId', 'Taskid:') !!}
-    <p>{!! $activity->TaskId !!}</p>
+    {!! Form::label('task_id', 'Task Id:') !!}
+    <p>{!! $activity->task_id !!}</p>
 </div>
 
 <!-- Created At Field -->
@@ -38,17 +38,5 @@
 <div class="form-group">
     {!! Form::label('deleted_at', 'Deleted At:') !!}
     <p>{!! $activity->deleted_at !!}</p>
-</div>
-
-<!-- Created By Field -->
-<div class="form-group">
-    {!! Form::label('created_by', 'Created By:') !!}
-    <p>{!! $activity->created_by !!}</p>
-</div>
-
-<!-- Updated By Field -->
-<div class="form-group">
-    {!! Form::label('updated_by', 'Updated By:') !!}
-    <p>{!! $activity->updated_by !!}</p>
 </div>
 

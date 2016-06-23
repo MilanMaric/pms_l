@@ -1,30 +1,26 @@
 <table class="table table-responsive" id="incomes-table">
     <thead>
-        <th>Projectid</th>
+        <th>Project Id</th>
         <th>Description</th>
         <th>Amount</th>
-        <th>Activityid</th>
+        <th>Activity Id</th>
         <th>Date</th>
         <th>Created At</th>
         <th>Updated At</th>
         <th>Deleted At</th>
-        <th>Created By</th>
-        <th>Updated By</th>
         <th colspan="3">Action</th>
     </thead>
     <tbody>
     @foreach($incomes as $income)
         <tr>
-            <td>{!! $income->ProjectId !!}</td>
+            <td>{!! $income->project_id !!}</td>
             <td>{!! $income->Description !!}</td>
             <td>{!! $income->Amount !!}</td>
-            <td>{!! $income->ActivityId !!}</td>
+            <td>{!! $income->activity_id !!}</td>
             <td>{!! $income->Date !!}</td>
             <td>{!! $income->created_at !!}</td>
             <td>{!! $income->updated_at !!}</td>
             <td>{!! $income->deleted_at !!}</td>
-            <td>{!! $income->created_by !!}</td>
-            <td>{!! $income->updated_by !!}</td>
             <td>
                 {!! Form::open(['route' => ['incomes.destroy', $income->id], 'method' => 'delete']) !!}
                 <div class='btn-group'>

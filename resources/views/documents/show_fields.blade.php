@@ -16,10 +16,10 @@
     <p>{!! $document->Description !!}</p>
 </div>
 
-<!-- Projectid Field -->
+<!-- Project Id Field -->
 <div class="form-group">
-    {!! Form::label('ProjectId', 'Projectid:') !!}
-    <p>{!! $document->ProjectId !!}</p>
+    {!! Form::label('project_id', 'Project Id:') !!}
+    <p>{!! $document->project_id !!}</p>
 </div>
 
 <!-- Date Field -->
@@ -28,16 +28,10 @@
     <p>{!! $document->Date !!}</p>
 </div>
 
-<!-- Blobfajl Field -->
+<!-- File Field -->
 <div class="form-group">
-    {!! Form::label('BlobFajl', 'Blobfajl:') !!}
-    <p>{!! $document->BlobFajl !!}</p>
-</div>
-
-<!-- Size Field -->
-<div class="form-group">
-    {!! Form::label('Size', 'Size:') !!}
-    <p>{!! $document->Size !!}</p>
+    {!! Form::label('file', 'File:') !!}
+    <p>{!! $document->file !!}</p>
 </div>
 
 <!-- Created At Field -->
@@ -52,15 +46,9 @@
     <p>{!! $document->updated_at !!}</p>
 </div>
 
-<!-- Created By Field -->
+<!-- Deleted At Field -->
 <div class="form-group">
-    {!! Form::label('created_by', 'Created By:') !!}
-    <p>{!! $document->created_by !!}</p>
-</div>
-
-<!-- Updated By Field -->
-<div class="form-group">
-    {!! Form::label('updated_by', 'Updated By:') !!}
-    <p>{!! $document->updated_by !!}</p>
+    {!! Form::label('deleted_at', 'Deleted At:') !!}
+    <p>{!! $document->deleted_at !!}</p>
 </div>
 

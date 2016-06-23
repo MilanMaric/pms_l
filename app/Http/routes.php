@@ -92,3 +92,24 @@ Route::resource('tasks', 'TaskController');
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
+
+
+Route::resource('activities', 'ActivityController');
+
+Route::resource('documents', 'DocumentController');
+
+Route::resource('people', 'PersonController');
+
+Route::resource('incomes', 'IncomeController');
+
+Route::resource('projects', 'ProjectController');
+
+Route::resource('worksOnProjects', 'WorksOnProjectController');
+
+Route::resource('worksOnTasks', 'WorksOnTaskController');
+
+Route::resource('revisions', 'RevisionController');
+
+Route::resource('expenses', 'ExpenseController');
+
+Route::resource('tasks', 'TaskController');

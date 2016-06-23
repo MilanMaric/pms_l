@@ -33,20 +33,13 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *          type="string"
  *      ),
  *      @SWG\Property(
- *          property="DocumentId",
- *          description="DocumentId",
- *          type="integer",
- *          format="int32"
+ *          property="file",
+ *          description="file",
+ *          type="string"
  *      ),
  *      @SWG\Property(
- *          property="created_by",
- *          description="created_by",
- *          type="integer",
- *          format="int32"
- *      ),
- *      @SWG\Property(
- *          property="updated_by",
- *          description="updated_by",
+ *          property="document_id",
+ *          description="document_id",
  *          type="integer",
  *          format="int32"
  *      )
@@ -70,10 +63,9 @@ class Revision extends Model
         'Date',
         'Number',
         'description',
-        'DocumentId',
-        'deleted_at',
-        'created_by',
-        'updated_by'
+        'file',
+        'document_id',
+        'deleted_at'
     ];
 
     /**
@@ -85,10 +77,9 @@ class Revision extends Model
         'Id' => 'integer',
         'Date' => 'date',
         'description' => 'string',
-        'DocumentId' => 'integer',
-        'deleted_at' => 'datetime',
-        'created_by' => 'integer',
-        'updated_by' => 'integer'
+        'file' => 'string',
+        'document_id' => 'integer',
+        'deleted_at' => 'datetime'
     ];
 
     /**

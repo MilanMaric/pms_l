@@ -8,8 +8,6 @@
         <th>Created At</th>
         <th>Updated At</th>
         <th>Deleted At</th>
-        <th>Created By</th>
-        <th>Updated By</th>
         <th colspan="3">Action</th>
     </thead>
     <tbody>
@@ -23,8 +21,6 @@
             <td>{!! $project->created_at !!}</td>
             <td>{!! $project->updated_at !!}</td>
             <td>{!! $project->deleted_at !!}</td>
-            <td>{!! $project->created_by !!}</td>
-            <td>{!! $project->updated_by !!}</td>
             <td>
                 {!! Form::open(['route' => ['projects.destroy', $project->id], 'method' => 'delete']) !!}
                 <div class='btn-group'>

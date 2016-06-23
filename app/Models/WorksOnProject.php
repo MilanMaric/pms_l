@@ -10,32 +10,20 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *      definition="WorksOnProject",
  *      required={},
  *      @SWG\Property(
- *          property="PersonId",
- *          description="PersonId",
+ *          property="person_id",
+ *          description="person_id",
  *          type="integer",
  *          format="int32"
  *      ),
  *      @SWG\Property(
- *          property="ProjectId",
- *          description="ProjectId",
+ *          property="project_id",
+ *          description="project_id",
  *          type="integer",
  *          format="int32"
  *      ),
  *      @SWG\Property(
- *          property="role",
- *          description="role",
- *          type="integer",
- *          format="int32"
- *      ),
- *      @SWG\Property(
- *          property="created_by",
- *          description="created_by",
- *          type="integer",
- *          format="int32"
- *      ),
- *      @SWG\Property(
- *          property="updated_by",
- *          description="updated_by",
+ *          property="role_id",
+ *          description="role_id",
  *          type="integer",
  *          format="int32"
  *      )
@@ -55,12 +43,10 @@ class WorksOnProject extends Model
 
 
     public $fillable = [
-        'PersonId',
-        'ProjectId',
-        'role',
-        'deleted_at',
-        'created_by',
-        'updated_by'
+        'person_id',
+        'project_id',
+        'role_id',
+        'deleted_at'
     ];
 
     /**
@@ -69,12 +55,10 @@ class WorksOnProject extends Model
      * @var array
      */
     protected $casts = [
-        'PersonId' => 'integer',
-        'ProjectId' => 'integer',
-        'role' => 'integer',
-        'deleted_at' => 'datetime',
-        'created_by' => 'integer',
-        'updated_by' => 'integer'
+        'person_id' => 'integer',
+        'project_id' => 'integer',
+        'role_id' => 'integer',
+        'deleted_at' => 'datetime'
     ];
 
     /**

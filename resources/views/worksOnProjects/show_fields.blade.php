@@ -1,19 +1,19 @@
-<!-- Personid Field -->
+<!-- Person Id Field -->
 <div class="form-group">
-    {!! Form::label('PersonId', 'Personid:') !!}
-    <p>{!! $worksOnProject->PersonId !!}</p>
+    {!! Form::label('person_id', 'Person Id:') !!}
+    <p>{!! $worksOnProject->person_id !!}</p>
 </div>
 
-<!-- Projectid Field -->
+<!-- Project Id Field -->
 <div class="form-group">
-    {!! Form::label('ProjectId', 'Projectid:') !!}
-    <p>{!! $worksOnProject->ProjectId !!}</p>
+    {!! Form::label('project_id', 'Project Id:') !!}
+    <p>{!! $worksOnProject->project_id !!}</p>
 </div>
 
-<!-- Role Field -->
+<!-- Role Id Field -->
 <div class="form-group">
-    {!! Form::label('role', 'Role:') !!}
-    <p>{!! $worksOnProject->role !!}</p>
+    {!! Form::label('role_id', 'Role Id:') !!}
+    <p>{!! $worksOnProject->role_id !!}</p>
 </div>
 
 <!-- Created At Field -->
@@ -32,17 +32,5 @@
 <div class="form-group">
     {!! Form::label('deleted_at', 'Deleted At:') !!}
     <p>{!! $worksOnProject->deleted_at !!}</p>
-</div>
-
-<!-- Created By Field -->
-<div class="form-group">
-    {!! Form::label('created_by', 'Created By:') !!}
-    <p>{!! $worksOnProject->created_by !!}</p>
-</div>
-
-<!-- Updated By Field -->
-<div class="form-group">
-    {!! Form::label('updated_by', 'Updated By:') !!}
-    <p>{!! $worksOnProject->updated_by !!}</p>
 </div>
 

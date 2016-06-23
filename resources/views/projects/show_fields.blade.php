@@ -52,15 +52,3 @@
     <p>{!! $project->deleted_at !!}</p>
 </div>
 
-<!-- Created By Field -->
-<div class="form-group">
-    {!! Form::label('created_by', 'Created By:') !!}
-    <p>{!! $project->created_by !!}</p>
-</div>
-
-<!-- Updated By Field -->
-<div class="form-group">
-    {!! Form::label('updated_by', 'Updated By:') !!}
-    <p>{!! $project->updated_by !!}</p>
-</div>
-

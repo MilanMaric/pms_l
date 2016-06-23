@@ -22,10 +22,16 @@
     <p>{!! $revision->description !!}</p>
 </div>
 
-<!-- Documentid Field -->
+<!-- File Field -->
 <div class="form-group">
-    {!! Form::label('DocumentId', 'Documentid:') !!}
-    <p>{!! $revision->DocumentId !!}</p>
+    {!! Form::label('file', 'File:') !!}
+    <p>{!! $revision->file !!}</p>
+</div>
+
+<!-- Document Id Field -->
+<div class="form-group">
+    {!! Form::label('document_id', 'Document Id:') !!}
+    <p>{!! $revision->document_id !!}</p>
 </div>
 
 <!-- Created At Field -->
@@ -44,17 +50,5 @@
 <div class="form-group">
     {!! Form::label('deleted_at', 'Deleted At:') !!}
     <p>{!! $revision->deleted_at !!}</p>
-</div>
-
-<!-- Created By Field -->
-<div class="form-group">
-    {!! Form::label('created_by', 'Created By:') !!}
-    <p>{!! $revision->created_by !!}</p>
-</div>
-
-<!-- Updated By Field -->
-<div class="form-group">
-    {!! Form::label('updated_by', 'Updated By:') !!}
-    <p>{!! $revision->updated_by !!}</p>
 </div>
 

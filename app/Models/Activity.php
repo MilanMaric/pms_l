@@ -21,20 +21,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *          type="string"
  *      ),
  *      @SWG\Property(
- *          property="TaskId",
- *          description="TaskId",
- *          type="integer",
- *          format="int32"
- *      ),
- *      @SWG\Property(
- *          property="created_by",
- *          description="created_by",
- *          type="integer",
- *          format="int32"
- *      ),
- *      @SWG\Property(
- *          property="updated_by",
- *          description="updated_by",
+ *          property="task_id",
+ *          description="task_id",
  *          type="integer",
  *          format="int32"
  *      )
@@ -57,10 +45,8 @@ class Activity extends Model
     public $fillable = [
         'Description',
         'Date',
-        'TaskId',
-        'deleted_at',
-        'created_by',
-        'updated_by'
+        'task_id',
+        'deleted_at'
     ];
 
     /**
@@ -72,10 +58,8 @@ class Activity extends Model
         'Id' => 'integer',
         'Description' => 'string',
         'Date' => 'datetime',
-        'TaskId' => 'integer',
-        'deleted_at' => 'datetime',
-        'created_by' => 'integer',
-        'updated_by' => 'integer'
+        'task_id' => 'integer',
+        'deleted_at' => 'datetime'
     ];
 
     /**
