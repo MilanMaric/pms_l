@@ -13,7 +13,9 @@
     "infyomlabs/laravel-generator": "dev-master",
     "laravelcollective/html": "5.2.*",
     "infyomlabs/core-templates": "dev-master",
-    "doctrine/dbal": "~2.3"
+    "doctrine/dbal": "~2.3",
+    "infyomlabs/swagger-generator": "dev-master",
+    "jlapp/swaggervel": "dev-master"
   },
   "require-dev": {
     "fzaninotto/faker": "~1.4",
