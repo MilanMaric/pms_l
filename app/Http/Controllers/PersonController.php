@@ -20,6 +20,7 @@ class PersonController extends InfyOmBaseController
     public function __construct(PersonRepository $personRepo)
     {
         $this->personRepository = $personRepo;
+        $this->middleware('auth');
     }
 
     /**

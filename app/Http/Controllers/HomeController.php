@@ -33,7 +33,7 @@ class HomeController extends Controller
             Log::debug($person);
             return view('home', ['person' => $person]);
         }
-        return view('home');
-
+//        return view('home');
+        return view('login');
     }
 }

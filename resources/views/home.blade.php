@@ -9,6 +9,7 @@
 
                 <div class="panel-body">
                     You are logged in!
+                    {{Session::get("person")}}
                 </div>
             </div>
         </div>
