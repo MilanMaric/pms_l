@@ -46,7 +46,7 @@ class Works_On_Project extends Model
     use SoftDeletes;
 
     public $table = 'Works_On_Project';
-    
+
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
 
@@ -81,6 +81,16 @@ class Works_On_Project extends Model
      * @var array
      */
     public static $rules = [
-        
+
     ];
+
+    public function person()
+    {
+        return $this->belongsToOne('App\Models\Peopole');
+    }
+
+    public function project()
+    {
+        return $this->belongsToOne('App\Models\Project');
+    }
 }

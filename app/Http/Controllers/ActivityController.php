@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\AppBaseController as InfyOmBaseController;
 use App\Http\Requests;
 use App\Http\Requests\CreateActivityRequest;
 use App\Http\Requests\UpdateActivityRequest;
 use App\Repositories\ActivityRepository;
-use App\Http\Controllers\AppBaseController as InfyOmBaseController;
-use Illuminate\Http\Request;
 use Flash;
+use Illuminate\Http\Request;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
 
@@ -20,6 +20,7 @@ class ActivityController extends InfyOmBaseController
     public function __construct(ActivityRepository $activityRepo)
     {
         $this->activityRepository = $activityRepo;
+        $this->middleware('auth');
     }
 
     /**
@@ -108,7 +109,7 @@ class ActivityController extends InfyOmBaseController
     /**
      * Update the specified Activity in storage.
      *
-     * @param  int              $id
+     * @param  int $id
      * @param UpdateActivityRequest $request
      *
      * @return Response

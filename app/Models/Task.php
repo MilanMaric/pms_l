@@ -56,7 +56,7 @@ class Task extends Model
     use SoftDeletes;
 
     public $table = 'Task';
-    
+
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
 
@@ -103,6 +103,11 @@ class Task extends Model
      * @var array
      */
     public static $rules = [
-        
+
     ];
+
+    public function project()
+    {
+        return $this->belongsTo('App\Models\Project');
+    }
 }

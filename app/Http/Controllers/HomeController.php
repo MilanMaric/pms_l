@@ -24,12 +24,12 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($request)
+    public function index()
     {
 
         if (Auth::check()) {
             $person = \App\Models\Person::find(['user_id' => Auth::user()->id]);
-            Session::put('person', $person);
+            Session::set('person', $person);
             Log::debug($person);
             return view('home', ['person' => $person]);
         }

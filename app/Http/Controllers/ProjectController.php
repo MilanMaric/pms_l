@@ -20,6 +20,7 @@ class ProjectController extends InfyOmBaseController
     public function __construct(ProjectRepository $projectRepo)
     {
         $this->projectRepository = $projectRepo;
+        $this->middleware('auth');
     }
 
     /**
