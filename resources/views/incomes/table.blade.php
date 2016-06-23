@@ -7,6 +7,7 @@
         <th>Date</th>
         <th>Created At</th>
         <th>Updated At</th>
+        <th>Deleted At</th>
         <th>Created By</th>
         <th>Updated By</th>
         <th colspan="3">Action</th>
@@ -21,6 +22,7 @@
             <td>{!! $income->Date !!}</td>
             <td>{!! $income->created_at !!}</td>
             <td>{!! $income->updated_at !!}</td>
+            <td>{!! $income->deleted_at !!}</td>
             <td>{!! $income->created_by !!}</td>
             <td>{!! $income->updated_by !!}</td>
             <td>

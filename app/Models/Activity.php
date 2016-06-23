@@ -58,6 +58,7 @@ class Activity extends Model
         'Description',
         'Date',
         'TaskId',
+        'deleted_at',
         'created_by',
         'updated_by'
     ];
@@ -72,6 +73,7 @@ class Activity extends Model
         'Description' => 'string',
         'Date' => 'datetime',
         'TaskId' => 'integer',
+        'deleted_at' => 'datetime',
         'created_by' => 'integer',
         'updated_by' => 'integer'
     ];

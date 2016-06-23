@@ -78,6 +78,7 @@ class Expense extends Model
         'ProjectId',
         'ActivityId',
         'Date',
+        'deleted_at',
         'created_by',
         'updated_by'
     ];
@@ -94,6 +95,7 @@ class Expense extends Model
         'ProjectId' => 'integer',
         'ActivityId' => 'integer',
         'Date' => 'date',
+        'deleted_at' => 'datetime',
         'created_by' => 'integer',
         'updated_by' => 'integer'
     ];

@@ -6,6 +6,7 @@
         <th>Startdate</th>
         <th>Created At</th>
         <th>Updated At</th>
+        <th>Deleted At</th>
         <th>Created By</th>
         <th>Updated By</th>
         <th colspan="3">Action</th>
@@ -19,6 +20,7 @@
             <td>{!! $worksOnTask->StartDate !!}</td>
             <td>{!! $worksOnTask->created_at !!}</td>
             <td>{!! $worksOnTask->updated_at !!}</td>
+            <td>{!! $worksOnTask->deleted_at !!}</td>
             <td>{!! $worksOnTask->created_by !!}</td>
             <td>{!! $worksOnTask->updated_by !!}</td>
             <td>

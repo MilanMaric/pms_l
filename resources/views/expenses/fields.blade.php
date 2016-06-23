@@ -46,6 +46,12 @@
     {!! Form::date('updated_at', null, ['class' => 'form-control']) !!}
 </div>
 
+<!-- Deleted At Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('deleted_at', 'Deleted At:') !!}
+    {!! Form::date('deleted_at', null, ['class' => 'form-control']) !!}
+</div>
+
 <!-- Created By Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('created_by', 'Created By:') !!}

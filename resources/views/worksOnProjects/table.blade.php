@@ -5,6 +5,7 @@
         <th>Role</th>
         <th>Created At</th>
         <th>Updated At</th>
+        <th>Deleted At</th>
         <th>Created By</th>
         <th>Updated By</th>
         <th colspan="3">Action</th>
@@ -17,6 +18,7 @@
             <td>{!! $worksOnProject->role !!}</td>
             <td>{!! $worksOnProject->created_at !!}</td>
             <td>{!! $worksOnProject->updated_at !!}</td>
+            <td>{!! $worksOnProject->deleted_at !!}</td>
             <td>{!! $worksOnProject->created_by !!}</td>
             <td>{!! $worksOnProject->updated_by !!}</td>
             <td>

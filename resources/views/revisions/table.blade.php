@@ -6,6 +6,7 @@
         <th>Documentid</th>
         <th>Created At</th>
         <th>Updated At</th>
+        <th>Deleted At</th>
         <th>Created By</th>
         <th>Updated By</th>
         <th colspan="3">Action</th>
@@ -19,6 +20,7 @@
             <td>{!! $revision->DocumentId !!}</td>
             <td>{!! $revision->created_at !!}</td>
             <td>{!! $revision->updated_at !!}</td>
+            <td>{!! $revision->deleted_at !!}</td>
             <td>{!! $revision->created_by !!}</td>
             <td>{!! $revision->updated_by !!}</td>
             <td>

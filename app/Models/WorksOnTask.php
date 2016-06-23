@@ -7,47 +7,31 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * @SWG\Definition(
- *      definition="Task",
+ *      definition="WorksOnTask",
  *      required={},
  *      @SWG\Property(
- *          property="Id",
- *          description="Id",
+ *          property="TaskId",
+ *          description="TaskId",
  *          type="integer",
  *          format="int32"
  *      ),
  *      @SWG\Property(
- *          property="ProjectId",
- *          description="ProjectId",
+ *          property="PersonId",
+ *          description="PersonId",
  *          type="integer",
  *          format="int32"
  *      ),
  *      @SWG\Property(
- *          property="Description",
- *          description="Description",
- *          type="string"
- *      ),
- *      @SWG\Property(
- *          property="Title",
- *          description="Title",
- *          type="string"
- *      ),
- *      @SWG\Property(
- *          property="ManHour",
- *          description="ManHour",
+ *          property="ActivityId",
+ *          description="ActivityId",
  *          type="integer",
  *          format="int32"
  *      ),
  *      @SWG\Property(
- *          property="PercentageDone",
- *          description="PercentageDone",
- *          type="integer",
- *          format="int32"
- *      ),
- *      @SWG\Property(
- *          property="Hours",
- *          description="Hours",
- *          type="integer",
- *          format="int32"
+ *          property="StartDate",
+ *          description="StartDate",
+ *          type="string",
+ *          format="date"
  *      ),
  *      @SWG\Property(
  *          property="created_by",
@@ -63,11 +47,11 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *      )
  * )
  */
-class Task extends Model
+class WorksOnTask extends Model
 {
     use SoftDeletes;
 
-    public $table = 'Task';
+    public $table = 'Works_On_Task';
     
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
@@ -75,18 +59,12 @@ class Task extends Model
 
     protected $dates = ['deleted_at'];
 
-    protected $primaryKey = 'Id';
 
     public $fillable = [
-        'ProjectId',
-        'Description',
-        'Start',
-        'End',
-        'Deadline',
-        'Title',
-        'ManHour',
-        'PercentageDone',
-        'Hours',
+        'TaskId',
+        'PersonId',
+        'ActivityId',
+        'StartDate',
         'deleted_at',
         'created_by',
         'updated_by'
@@ -98,16 +76,10 @@ class Task extends Model
      * @var array
      */
     protected $casts = [
-        'Id' => 'integer',
-        'ProjectId' => 'integer',
-        'Description' => 'string',
-        'Start' => 'datetime',
-        'End' => 'datetime',
-        'Deadline' => 'datetime',
-        'Title' => 'string',
-        'ManHour' => 'integer',
-        'PercentageDone' => 'integer',
-        'Hours' => 'integer',
+        'TaskId' => 'integer',
+        'PersonId' => 'integer',
+        'ActivityId' => 'integer',
+        'StartDate' => 'date',
         'deleted_at' => 'datetime',
         'created_by' => 'integer',
         'updated_by' => 'integer'

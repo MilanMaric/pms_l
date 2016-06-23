@@ -34,6 +34,12 @@
     <p>{!! $activity->updated_at !!}</p>
 </div>
 
+<!-- Deleted At Field -->
+<div class="form-group">
+    {!! Form::label('deleted_at', 'Deleted At:') !!}
+    <p>{!! $activity->deleted_at !!}</p>
+</div>
+
 <!-- Created By Field -->
 <div class="form-group">
     {!! Form::label('created_by', 'Created By:') !!}

@@ -5,6 +5,7 @@
         <th>Taskid</th>
         <th>Created At</th>
         <th>Updated At</th>
+        <th>Deleted At</th>
         <th>Created By</th>
         <th>Updated By</th>
         <th colspan="3">Action</th>
@@ -17,6 +18,7 @@
             <td>{!! $activity->TaskId !!}</td>
             <td>{!! $activity->created_at !!}</td>
             <td>{!! $activity->updated_at !!}</td>
+            <td>{!! $activity->deleted_at !!}</td>
             <td>{!! $activity->created_by !!}</td>
             <td>{!! $activity->updated_by !!}</td>
             <td>

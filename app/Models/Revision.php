@@ -71,6 +71,7 @@ class Revision extends Model
         'Number',
         'description',
         'DocumentId',
+        'deleted_at',
         'created_by',
         'updated_by'
     ];
@@ -85,6 +86,7 @@ class Revision extends Model
         'Date' => 'date',
         'description' => 'string',
         'DocumentId' => 'integer',
+        'deleted_at' => 'datetime',
         'created_by' => 'integer',
         'updated_by' => 'integer'
     ];

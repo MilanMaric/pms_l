@@ -11,6 +11,7 @@
         <th>Hours</th>
         <th>Created At</th>
         <th>Updated At</th>
+        <th>Deleted At</th>
         <th>Created By</th>
         <th>Updated By</th>
         <th colspan="3">Action</th>
@@ -29,6 +30,7 @@
             <td>{!! $task->Hours !!}</td>
             <td>{!! $task->created_at !!}</td>
             <td>{!! $task->updated_at !!}</td>
+            <td>{!! $task->deleted_at !!}</td>
             <td>{!! $task->created_by !!}</td>
             <td>{!! $task->updated_by !!}</td>
             <td>

@@ -8,6 +8,7 @@
         <th>Mobilenumber</th>
         <th>Created At</th>
         <th>Updated At</th>
+        <th>Deleted At</th>
         <th>Created By</th>
         <th>Updated By</th>
         <th colspan="3">Action</th>
@@ -23,6 +24,7 @@
             <td>{!! $person->MobileNumber !!}</td>
             <td>{!! $person->created_at !!}</td>
             <td>{!! $person->updated_at !!}</td>
+            <td>{!! $person->deleted_at !!}</td>
             <td>{!! $person->created_by !!}</td>
             <td>{!! $person->updated_by !!}</td>
             <td>

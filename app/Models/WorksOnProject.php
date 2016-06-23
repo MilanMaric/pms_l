@@ -7,11 +7,11 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * @SWG\Definition(
- *      definition="Task",
+ *      definition="WorksOnProject",
  *      required={},
  *      @SWG\Property(
- *          property="Id",
- *          description="Id",
+ *          property="PersonId",
+ *          description="PersonId",
  *          type="integer",
  *          format="int32"
  *      ),
@@ -22,30 +22,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *          format="int32"
  *      ),
  *      @SWG\Property(
- *          property="Description",
- *          description="Description",
- *          type="string"
- *      ),
- *      @SWG\Property(
- *          property="Title",
- *          description="Title",
- *          type="string"
- *      ),
- *      @SWG\Property(
- *          property="ManHour",
- *          description="ManHour",
- *          type="integer",
- *          format="int32"
- *      ),
- *      @SWG\Property(
- *          property="PercentageDone",
- *          description="PercentageDone",
- *          type="integer",
- *          format="int32"
- *      ),
- *      @SWG\Property(
- *          property="Hours",
- *          description="Hours",
+ *          property="role",
+ *          description="role",
  *          type="integer",
  *          format="int32"
  *      ),
@@ -63,11 +41,11 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *      )
  * )
  */
-class Task extends Model
+class WorksOnProject extends Model
 {
     use SoftDeletes;
 
-    public $table = 'Task';
+    public $table = 'Works_On_Project';
     
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
@@ -75,18 +53,11 @@ class Task extends Model
 
     protected $dates = ['deleted_at'];
 
-    protected $primaryKey = 'Id';
 
     public $fillable = [
+        'PersonId',
         'ProjectId',
-        'Description',
-        'Start',
-        'End',
-        'Deadline',
-        'Title',
-        'ManHour',
-        'PercentageDone',
-        'Hours',
+        'role',
         'deleted_at',
         'created_by',
         'updated_by'
@@ -98,16 +69,9 @@ class Task extends Model
      * @var array
      */
     protected $casts = [
-        'Id' => 'integer',
+        'PersonId' => 'integer',
         'ProjectId' => 'integer',
-        'Description' => 'string',
-        'Start' => 'datetime',
-        'End' => 'datetime',
-        'Deadline' => 'datetime',
-        'Title' => 'string',
-        'ManHour' => 'integer',
-        'PercentageDone' => 'integer',
-        'Hours' => 'integer',
+        'role' => 'integer',
         'deleted_at' => 'datetime',
         'created_by' => 'integer',
         'updated_by' => 'integer'

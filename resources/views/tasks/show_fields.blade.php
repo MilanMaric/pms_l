@@ -70,6 +70,12 @@
     <p>{!! $task->updated_at !!}</p>
 </div>
 
+<!-- Deleted At Field -->
+<div class="form-group">
+    {!! Form::label('deleted_at', 'Deleted At:') !!}
+    <p>{!! $task->deleted_at !!}</p>
+</div>
+
 <!-- Created By Field -->
 <div class="form-group">
     {!! Form::label('created_by', 'Created By:') !!}

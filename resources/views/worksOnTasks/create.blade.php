@@ -3,7 +3,7 @@
 @section('content')
     <div class="row">
         <div class="col-sm-12">
-            <h1 class="pull-left">Create New Works_On_Task</h1>
+            <h1 class="pull-left">Create New WorksOnTask</h1>
         </div>
     </div>
 

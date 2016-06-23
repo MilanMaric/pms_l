@@ -77,6 +77,7 @@ class Project extends Model
         'EndDate',
         'Description',
         'Budget',
+        'deleted_at',
         'created_by',
         'updated_by'
     ];
@@ -93,6 +94,7 @@ class Project extends Model
         'EndDate' => 'date',
         'Description' => 'string',
         'Budget' => 'integer',
+        'deleted_at' => 'datetime',
         'created_by' => 'integer',
         'updated_by' => 'integer'
     ];

@@ -81,6 +81,7 @@ class Person extends Model
         'Address',
         'PhoneNumber',
         'MobileNumber',
+        'deleted_at',
         'created_by',
         'updated_by'
     ];
@@ -98,6 +99,7 @@ class Person extends Model
         'Address' => 'string',
         'PhoneNumber' => 'string',
         'MobileNumber' => 'string',
+        'deleted_at' => 'datetime',
         'created_by' => 'integer',
         'updated_by' => 'integer'
     ];
