@@ -53,3 +53,5 @@ Route::resource('documents', 'DocumentController');
 Route::resource('people', 'PersonController');
 
 Route::resource('incomes', 'IncomeController');
+
+Route::resource('projects', 'ProjectController');
