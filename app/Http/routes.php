@@ -55,3 +55,7 @@ Route::resource('people', 'PersonController');
 Route::resource('incomes', 'IncomeController');
 
 Route::resource('projects', 'ProjectController');
+
+Route::resource('worksOnProjects', 'Works_On_ProjectController');
+
+Route::resource('worksOnTasks', 'Works_On_TaskController');
