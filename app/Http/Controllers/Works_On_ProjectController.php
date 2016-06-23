@@ -20,6 +20,8 @@ class Works_On_ProjectController extends InfyOmBaseController
     public function __construct(Works_On_ProjectRepository $worksOnProjectRepo)
     {
         $this->worksOnProjectRepository = $worksOnProjectRepo;
+        $this->middleware('auth');
+
     }
 
     /**
