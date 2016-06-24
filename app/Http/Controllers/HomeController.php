@@ -29,8 +29,8 @@ class HomeController extends Controller
     {
 
         if (Auth::check()) {
-            self::projectSessionHelper();
-            return view('home');//, ['person' => $person, 'projects' => $projects]);
+
+            return view('home', ['projects' => self::projectSessionHelper()]);//, ['person' => $person, 'projects' => $projects]);
         }
 //        return view('home');
         return view('login');

@@ -22,7 +22,7 @@
         <header class="main-header">
 
             <!-- Logo -->
-            <a href="/" class="logo">
+            <a href="/home" class="logo">
                 <b>PMS</b>
             </a>
 

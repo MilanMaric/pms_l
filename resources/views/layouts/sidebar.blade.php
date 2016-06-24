@@ -11,34 +11,35 @@
             </div>
             <div class="pull-left info">
                 @if (Auth::guest())
-                    <p>InfyOm</p>
+                    <p>PMS</p>
                 @else
                     <p>{{ Auth::user()->name}}</p>
                     @endif
                             <!-- Status -->
                     <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
-            <div class="pull-left">
-                {{--{{$projects=\App\Http\Controllers\HomeController::projectSessionHelper()[0]}}--}}
-                @foreach(Session::get('projects') as $project)
-                    <div class="title">
-                        {{$project}}
-                    </div>
-                @endforeach
-            </div>
+
+        </div>
+        <div class="list-group">
+            {{--{{$projects=\App\Http\Controllers\HomeController::projectSessionHelper()[0]}}--}}
+            @foreach(Session::get('projects') as $project)
+                <a class="list-group-item" href={{"/projects/".$project->Id}}>
+                    {{$project->Title}}
+                </a>
+            @endforeach
         </div>
 
         <!-- search form (Optional) -->
         {{--<form action="#" method="get" class="sidebar-form">--}}
-            {{--<div class="input-group">--}}
-                {{--<input type="text" name="q" class="form-control" placeholder="Search..."/>--}}
-          {{--<span class="input-group-btn">--}}
-            {{--<button type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i>--}}
-            {{--</button>--}}
-          {{--</span>--}}
-            {{--</div>--}}
+        {{--<div class="input-group">--}}
+        {{--<input type="text" name="q" class="form-control" placeholder="Search..."/>--}}
+        {{--<span class="input-group-btn">--}}
+        {{--<button type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i>--}}
+        {{--</button>--}}
+        {{--</span>--}}
+        {{--</div>--}}
         {{--</form>--}}
-        <!-- Sidebar Menu -->
+                <!-- Sidebar Menu -->
 
         <ul class="sidebar-menu">
             @include('layouts.menu')
