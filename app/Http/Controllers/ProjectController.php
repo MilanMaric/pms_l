@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\AppBaseController as InfyOmBaseController;
 use App\Http\Requests;
 use App\Http\Requests\CreateProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
+use App\Models\Project;
 use App\Repositories\ProjectRepository;
-use App\Http\Controllers\AppBaseController as InfyOmBaseController;
-use Illuminate\Http\Request;
 use Flash;
+use Illuminate\Http\Request;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
 
@@ -20,6 +21,7 @@ class ProjectController extends InfyOmBaseController
     public function __construct(ProjectRepository $projectRepo)
     {
         $this->projectRepository = $projectRepo;
+        $this->middleware('auth');
     }
 
     /**
@@ -61,7 +63,7 @@ class ProjectController extends InfyOmBaseController
         $project = $this->projectRepository->create($input);
 
         Flash::success('Project saved successfully.');
-
+        HomeController::projectSessionHelper();
         return redirect(route('projects.index'));
     }
 
@@ -75,13 +77,12 @@ class ProjectController extends InfyOmBaseController
     public function show($id)
     {
         $project = $this->projectRepository->findWithoutFail($id);
+        if (Project::checkUser($project))
+            if (empty($project)) {
+                Flash::error('Project not found');
 
-        if (empty($project)) {
-            Flash::error('Project not found');
-
-            return redirect(route('projects.index'));
-        }
-
+                return redirect(route('projects.index'));
+            }
         return view('projects.show')->with('project', $project);
     }
 
@@ -95,7 +96,6 @@ class ProjectController extends InfyOmBaseController
     public function edit($id)
     {
         $project = $this->projectRepository->findWithoutFail($id);
-
         if (empty($project)) {
             Flash::error('Project not found');
 
@@ -108,7 +108,7 @@ class ProjectController extends InfyOmBaseController
     /**
      * Update the specified Project in storage.
      *
-     * @param  int              $id
+     * @param  int $id
      * @param UpdateProjectRequest $request
      *
      * @return Response

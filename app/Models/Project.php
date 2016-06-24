@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
+use App\Http\Controllers\HomeController;
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\Session;
 
 /**
  * @SWG\Definition(
@@ -50,7 +52,7 @@ class Project extends Model
     use SoftDeletes;
 
     public $table = 'Project';
-    
+
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
 
@@ -89,6 +91,20 @@ class Project extends Model
      * @var array
      */
     public static $rules = [
-        
+
     ];
+
+    public static function checkUser($project)
+    {
+        $projects = Session::get('projects');
+        if (empty($projects)) {
+            $projects = HomeController::projectSessionHelper();
+        }
+        foreach ($projects as $i) {
+            if (empty($i))
+                if ($i->Id == $project->Id)
+                    return true;
+        }
+        return false;
+    }
 }
