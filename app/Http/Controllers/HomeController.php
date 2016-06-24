@@ -35,8 +35,8 @@ class HomeController extends Controller
             foreach ($works_on_project as $wp) {
                 $projects[] = Project::find(['id' => $wp->project_id]);
             }
-            $person[0]->projects = $projects;
-            return view('home', ['person' => $person, 'projects' => $projects]);
+//           return view('home',['projects'=>$projects]);
+            return view('home');//, ['person' => $person, 'projects' => $projects]);
         }
 //        return view('home');
         return view('login');
