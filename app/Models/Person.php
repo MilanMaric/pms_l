@@ -96,4 +96,14 @@ class Person extends Model
     public static $rules = [
         
     ];
+
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
+
+    public function project()
+    {
+        return $this->hasManyThrough('App\Models\Project','App\Models\Worsk_On_Project');
+    }
 }

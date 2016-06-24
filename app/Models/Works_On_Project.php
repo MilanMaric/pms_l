@@ -89,8 +89,5 @@ class Works_On_Project extends Model
 //        return $this->belongsTo('App\Models\Peopole');
 //    }
 
-//    public function project()
-//    {
-//        return $this->belongsTo('App\Models\Project');
-//    }
+    
 }
