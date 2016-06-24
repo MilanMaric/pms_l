@@ -84,13 +84,13 @@ class Works_On_Project extends Model
 
     ];
 
-    public function person()
-    {
-        return $this->belongsToOne('App\Models\Peopole');
-    }
+//    public function person()
+//    {
+//        return $this->belongsTo('App\Models\Peopole');
+//    }
 
-    public function project()
-    {
-        return $this->belongsToOne('App\Models\Project');
-    }
+//    public function project()
+//    {
+//        return $this->belongsTo('App\Models\Project');
+//    }
 }

@@ -9,7 +9,7 @@
 
                 <div class="panel-body">
                     You are logged in!
-                    {{Session::get("person")}}
+                    {{$projects}}
                 </div>
             </div>
         </div>

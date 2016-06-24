@@ -29,9 +29,9 @@ class HomeController extends Controller
 
         if (Auth::check()) {
             $person = \App\Models\Person::find(['user_id' => Auth::user()->id]);
-            Session::set('person', $person);
-            Log::debug($person);
-            return view('home', ['person' => $person]);
+//            Session::set('person', $person);
+            return $person[0];
+            return view('home', ['person' => $person,'projects'=>$person[0]->projects]);
         }
 //        return view('home');
         return view('login');

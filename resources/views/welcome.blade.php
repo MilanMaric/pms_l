@@ -9,9 +9,7 @@
 
                     <div class="panel-body">
                         Your Application's Landing Page.
-                        @if($person!=null)
-                            {{$person}}
-                        @endif
+
                         {{Session::get('person')}}
                     </div>
                 </div>
