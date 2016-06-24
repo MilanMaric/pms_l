@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use App\Http\Requests\CreateWorks_On_ProjectRequest;
 use App\Http\Requests\UpdateWorks_On_ProjectRequest;
+use App\Models\Person;
+use App\Models\Project;
 use App\Repositories\Works_On_ProjectRepository;
 use App\Http\Controllers\AppBaseController as InfyOmBaseController;
 use Illuminate\Http\Request;

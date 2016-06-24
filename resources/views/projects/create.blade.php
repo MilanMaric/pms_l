@@ -7,7 +7,7 @@
         </div>
     </div>
 
-    @include('core-templates::common.errors')
+{{--    @include('::common.errors')--}}
 
     <div class="row">
         {!! Form::open(['route' => 'projects.store']) !!}
