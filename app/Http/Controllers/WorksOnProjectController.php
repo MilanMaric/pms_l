@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\AppBaseController as InfyOmBaseController;
 use App\Http\Requests;
 use App\Http\Requests\CreateWorksOnProjectRequest;
 use App\Http\Requests\UpdateWorksOnProjectRequest;
+use App\Models\Person;
+use App\Models\Project;
 use App\Repositories\WorksOnProjectRepository;
-use App\Http\Controllers\AppBaseController as InfyOmBaseController;
-use Illuminate\Http\Request;
 use Flash;
+use Illuminate\Http\Request;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
 
@@ -44,7 +46,10 @@ class WorksOnProjectController extends InfyOmBaseController
      */
     public function create()
     {
-        return view('worksOnProjects.create');
+        $persons = Person::where([])->select(['id', 'name', 'lastname'])->get();
+        $projects = Project::where([])->select(['id','title'])->get();
+//        dd($persons);
+        return view('worksOnProjects.create')->with(['persons' => $persons, 'projects' => $projects]);
     }
 
     /**
@@ -61,7 +66,7 @@ class WorksOnProjectController extends InfyOmBaseController
         $worksOnProject = $this->worksOnProjectRepository->create($input);
 
         Flash::success('WorksOnProject saved successfully.');
-
+        HomeController::projectSessionHelper();
         return redirect(route('worksOnProjects.index'));
     }
 
@@ -101,14 +106,16 @@ class WorksOnProjectController extends InfyOmBaseController
 
             return redirect(route('worksOnProjects.index'));
         }
+        $persons = Person::where([])->select(['id', 'name', 'lastname'])->get();
+        $projects = Project::where([])->select(['id','title'])->get();
 
-        return view('worksOnProjects.edit')->with('worksOnProject', $worksOnProject);
+        return view('worksOnProjects.edit')->with(['worksOnProject', $worksOnProject, 'persons' => $persons, 'projects' => $projects]);
     }
 
     /**
      * Update the specified WorksOnProject in storage.
      *
-     * @param  int              $id
+     * @param  int $id
      * @param UpdateWorksOnProjectRequest $request
      *
      * @return Response
@@ -126,7 +133,6 @@ class WorksOnProjectController extends InfyOmBaseController
         $worksOnProject = $this->worksOnProjectRepository->update($request->all(), $id);
 
         Flash::success('WorksOnProject updated successfully.');
-
         return redirect(route('worksOnProjects.index'));
     }
 
@@ -150,7 +156,7 @@ class WorksOnProjectController extends InfyOmBaseController
         $this->worksOnProjectRepository->delete($id);
 
         Flash::success('WorksOnProject deleted successfully.');
-
+        HomeController::projectSessionHelper();
         return redirect(route('worksOnProjects.index'));
     }
 }

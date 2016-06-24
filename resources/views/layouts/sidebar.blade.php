@@ -18,6 +18,9 @@
                 <!-- Status -->
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
+            <div class="pull-left">
+                {{(Session::get("projects"))}}
+            </div>
         </div>
 
         <!-- search form (Optional) -->
