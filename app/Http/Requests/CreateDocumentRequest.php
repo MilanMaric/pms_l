@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Http\Requests\Request;
 use App\Models\Document;
 
 class CreateDocumentRequest extends Request

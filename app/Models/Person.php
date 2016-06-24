@@ -53,7 +53,7 @@ class Person extends Model
     use SoftDeletes;
 
     public $table = 'Person';
-
+    
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
 
@@ -94,16 +94,6 @@ class Person extends Model
      * @var array
      */
     public static $rules = [
-
+        
     ];
-
-    public function user()
-    {
-        return $this->belongsTo('App\User');
-    }
-
-    public function worksOnProject()
-    {
-        return $this->belongsToMany('App\Models\Works_On_Project');
-    }
 }
