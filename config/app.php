@@ -151,7 +151,7 @@ return [
         Laracasts\Flash\FlashServiceProvider::class,
         Prettus\Repository\Providers\RepositoryServiceProvider::class,
         \InfyOm\Generator\InfyOmGeneratorServiceProvider::class,
-        \InfyOm\CoreTemplates\CoreTemplatesServiceProvider::class,
+        \InfyOm\AdminLTETemplates\AdminLTETemplatesServiceProvider::class,
         /*
          * Application Service Providers...
          */

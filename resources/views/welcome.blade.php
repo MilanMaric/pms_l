@@ -9,8 +9,6 @@
 
                     <div class="panel-body">
                         Your Application's Landing Page.
-
-                        {{Session::get('person')}}
                     </div>
                 </div>
             </div>

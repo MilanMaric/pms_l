@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c9529342d0d565bd52a030c830dd59b2",
-    "content-hash": "79b65b9a0ac2383752007e681b2c228b",
+    "hash": "29ccfab2ea62ca1cc086cefe15c1796a",
+    "content-hash": "c52c4c002b3360910f1d870f9de72280",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -564,17 +564,17 @@
             "time": "2014-09-09 13:34:57"
         },
         {
-            "name": "infyomlabs/core-templates",
+            "name": "infyomlabs/adminlte-templates",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/InfyOmLabs/core-templates.git",
-                "reference": "6eb5f7a151c2f49bbf85741d570c2afdc254ef85"
+                "url": "https://github.com/InfyOmLabs/adminlte-templates.git",
+                "reference": "906caadd78c5f7a13dc9ae9b4a71e9f1f6c7accd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/InfyOmLabs/core-templates/zipball/6eb5f7a151c2f49bbf85741d570c2afdc254ef85",
-                "reference": "6eb5f7a151c2f49bbf85741d570c2afdc254ef85",
+                "url": "https://api.github.com/repos/InfyOmLabs/adminlte-templates/zipball/906caadd78c5f7a13dc9ae9b4a71e9f1f6c7accd",
+                "reference": "906caadd78c5f7a13dc9ae9b4a71e9f1f6c7accd",
                 "shasum": ""
             },
             "require": {
@@ -584,7 +584,7 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "InfyOm\\CoreTemplates\\": "src/"
+                    "InfyOm\\AdminLTETemplates\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -597,14 +597,16 @@
                     "email": "me@mitul.me"
                 }
             ],
-            "description": "Core Bootstrap templates for InfyOm Laravel Generator",
+            "description": "AdminLTE templates for InfyOm Laravel Generator",
             "keywords": [
+                "AdminLTE",
                 "bootstrap",
                 "generator",
+                "infyom",
                 "laravel",
                 "templates"
             ],
-            "time": "2016-06-09 05:59:54"
+            "time": "2016-06-18 07:46:00"
         },
         {
             "name": "infyomlabs/laravel-generator",
@@ -1467,16 +1469,16 @@
         },
         {
             "name": "prettus/l5-repository",
-            "version": "2.5.1",
+            "version": "2.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/andersao/l5-repository.git",
-                "reference": "a6f52e0d79b91569fee183210765f9401a7b9be8"
+                "reference": "e67ad08cd79976c10463ec24d21d6b3587e5aa4b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/andersao/l5-repository/zipball/a6f52e0d79b91569fee183210765f9401a7b9be8",
-                "reference": "a6f52e0d79b91569fee183210765f9401a7b9be8",
+                "url": "https://api.github.com/repos/andersao/l5-repository/zipball/e67ad08cd79976c10463ec24d21d6b3587e5aa4b",
+                "reference": "e67ad08cd79976c10463ec24d21d6b3587e5aa4b",
                 "shasum": ""
             },
             "require": {
@@ -1523,7 +1525,7 @@
                 "model",
                 "repository"
             ],
-            "time": "2016-04-26 15:53:10"
+            "time": "2016-06-23 22:09:47"
         },
         {
             "name": "prettus/laravel-validation",
@@ -3995,7 +3997,7 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "infyomlabs/laravel-generator": 20,
-        "infyomlabs/core-templates": 20,
+        "infyomlabs/adminlte-templates": 20,
         "infyomlabs/swagger-generator": 20,
         "jlapp/swaggervel": 20
     },

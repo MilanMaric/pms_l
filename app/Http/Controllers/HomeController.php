@@ -6,6 +6,7 @@ use App\Http\Requests;
 use App\Models\Person;
 use App\Models\Project;
 use App\Models\Works_On_Project;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
