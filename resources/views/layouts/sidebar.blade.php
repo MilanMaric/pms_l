@@ -11,28 +11,33 @@
             </div>
             <div class="pull-left info">
                 @if (Auth::guest())
-                <p>InfyOm</p>
+                    <p>InfyOm</p>
                 @else
                     <p>{{ Auth::user()->name}}</p>
-                @endif
-                <!-- Status -->
-                <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                    @endif
+                            <!-- Status -->
+                    <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
             <div class="pull-left">
-                {{(Session::get("projects"))}}
+                {{--{{$projects=\App\Http\Controllers\HomeController::projectSessionHelper()[0]}}--}}
+                @foreach(Session::get('projects') as $project)
+                    <div class="title">
+                        {{$project}}
+                    </div>
+                @endforeach
             </div>
         </div>
 
         <!-- search form (Optional) -->
-        <form action="#" method="get" class="sidebar-form">
-            <div class="input-group">
-                <input type="text" name="q" class="form-control" placeholder="Search..."/>
-          <span class="input-group-btn">
-            <button type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i>
-            </button>
-          </span>
-            </div>
-        </form>
+        {{--<form action="#" method="get" class="sidebar-form">--}}
+            {{--<div class="input-group">--}}
+                {{--<input type="text" name="q" class="form-control" placeholder="Search..."/>--}}
+          {{--<span class="input-group-btn">--}}
+            {{--<button type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i>--}}
+            {{--</button>--}}
+          {{--</span>--}}
+            {{--</div>--}}
+        {{--</form>--}}
         <!-- Sidebar Menu -->
 
         <ul class="sidebar-menu">

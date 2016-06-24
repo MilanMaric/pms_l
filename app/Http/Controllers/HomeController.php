@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests;
 use App\Models\Person;
 use App\Models\Project;
 use App\Models\Works_On_Project;
@@ -30,15 +29,7 @@ class HomeController extends Controller
     {
 
         if (Auth::check()) {
-            $person = Person::find(['user_id' => Auth::user()->id]);
-            $works_on_project = Works_On_Project::where(['person_id' => $person[0]->Id])->get();
-            $projects = [];
-            foreach ($works_on_project as $wp) {
-                $projects[] = Project::find(['id' => $wp->project_id]);
-            }
-            Session::put('projects', $projects);
-//            dd(Session::get('projects'));
-//           return view('home',['projects'=>$projects]);
+            self::projectSessionHelper();
             return view('home');//, ['person' => $person, 'projects' => $projects]);
         }
 //        return view('home');
@@ -47,13 +38,17 @@ class HomeController extends Controller
 
     public static function projectSessionHelper()
     {
-        $person = Person::find(['user_id' => Auth::user()->id]);
-        $works_on_project = Works_On_Project::where(['person_id' => $person[0]->Id])->get();
-        $projects = [];
-        foreach ($works_on_project as $wp) {
-            $projects[] = Project::find(['id' => $wp->project_id]);
+        if (Auth::check()) {
+            $person = Person::find(['user_id' => Auth::user()->id]);
+            $works_on_project = Works_On_Project::where(['person_id' => $person[0]->Id])->get();
+            $projects = [];
+            foreach ($works_on_project as $wp) {
+                $projects[] = Project::find(['id' => $wp->project_id])[0];
+            }
+            Session::put('projects', $projects);
+            return $projects;
+        } else {
+            return null;
         }
-        Session::put('projects', $projects);
-        return $projects;
     }
 }

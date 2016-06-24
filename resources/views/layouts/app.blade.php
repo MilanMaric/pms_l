@@ -22,8 +22,8 @@
         <header class="main-header">
 
             <!-- Logo -->
-            <a href="#" class="logo">
-                <b>InfyOm</b>
+            <a href="/" class="logo">
+                <b>PMS</b>
             </a>
 
             <!-- Header Navbar -->
@@ -47,7 +47,7 @@
                                       @if (Auth::guest())
                                         InfyOm
                                     @else
-                                    {!! Auth::user()->name !!}
+                                        {!! Auth::user()->name !!}
                                     @endif
                                 </span>
                             </a>
@@ -83,14 +83,14 @@
 
         <!-- Left side column. contains the logo and sidebar -->
         @include('layouts.sidebar')
-        <!-- Content Wrapper. Contains page content -->
+                <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             @yield('content')
         </div>
 
         <!-- Main Footer -->
         <footer class="main-footer" style="max-height: 100px;text-align: center">
-            <strong>Copyright © 2016 <a href="#">Company</a>.</strong> All rights reserved.
+            <strong>Copyright © 2016 <a href="http://etfbl.net">ETFBL</a>.</strong> All rights reserved.
         </footer>
 
     </div>
@@ -143,7 +143,7 @@
     </div>
     @endif
 
-    <!-- jQuery 2.1.4 -->
+            <!-- jQuery 2.1.4 -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2/js/select2.min.js"></script>
