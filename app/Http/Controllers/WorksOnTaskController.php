@@ -20,7 +20,6 @@ class WorksOnTaskController extends InfyOmBaseController
     public function __construct(WorksOnTaskRepository $worksOnTaskRepo)
     {
         $this->worksOnTaskRepository = $worksOnTaskRepo;
-        $this->middleware('auth');
     }
 
     /**

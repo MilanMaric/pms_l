@@ -20,7 +20,6 @@ class RevisionController extends InfyOmBaseController
     public function __construct(RevisionRepository $revisionRepo)
     {
         $this->revisionRepository = $revisionRepo;
-        $this->middleware('auth');
     }
 
     /**
