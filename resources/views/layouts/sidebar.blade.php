@@ -6,7 +6,7 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel">
             <div class="pull-left image">
-                <img src="http://infyom.com/images/logo/blue_logo_150x150.jpg" class="img-circle"
+                <img src="https://www.startupdb.asia/assets/images/team.default.png" class="img-circle"
                      alt="User Image"/>
             </div>
             <div class="pull-left info">
@@ -18,11 +18,10 @@
                             <!-- Status -->
                     <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
-
         </div>
         <div class="list-group">
             {{--{{$projects=\App\Http\Controllers\HomeController::projectSessionHelper()[0]}}--}}
-            @if(Session::get('projects')!=null && Session::get('projects').length>0)
+            @if(Session::get('projects')!=null && Session::get('projects')->count()>0)
                 @foreach(Session::get('projects') as $project)
                     <a class="list-group-item" href={{"/projects/".$project->Id}}>
                         {{$project->Title}}

@@ -7,12 +7,12 @@
         </div>
     </div>
 
-{{--    @include('core-templates::common.errors')--}}
+    {{--    @include('core-templates::common.errors')--}}
 
     <div class="row">
         {!! Form::open(['route' => 'people.store']) !!}
 
-            @include('people.fields')
+        @include('people.fields')
 
         {!! Form::close() !!}
     </div>

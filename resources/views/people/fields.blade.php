@@ -1,8 +1,8 @@
-<!-- Id Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('Id', 'Id:') !!}
-    {!! Form::number('Id', null, ['class' => 'form-control']) !!}
-</div>
+{{--<!-- Id Field -->--}}
+{{--<div class="form-group col-sm-6">--}}
+{{--{!! Form::label('Id', 'Id:') !!}--}}
+{{--{!! Form::number('Id', null, ['class' => 'form-control']) !!}--}}
+{{--</div>--}}
 
 <!-- Name Field -->
 <div class="form-group col-sm-6">
@@ -34,28 +34,28 @@
     {!! Form::text('MobileNumber', null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- Created At Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('created_at', 'Created At:') !!}
-    {!! Form::date('created_at', null, ['class' => 'form-control']) !!}
-</div>
+{{--<!-- Created At Field -->--}}
+{{--<div class="form-group col-sm-6">--}}
+{{--{!! Form::label('created_at', 'Created At:') !!}--}}
+{{--{!! Form::date('created_at', null, ['class' => 'form-control']) !!}--}}
+{{--</div>--}}
 
-<!-- Updated At Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('updated_at', 'Updated At:') !!}
-    {!! Form::date('updated_at', null, ['class' => 'form-control']) !!}
-</div>
+{{--<!-- Updated At Field -->--}}
+{{--<div class="form-group col-sm-6">--}}
+{{--{!! Form::label('updated_at', 'Updated At:') !!}--}}
+{{--{!! Form::date('updated_at', null, ['class' => 'form-control']) !!}--}}
+{{--</div>--}}
 
-<!-- Deleted At Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('deleted_at', 'Deleted At:') !!}
-    {!! Form::date('deleted_at', null, ['class' => 'form-control']) !!}
-</div>
+{{--<!-- Deleted At Field -->--}}
+{{--<div class="form-group col-sm-6">--}}
+{{--{!! Form::label('deleted_at', 'Deleted At:') !!}--}}
+{{--{!! Form::date('deleted_at', null, ['class' => 'form-control']) !!}--}}
+{{--</div>--}}
 
-<!-- User Id Field -->
+        <!-- User Id Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('user_id', 'User Id:') !!}
-    {!! Form::number('user_id', null, ['class' => 'form-control']) !!}
+    {!! Form::label('user_id', 'User:') !!}
+    {!! Form::select('user_id', $users, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Submit Field -->

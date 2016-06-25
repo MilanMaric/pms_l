@@ -8,3 +8,4 @@ php artisan infyom:api_scaffold WorksOnTask --fromTable --tableName=Works_On_Tas
 php artisan infyom:api_scaffold Revision --fromTable --tableName=Revision
 php artisan infyom:api_scaffold Expense --fromTable --tableName=Expense
 php artisan infyom:api_scaffold Task --fromTable --tableName=Task
+php artisan infyom:api Role --fromTable --tableName=Role

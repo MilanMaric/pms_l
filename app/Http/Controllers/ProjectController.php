@@ -7,9 +7,11 @@ use App\Http\Requests;
 use App\Http\Requests\CreateProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 use App\Models\Project;
+use App\Models\WorksOnProject;
 use App\Repositories\ProjectRepository;
 use Flash;
 use Illuminate\Http\Request;
+use phpDocumentor\Reflection\Types\Object_;
 use Response;
 
 class ProjectController extends InfyOmBaseController
@@ -57,9 +59,14 @@ class ProjectController extends InfyOmBaseController
     public function store(CreateProjectRequest $request)
     {
         $input = $request->all();
-
         $project = $this->projectRepository->create($input);
-
+        //TODO insert into works_on_project authentificated user and this project
+//        $wop;
+        $wop = new WorksOnProject();
+        $wop->project_id = $project->Id;
+        $wop->person_id = HomeController::getPerson()->Id;
+        $wop->role_id = 1;
+        $wop->save();
         Flash::success('Project saved successfully.');
         HomeController::projectSessionHelper();
         return redirect(route('projects.index'));

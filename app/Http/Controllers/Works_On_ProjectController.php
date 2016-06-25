@@ -61,7 +61,7 @@ class Works_On_ProjectController extends InfyOmBaseController
     public function store(CreateWorks_On_ProjectRequest $request)
     {
         $input = $request->all();
-
+        
         $worksOnProject = $this->worksOnProjectRepository->create($input);
 
         Flash::success('Works_On_Project saved successfully.');

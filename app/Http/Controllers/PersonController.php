@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\AppBaseController as InfyOmBaseController;
 use App\Http\Requests;
 use App\Http\Requests\CreatePersonRequest;
 use App\Http\Requests\UpdatePersonRequest;
 use App\Repositories\PersonRepository;
-use App\Http\Controllers\AppBaseController as InfyOmBaseController;
-use Illuminate\Http\Request;
 use Flash;
+use Illuminate\Http\Request;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
 
@@ -44,7 +44,8 @@ class PersonController extends InfyOmBaseController
      */
     public function create()
     {
-        return view('people.create');
+        $users = \App\User::where([])->get();
+        return view('people.create', ['users' => $users]);
     }
 
     /**
@@ -108,7 +109,7 @@ class PersonController extends InfyOmBaseController
     /**
      * Update the specified Person in storage.
      *
-     * @param  int              $id
+     * @param  int $id
      * @param UpdatePersonRequest $request
      *
      * @return Response

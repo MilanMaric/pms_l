@@ -39,7 +39,7 @@ class HomeController extends Controller
     public static function projectSessionHelper()
     {
         if (Auth::check()) {
-            $person = Person::find(['user_id' => Auth::user()->id]);
+            $person = Person::where(['user_id' => Auth::user()->id])->get();
             if ($person != null && $person->count() > 0) {
                 $works_on_project = Works_On_Project::where(['person_id' => $person[0]->Id])->get();
                 $projects = [];
@@ -53,6 +53,17 @@ class HomeController extends Controller
             return [];
         } else {
             return [];
+        }
+    }
+
+    public static function getPerson()
+    {
+        if (Auth::check()) {
+            $person = Person::where(['user_id' => Auth::user()->id])->get();
+            if (empty($person))
+                return null;
+            if ($person != null)
+                return $person[0];
         }
     }
 }
