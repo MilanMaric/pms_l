@@ -10,7 +10,6 @@ use App\Models\Project;
 use App\Repositories\ProjectRepository;
 use Flash;
 use Illuminate\Http\Request;
-use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
 
 class ProjectController extends InfyOmBaseController
@@ -32,8 +31,7 @@ class ProjectController extends InfyOmBaseController
      */
     public function index(Request $request)
     {
-        $this->projectRepository->pushCriteria(new RequestCriteria($request));
-        $projects = $this->projectRepository->all();
+        $projects = HomeController::projectSessionHelper();
 
         return view('projects.index')
             ->with('projects', $projects);

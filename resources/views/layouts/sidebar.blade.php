@@ -22,11 +22,13 @@
         </div>
         <div class="list-group">
             {{--{{$projects=\App\Http\Controllers\HomeController::projectSessionHelper()[0]}}--}}
-            @foreach(Session::get('projects') as $project)
-                <a class="list-group-item" href={{"/projects/".$project->Id}}>
-                    {{$project->Title}}
-                </a>
-            @endforeach
+            @if(Session::get('projects')!=null && Session::get('projects').length>0)
+                @foreach(Session::get('projects') as $project)
+                    <a class="list-group-item" href={{"/projects/".$project->Id}}>
+                        {{$project->Title}}
+                    </a>
+                @endforeach
+            @endif
         </div>
 
         <!-- search form (Optional) -->

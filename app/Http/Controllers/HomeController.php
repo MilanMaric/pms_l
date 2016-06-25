@@ -40,15 +40,19 @@ class HomeController extends Controller
     {
         if (Auth::check()) {
             $person = Person::find(['user_id' => Auth::user()->id]);
-            $works_on_project = Works_On_Project::where(['person_id' => $person[0]->Id])->get();
-            $projects = [];
-            foreach ($works_on_project as $wp) {
-                $projects[] = Project::find(['id' => $wp->project_id])[0];
+            if ($person != null && $person->count() > 0) {
+                $works_on_project = Works_On_Project::where(['person_id' => $person[0]->Id])->get();
+                $projects = [];
+                if ($works_on_project != null && $works_on_project->count() > 0)
+                    foreach ($works_on_project as $wp) {
+                        $projects[] = Project::find(['id' => $wp->project_id])[0];
+                    }
+                Session::put('projects', $projects);
+                return $projects;
             }
-            Session::put('projects', $projects);
-            return $projects;
+            return [];
         } else {
-            return null;
+            return [];
         }
     }
 }
