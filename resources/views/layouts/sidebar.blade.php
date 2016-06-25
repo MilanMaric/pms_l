@@ -21,7 +21,7 @@
         </div>
         <div class="list-group">
             {{--{{$projects=\App\Http\Controllers\HomeController::projectSessionHelper()[0]}}--}}
-            @if(Session::get('projects')!=null && Session::get('projects')->count()>0)
+            @if(!empty(Session::get('projects')))
                 @foreach(Session::get('projects') as $project)
                     <a class="list-group-item" href={{"/projects/".$project->Id}}>
                         {{$project->Title}}

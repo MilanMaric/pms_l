@@ -32,3 +32,7 @@ Route::resource('revisions', 'RevisionAPIController');
 Route::resource('expenses', 'ExpenseAPIController');
 
 Route::resource('tasks', 'TaskAPIController');
+
+Route::resource('roles', 'RoleAPIController');
+
+Route::resource('roles', 'RoleAPIController');
