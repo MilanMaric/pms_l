@@ -4,7 +4,7 @@
     <title>PMS</title>
 
     <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
     <style>
         html, body {
             height: 100%;
@@ -41,7 +41,8 @@
 <body>
 <div class="container">
     <div class="content">
-        <div class="title">Welcome to PMS</div>
+        <div class="title"><i class="fa fa-eye fa-3x"></i></div>
+        <div class="title">PMS</div>
         <div>Project management system</div>
         <a href="/login" class="btn btn-">Login</a> <a
                 href='register'>Register</a>
