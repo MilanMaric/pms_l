@@ -26,6 +26,7 @@ class WorksOnProjectAPIController extends InfyOmBaseController
     public function __construct(WorksOnProjectRepository $worksOnProjectRepo)
     {
         $this->worksOnProjectRepository = $worksOnProjectRepo;
+        $this->middleware('auth.basic');
     }
 
     /**

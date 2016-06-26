@@ -100,11 +100,26 @@ class Project extends Model
         if (empty($projects)) {
             $projects = HomeController::projectSessionHelper();
         }
+
         foreach ($projects as $i) {
-            if (empty($i))
+            if (!empty($i))
                 if ($i->Id == $project->Id)
                     return true;
         }
         return false;
+    }
+
+    public static function getUserRole($project)
+    {
+        $projects = Session::get('projects');
+        $persons = Person::where(['user_id' => Auth::user()->id])->get();
+        $person = $persons[0];
+        if (empty($projects))
+            $projects = HomeController::projectSessionHelper();
+        $wop = Works_On_Project::where(['project_id' => $project->Id, 'person_id' => $person->Id])->get();
+        if (empty($wop)) {
+            return 0;
+        }
+        return $wop[$wop->count() - 1];
     }
 }

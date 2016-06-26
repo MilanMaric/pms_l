@@ -6,12 +6,12 @@ use App\Http\Controllers\AppBaseController as InfyOmBaseController;
 use App\Http\Requests;
 use App\Http\Requests\CreateProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
+use App\Models\Person;
 use App\Models\Project;
 use App\Models\WorksOnProject;
 use App\Repositories\ProjectRepository;
 use Flash;
 use Illuminate\Http\Request;
-use phpDocumentor\Reflection\Types\Object_;
 use Response;
 
 class ProjectController extends InfyOmBaseController
@@ -82,13 +82,19 @@ class ProjectController extends InfyOmBaseController
     public function show($id)
     {
         $project = $this->projectRepository->findWithoutFail($id);
-        if (Project::checkUser($project))
+        $worksOnProject = WorksOnProject::where(['project_id' => $project->Id])->get();
+        foreach ($worksOnProject as $wop) {
+            $worksOnProject->person = Person::find($wop->person_id);
+        }
+        if (Project::checkUser($project)) {
             if (empty($project)) {
                 Flash::error('Project not found');
-
                 return redirect(route('projects.index'));
             }
-        return view('projects.show')->with('project', $project);
+            return view('projects.show')->with('project', $project)->with('worksOnProjects', $worksOnProject);
+        } else {
+            return redirect('projects');
+        }
     }
 
     /**

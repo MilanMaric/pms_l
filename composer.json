@@ -12,7 +12,7 @@
     "laravel/framework": "5.2.*",
     "infyomlabs/laravel-generator": "dev-master",
     "laravelcollective/html": "5.2.*",
-    "infyomlabs/adminlte-templates": "dev-master",
+    "infyomlabs/metronic-templates": "dev-master",
     "doctrine/dbal": "~2.3",
     "infyomlabs/swagger-generator": "dev-master",
     "jlapp/swaggervel": "dev-master"
