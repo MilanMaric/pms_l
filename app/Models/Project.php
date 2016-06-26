@@ -122,4 +122,14 @@ class Project extends Model
         }
         return $wop[$wop->count() - 1];
     }
+
+
+    public static function getProjectSelectArray($projects)
+    {
+        $p = [];
+        foreach ($projects as $project) {
+            $p[$project->Id] = "Title: " . $project->Title . " Description: " . $project->Description;
+        }
+        return $p;
+    }
 }

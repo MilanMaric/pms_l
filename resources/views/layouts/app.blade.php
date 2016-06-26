@@ -30,6 +30,11 @@
 
 <body class="skin-blue sidebar-mini">
 @if (!Auth::guest())
+    <div class="peace">
+        <div class="peace-progress">
+            <div class="pace-progress-inner"></div>
+        </div>
+    </div>
     <div class="wrapper">
         <!-- Main Header -->
         <header class="main-header">

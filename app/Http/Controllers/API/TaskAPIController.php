@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Http\Controllers\AppBaseController as InfyOmBaseController;
 use App\Http\Requests\API\CreateTaskAPIRequest;
 use App\Http\Requests\API\UpdateTaskAPIRequest;
 use App\Models\Task;
 use App\Repositories\TaskRepository;
 use Illuminate\Http\Request;
-use App\Http\Controllers\AppBaseController as InfyOmBaseController;
 use InfyOm\Generator\Criteria\LimitOffsetCriteria;
 use InfyOm\Generator\Utils\ResponseUtil;
 use Prettus\Repository\Criteria\RequestCriteria;
@@ -17,7 +17,6 @@ use Response;
  * Class TaskController
  * @package App\Http\Controllers\API
  */
-
 class TaskAPIController extends InfyOmBaseController
 {
     /** @var  TaskRepository */
@@ -62,10 +61,10 @@ class TaskAPIController extends InfyOmBaseController
      */
     public function index(Request $request)
     {
+
         $this->taskRepository->pushCriteria(new RequestCriteria($request));
         $this->taskRepository->pushCriteria(new LimitOffsetCriteria($request));
         $tasks = $this->taskRepository->all();
-
         return $this->sendResponse($tasks->toArray(), 'Tasks retrieved successfully');
     }
 

@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\AppBaseController as InfyOmBaseController;
 use App\Http\Requests;
 use App\Http\Requests\CreateTaskRequest;
 use App\Http\Requests\UpdateTaskRequest;
+use App\Models\Project;
 use App\Repositories\TaskRepository;
-use App\Http\Controllers\AppBaseController as InfyOmBaseController;
-use Illuminate\Http\Request;
 use Flash;
+use Illuminate\Http\Request;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
 
@@ -44,7 +45,9 @@ class TaskController extends InfyOmBaseController
      */
     public function create()
     {
-        return view('tasks.create');
+        $projects = HomeController::projectSessionHelper();
+        $p = Project::getProjectSelectArray($projects);
+        return view('tasks.create', ['projects' => $p]);
     }
 
     /**
@@ -108,7 +111,7 @@ class TaskController extends InfyOmBaseController
     /**
      * Update the specified Task in storage.
      *
-     * @param  int              $id
+     * @param  int $id
      * @param UpdateTaskRequest $request
      *
      * @return Response

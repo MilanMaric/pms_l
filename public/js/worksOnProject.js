@@ -10,17 +10,18 @@ function roleToString(role) {
 function dataRow(row) {
     var tableRow = "<tr>";
     if (row.person) {
-        tableRow += "<td>" + row.person.Name + "</td>";
-        tableRow += "<td>" + row.person.LastName + "</td>";
-        tableRow += "<td>" + row.person.MobileNumber + "</td>";
-        tableRow += "<td>" + row.person.PhoneNumber + "</td>";
-        tableRow += "<td>" + roleToString(row.person.role) + "</td>";
+        tableRow += "<th>" + row.person.Name + "</th>";
+        tableRow += "<th>" + row.person.LastName + "</th>";
+        tableRow += "<th>" + row.person.MobileNumber + "</th>";
+        tableRow += "<th>" + row.person.PhoneNumber + "</th>";
+        tableRow += "<th>" + roleToString(row.person.role) + "</th>";
     }
     tableRow += "</tr>";
     return tableRow;
 }
+
 function dataToTable(data) {
-    var table = "<tr><td>Name</td><td>Last name</td><td>Mobile number</td><td>Phone number</td></tr>"
+    var table = "<tr><td>Name</td><td>Last name</td><td>Mobile number</td><td>Phone number</td><td>Role</td></td></tr>"
     for (var i = 0; i < data.length; i++) {
         table += dataRow(data[i]);
     }
