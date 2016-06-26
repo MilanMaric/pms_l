@@ -128,7 +128,7 @@ class Project extends Model
     {
         $p = [];
         foreach ($projects as $project) {
-            $p[$project->Id] = "Title: " . $project->Title . " Description: " . $project->Description;
+            $p[$project->Id] = $project->Title;
         }
         return $p;
     }

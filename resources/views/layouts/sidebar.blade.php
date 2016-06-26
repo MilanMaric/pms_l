@@ -19,16 +19,24 @@
                     <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
         </div>
-        <div class="list-group">
-            {{--{{$projects=\App\Http\Controllers\HomeController::projectSessionHelper()[0]}}--}}
-            @if(!empty(Session::get('projects')))
-                @foreach(Session::get('projects') as $project)
-                    <a class="list-group-item" href={{"/projects/".$project->Id}}>
-                        {{$project->Title}}
-                    </a>
-                @endforeach
-            @endif
-        </div>
+        <ul class="sidebar-menu">
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-dashboard"></i>
+                    <span>Projects</span>
+                </a>
+                <ul class="treeview-menu">
+                    @if(!empty(Session::get('projects')))
+                        @foreach(Session::get('projects') as $project)
+                            <li><a href={{"/projects/".$project->Id}}>
+                                    {{$project->Title}}
+                                </a></li>
+                        @endforeach
+                    @endif
+                </ul>
+            </li>
+
+        </ul>
 
         <!-- search form (Optional) -->
         {{--<form action="#" method="get" class="sidebar-form">--}}

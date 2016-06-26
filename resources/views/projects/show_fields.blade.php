@@ -1,10 +1,10 @@
 <!-- Id Field -->
-<div class="form-group">
-    {!! Form::label('Id', 'Id:') !!}
-    <p>{!! $project->Id !!}</p>
-</div>
+{{--<div class="form-group">--}}
+{{--{!! Form::label('Id', 'Id:') !!}--}}
+{{--<p>{!! $project->Id !!}</p>--}}
+{{--</div>--}}
 
-<!-- Title Field -->
+        <!-- Title Field -->
 <div class="form-group">
     {!! Form::label('Title', 'Title:') !!}
     <p>{!! $project->Title !!}</p>
@@ -36,19 +36,19 @@
 
 {{--<!-- Created At Field -->--}}
 {{--<div class="form-group">--}}
-    {{--{!! Form::label('created_at', 'Created At:') !!}--}}
-    {{--<p>{!! $project->created_at !!}</p>--}}
+{{--{!! Form::label('created_at', 'Created At:') !!}--}}
+{{--<p>{!! $project->created_at !!}</p>--}}
 {{--</div>--}}
 
 {{--<!-- Updated At Field -->--}}
 {{--<div class="form-group">--}}
-    {{--{!! Form::label('updated_at', 'Updated At:') !!}--}}
-    {{--<p>{!! $project->updated_at !!}</p>--}}
+{{--{!! Form::label('updated_at', 'Updated At:') !!}--}}
+{{--<p>{!! $project->updated_at !!}</p>--}}
 {{--</div>--}}
 
 {{--<!-- Deleted At Field -->--}}
 {{--<div class="form-group">--}}
-    {{--{!! Form::label('deleted_at', 'Deleted At:') !!}--}}
-    {{--<p>{!! $project->deleted_at !!}</p>--}}
+{{--{!! Form::label('deleted_at', 'Deleted At:') !!}--}}
+{{--<p>{!! $project->deleted_at !!}</p>--}}
 {{--</div>--}}
 

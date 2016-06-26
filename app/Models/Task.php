@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\Auth;
 
 /**
  * @SWG\Definition(
@@ -56,7 +57,7 @@ class Task extends Model
     use SoftDeletes;
 
     public $table = 'Task';
-    
+
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
 
@@ -103,6 +104,15 @@ class Task extends Model
      * @var array
      */
     public static $rules = [
-        
+
     ];
+
+    public function getProjectTasks($project)
+    {
+        if (Auth::check) {
+            $tasks = Task::where(['project_id' => $project->Id]);
+            return $tasks;
+        }
+        return [];
+    }
 }

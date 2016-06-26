@@ -5,12 +5,14 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use App\Http\Requests\CreateIncomeRequest;
 use App\Http\Requests\UpdateIncomeRequest;
+use App\Models\Project;
 use App\Repositories\IncomeRepository;
 use App\Http\Controllers\AppBaseController as InfyOmBaseController;
 use Illuminate\Http\Request;
 use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
+use Session;
 
 class IncomeController extends InfyOmBaseController
 {
@@ -44,7 +46,8 @@ class IncomeController extends InfyOmBaseController
      */
     public function create()
     {
-        return view('incomes.create');
+        $project=Project::getProjectSelectArray(Session::get('projects'));
+        return view('incomes.create',['projects'=>$project]);
     }
 
     /**

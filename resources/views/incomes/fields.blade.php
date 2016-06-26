@@ -1,13 +1,13 @@
-<!-- Id Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('Id', 'Id:') !!}
-    {!! Form::number('Id', null, ['class' => 'form-control']) !!}
-</div>
+{{--<!-- Id Field -->--}}
+{{--<div class="form-group col-sm-6">--}}
+{{--{!! Form::label('Id', 'Id:') !!}--}}
+{{--{!! Form::number('Id', null, ['class' => 'form-control']) !!}--}}
+{{--</div>--}}
 
-<!-- Project Id Field -->
+        <!-- Project Id Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('project_id', 'Project Id:') !!}
-    {!! Form::number('project_id', null, ['class' => 'form-control']) !!}
+    {!! Form::label('project_id', 'Project :') !!}
+    {!! Form::select('project_id', $projects, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Description Field -->

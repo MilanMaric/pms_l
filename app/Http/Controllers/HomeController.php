@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Person;
 use App\Models\Project;
+use App\Models\Task;
 use App\Models\Works_On_Project;
+use App\Models\WorksOnTask;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
@@ -29,7 +31,6 @@ class HomeController extends Controller
     {
 
         if (Auth::check()) {
-
             return view('home', ['projects' => self::projectSessionHelper()]);//, ['person' => $person, 'projects' => $projects]);
         }
 //        return view('home');
@@ -53,6 +54,24 @@ class HomeController extends Controller
             return [];
         } else {
             return [];
+        }
+    }
+
+    public static function tasksSessionHelper()
+    {
+        if (Auth::check()) {
+            $person = Person::where(['user_id' => Auth::user()->id])->get();
+            if ($person != null && $person->count() > 0) {
+                $worksOnTask = WorksOnTask::where(['person_id' => $person[0]->id])->get();
+                if (!empty($worksOnTask)) {
+                    $tasks = [];
+                    foreach ($worksOnTask as $item) {
+                        $tasks[] = Task::find($item->task_id);
+                    }
+                    Session::put('tasks', $tasks);
+                    return $tasks;
+                }
+            }
         }
     }
 
