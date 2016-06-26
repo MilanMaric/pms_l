@@ -20,13 +20,17 @@ Route::resource('incomes', 'IncomeAPIController');
 
 Route::resource('projects', 'ProjectAPIController');
 
-Route::get('worksOnProjects/{projectId}', 'WorksOnProjectAPIController@index');
+Route::get('worksOnProjects/{projectId}', 'WorksOnProjectAPIController@project');
+
+Route::resource('worksOnProjects', 'WorksOnProjectAPIController@index');
 
 Route::resource('worksOnTasks', 'WorksOnTaskAPIController');
 
 Route::resource('revisions', 'RevisionAPIController');
 
 Route::resource('expenses', 'ExpenseAPIController');
+
+Route::get('tasks/{projectId}', 'TaskAPIController@project');
 
 Route::resource('tasks', 'TaskAPIController');
 

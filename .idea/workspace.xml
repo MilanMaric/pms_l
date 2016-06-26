@@ -5,15 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5609f5db-8e6a-44aa-bb60-8192c226c417" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/API/TaskAPIController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/TaskAPIController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/TaskController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/TaskController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Models/Project.php" afterPath="$PROJECT_DIR$/app/Models/Project.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/worksOnProject.js" afterPath="$PROJECT_DIR$/public/js/worksOnProject.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/projects/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/projects/show.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/tasks/fields.blade.php" afterPath="$PROJECT_DIR$/resources/views/tasks/fields.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/API/WorksOnProjectAPIController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/WorksOnProjectAPIController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/api_routes.php" afterPath="$PROJECT_DIR$/app/Http/api_routes.php" />
     </list>
     <ignored path="pms_l.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -80,11 +74,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="TaskAPIController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TaskAPIController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/TaskAPIController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="222" column="9" selection-start-line="222" selection-start-column="9" selection-end-line="222" selection-end-column="9" />
+            <state relative-caret-position="340">
+              <caret line="71" column="34" selection-start-line="71" selection-start-column="34" selection-end-line="71" selection-end-column="34" />
               <folding>
                 <element signature="e#44#111#0#PHP" expanded="true" />
               </folding>
@@ -92,65 +86,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fields.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/tasks/fields.blade.php">
+      <file leaf-file-name="api_routes.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/api_routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-491">
-              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+            <state relative-caret-position="442">
+              <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="show.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/projects/show.blade.php">
+      <file leaf-file-name="WorksOnProjectAPIController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/WorksOnProjectAPIController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/layouts/app.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="34" column="40" selection-start-line="34" selection-start-column="40" selection-end-line="34" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="worksOnProject.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/worksOnProject.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="13" column="59" selection-start-line="13" selection-start-column="59" selection-end-line="13" selection-end-column="59" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TaskController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TaskController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="48" column="55" selection-start-line="48" selection-start-column="55" selection-end-line="48" selection-end-column="55" />
+            <state relative-caret-position="312">
+              <caret line="80" column="106" selection-start-line="80" selection-start-column="7" selection-end-line="80" selection-end-column="106" />
               <folding>
-                <element signature="e#40#107#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Project.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Models/Project.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="410">
-              <caret line="130" column="76" selection-start-line="130" selection-start-column="76" selection-end-line="130" selection-end-column="76" />
-              <folding>
-                <element signature="e#30#70#0#PHP" expanded="true" />
+                <element signature="e#44#111#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -205,9 +157,6 @@
         <option value="$PROJECT_DIR$/resources/views/worksOnProjects/table.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ProjectController.php" />
-        <option value="$PROJECT_DIR$/app/Http/api_routes.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/API/WorksOnProjectAPIController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/API/TaskAPIController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/TaskController.php" />
         <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
         <option value="$PROJECT_DIR$/app/Models/Project.php" />
@@ -215,6 +164,9 @@
         <option value="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
         <option value="$PROJECT_DIR$/public/js/worksOnProject.js" />
         <option value="$PROJECT_DIR$/resources/views/projects/show.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/API/WorksOnProjectAPIController.php" />
+        <option value="$PROJECT_DIR$/app/Http/api_routes.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/API/TaskAPIController.php" />
       </list>
     </option>
   </component>
@@ -880,7 +832,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48584000" />
+    <option name="totallyTimeSpent" value="49028000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1338,14 +1290,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/api_routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="22" column="39" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/worksOnProjects/table.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1393,16 +1337,6 @@
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/WorksOnProjectAPIController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1207">
-          <caret line="71" column="5" selection-start-line="71" selection-start-column="5" selection-end-line="71" selection-end-column="5" />
-          <folding>
-            <element signature="e#44#111#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1474,21 +1408,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/TaskAPIController.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/tasks/fields.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="222" column="9" selection-start-line="222" selection-start-column="9" selection-end-line="222" selection-end-column="9" />
+        <state relative-caret-position="-491">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/api_routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/WorksOnProjectAPIController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="80" column="106" selection-start-line="80" selection-start-column="7" selection-end-line="80" selection-end-column="106" />
           <folding>
             <element signature="e#44#111#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/tasks/fields.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/TaskAPIController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-491">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="340">
+          <caret line="71" column="34" selection-start-line="71" selection-start-column="34" selection-end-line="71" selection-end-column="34" />
+          <folding>
+            <element signature="e#44#111#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

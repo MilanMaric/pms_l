@@ -61,10 +61,15 @@ class TaskAPIController extends InfyOmBaseController
      */
     public function index(Request $request)
     {
-
         $this->taskRepository->pushCriteria(new RequestCriteria($request));
         $this->taskRepository->pushCriteria(new LimitOffsetCriteria($request));
         $tasks = $this->taskRepository->all();
+        return $this->sendResponse($tasks->toArray(), 'Tasks retrieved successfully');
+    }
+
+    public function project(Request $request, $projectId)
+    {
+        $tasks = Task::where(['project_id' => $projectId])->get();
         return $this->sendResponse($tasks->toArray(), 'Tasks retrieved successfully');
     }
 

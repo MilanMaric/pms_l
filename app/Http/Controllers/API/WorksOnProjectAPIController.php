@@ -58,7 +58,17 @@ class WorksOnProjectAPIController extends InfyOmBaseController
      *      )
      * )
      */
-    public function index(Request $request, $projectId)
+    public function index(Request $request)
+    {
+        $worksOnProjects = WorksOnProject::where(['deleted_at' => null])->get();
+        foreach ($worksOnProjects as $wop) {
+            $wop->person_id;
+            $wop->person = \App\Models\Person::find($wop->person_id);
+        }
+        return $this->sendResponse($worksOnProjects->toArray(), 'WorksOnProjects retrieved successfully');
+    }
+
+    public function project(Request $request, $projectId)
     {
         if ($projectId > 0)
             $worksOnProjects = WorksOnProject::where(['project_id' => $projectId])->get();
