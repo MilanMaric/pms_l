@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\AppBaseController as InfyOmBaseController;
 use App\Http\Requests\API\CreateTaskAPIRequest;
 use App\Http\Requests\API\UpdateTaskAPIRequest;
+use App\Models\Activity;
 use App\Models\Task;
 use App\Repositories\TaskRepository;
 use Illuminate\Http\Request;
@@ -70,6 +71,10 @@ class TaskAPIController extends InfyOmBaseController
     public function project(Request $request, $projectId)
     {
         $tasks = Task::where(['project_id' => $projectId])->get();
+        foreach ($tasks as $task) {
+            $task->activities = Activity::where(['task_id' => $task->Id])->get();
+        }
+
         return $this->sendResponse($tasks->toArray(), 'Tasks retrieved successfully');
     }
 

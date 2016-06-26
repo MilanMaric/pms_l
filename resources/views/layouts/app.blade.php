@@ -112,6 +112,7 @@
                 <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <div class="container">
+
                 @yield('content')
             </div>
         </div>

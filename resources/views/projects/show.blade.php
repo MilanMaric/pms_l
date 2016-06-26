@@ -11,7 +11,7 @@
             </div>
         </div>
     </div>
-    <div class="col-lg-8">
+    <div class="col-lg-7">
         <div class="box box-default collapsed-box">
             <div class="box-header with-border">
                 <h3>Persons</h3>
@@ -40,6 +40,9 @@
                 <table class="table table-bordered table-striped dataTable" id="tasks-table" role="grid">
 
                 </table>
+                <a class="btn btn-primary" href="{!! route('tasks.create') !!}">
+                    <i class="fa fa-plus fa-2x"></i>
+                </a>
             </div>
         </div>
     </div>

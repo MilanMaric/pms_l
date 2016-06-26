@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Http\Controllers\AppBaseController as InfyOmBaseController;
 use App\Http\Requests\API\CreateIncomeAPIRequest;
 use App\Http\Requests\API\UpdateIncomeAPIRequest;
 use App\Models\Income;
 use App\Repositories\IncomeRepository;
 use Illuminate\Http\Request;
-use App\Http\Controllers\AppBaseController as InfyOmBaseController;
 use InfyOm\Generator\Criteria\LimitOffsetCriteria;
 use InfyOm\Generator\Utils\ResponseUtil;
 use Prettus\Repository\Criteria\RequestCriteria;
@@ -17,7 +17,6 @@ use Response;
  * Class IncomeController
  * @package App\Http\Controllers\API
  */
-
 class IncomeAPIController extends InfyOmBaseController
 {
     /** @var  IncomeRepository */
@@ -66,6 +65,12 @@ class IncomeAPIController extends InfyOmBaseController
         $this->incomeRepository->pushCriteria(new LimitOffsetCriteria($request));
         $incomes = $this->incomeRepository->all();
 
+        return $this->sendResponse($incomes->toArray(), 'Incomes retrieved successfully');
+    }
+
+    public function project(Request $request, $projectId)
+    {
+        $incomes = Income::where(['project_id' => $projectId])->get();
         return $this->sendResponse($incomes->toArray(), 'Incomes retrieved successfully');
     }
 

@@ -43,7 +43,8 @@
     <div class="content">
         <div class="title">Welcome to PMS</div>
         <div>Project management system</div>
-        <a href="/login" class="btn btn-">Login</a> <a href="/register">Register</a>
+        <a href="/login" class="btn btn-">Login</a> <a
+                href='register'>Register</a>
     </div>
 </div>
 </body>
