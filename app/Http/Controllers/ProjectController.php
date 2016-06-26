@@ -81,7 +81,9 @@ class ProjectController extends InfyOmBaseController
      */
     public function show($id)
     {
+
         $project = $this->projectRepository->findWithoutFail($id);
+
         $worksOnProject = WorksOnProject::where(['project_id' => $project->Id])->get();
         foreach ($worksOnProject as $wop) {
             $worksOnProject->person = Person::find($wop->person_id);
@@ -91,7 +93,7 @@ class ProjectController extends InfyOmBaseController
                 Flash::error('Project not found');
                 return redirect(route('projects.index'));
             }
-            return view('projects.show')->with('project', $project)->with('worksOnProjects', $worksOnProject);
+            return view('projects.show')->with('project', $project);
         } else {
             return redirect('projects');
         }
@@ -133,7 +135,6 @@ class ProjectController extends InfyOmBaseController
 
             return redirect(route('projects.index'));
         }
-
         $project = $this->projectRepository->update($request->all(), $id);
 
         Flash::success('Project updated successfully.');

@@ -2,22 +2,19 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Http\Controllers\AppBaseController as InfyOmBaseController;
 use App\Http\Requests\API\CreateWorksOnProjectAPIRequest;
 use App\Http\Requests\API\UpdateWorksOnProjectAPIRequest;
 use App\Models\WorksOnProject;
 use App\Repositories\WorksOnProjectRepository;
 use Illuminate\Http\Request;
-use App\Http\Controllers\AppBaseController as InfyOmBaseController;
-use InfyOm\Generator\Criteria\LimitOffsetCriteria;
 use InfyOm\Generator\Utils\ResponseUtil;
-use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
 
 /**
  * Class WorksOnProjectController
  * @package App\Http\Controllers\API
  */
-
 class WorksOnProjectAPIController extends InfyOmBaseController
 {
     /** @var  WorksOnProjectRepository */
@@ -26,7 +23,7 @@ class WorksOnProjectAPIController extends InfyOmBaseController
     public function __construct(WorksOnProjectRepository $worksOnProjectRepo)
     {
         $this->worksOnProjectRepository = $worksOnProjectRepo;
-        $this->middleware('auth.basic');
+//        $this->middleware('auth.basic');
     }
 
     /**
@@ -61,12 +58,16 @@ class WorksOnProjectAPIController extends InfyOmBaseController
      *      )
      * )
      */
-    public function index(Request $request)
+    public function index(Request $request, $projectId)
     {
-        $this->worksOnProjectRepository->pushCriteria(new RequestCriteria($request));
-        $this->worksOnProjectRepository->pushCriteria(new LimitOffsetCriteria($request));
-        $worksOnProjects = $this->worksOnProjectRepository->all();
-
+        if ($projectId > 0)
+            $worksOnProjects = WorksOnProject::where(['project_id' => $projectId])->get();
+        else
+            $worksOnProjects = WorksOnProject::where(['deleted_at' => null])->get();
+        foreach ($worksOnProjects as $wop) {
+            $wop->person_id;
+            $wop->person = \App\Models\Person::find($wop->person_id);
+        }
         return $this->sendResponse($worksOnProjects->toArray(), 'WorksOnProjects retrieved successfully');
     }
 

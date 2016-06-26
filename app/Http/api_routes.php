@@ -10,9 +10,6 @@
 */
 
 
-
-
-
 Route::resource('activities', 'ActivityAPIController');
 
 Route::resource('documents', 'DocumentAPIController');
@@ -23,7 +20,7 @@ Route::resource('incomes', 'IncomeAPIController');
 
 Route::resource('projects', 'ProjectAPIController');
 
-Route::resource('worksOnProjects', 'WorksOnProjectAPIController');
+Route::get('worksOnProjects/{projectId}', 'WorksOnProjectAPIController@index');
 
 Route::resource('worksOnTasks', 'WorksOnTaskAPIController');
 
