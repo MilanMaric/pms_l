@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Http\Controllers\AppBaseController as InfyOmBaseController;
 use App\Http\Requests\API\CreateExpenseAPIRequest;
 use App\Http\Requests\API\UpdateExpenseAPIRequest;
 use App\Models\Expense;
 use App\Repositories\ExpenseRepository;
 use Illuminate\Http\Request;
-use App\Http\Controllers\AppBaseController as InfyOmBaseController;
 use InfyOm\Generator\Criteria\LimitOffsetCriteria;
 use InfyOm\Generator\Utils\ResponseUtil;
 use Prettus\Repository\Criteria\RequestCriteria;
@@ -17,7 +17,6 @@ use Response;
  * Class ExpenseController
  * @package App\Http\Controllers\API
  */
-
 class ExpenseAPIController extends InfyOmBaseController
 {
     /** @var  ExpenseRepository */
@@ -66,6 +65,12 @@ class ExpenseAPIController extends InfyOmBaseController
         $this->expenseRepository->pushCriteria(new LimitOffsetCriteria($request));
         $expenses = $this->expenseRepository->all();
 
+        return $this->sendResponse($expenses->toArray(), 'Expenses retrieved successfully');
+    }
+
+    public function project(Request $request, $projectId)
+    {
+        $expenses=Expense::where(['project_id'=>$projectId])->get();
         return $this->sendResponse($expenses->toArray(), 'Expenses retrieved successfully');
     }
 

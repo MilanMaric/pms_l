@@ -2,6 +2,51 @@
 
 @section('content')
     <h1>{{$project->Title}}</h1>
+    <div class="col-xs-12">
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box bg-aqua">
+        <span class="info-box-icon">
+           <i class="fa fa-money"></i>
+        </span>
+                <div class="info-box-content">
+                    <span class="info-box-text">Budget</span>
+                    <span class="info-box-number">{{$project->Budget}}</span>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 100%" id="budget"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box bg-green">
+        <span class="info-box-icon">
+           <i class="fa fa-area-chart"></i>
+        </span>
+                <div class="info-box-content">
+                    <span class="info-box-text">Income</span>
+                    <span class="info-box-number" id="incomeHolder"></span>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 100%" id="budget"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box bg-yellow">
+        <span class="info-box-icon">
+           <i class="fa fa-area-chart"></i>
+        </span>
+                <div class="info-box-content">
+                    <span class="info-box-text">Expense</span>
+                    <span class="info-box-number" id="expenseHolder"></span>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 100%" id="budget"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="col-lg-4">
         <div class="box ">
             <div class="box-header with-border">
@@ -12,6 +57,7 @@
             </div>
         </div>
     </div>
+
 
 
     <div class="col-lg-7">
@@ -28,6 +74,9 @@
                 <table class="table table-bordered table-striped dataTable" id="worksOnProjects-table" role="grid">
 
                 </table>
+                <a class="btn btn-primary" href="{!! route('worksOnProjects.create') !!}">
+                    <i class="fa fa-plus fa-2x"></i>
+                </a>
             </div>
         </div>
 
@@ -48,25 +97,45 @@
                 </a>
             </div>
         </div>
-    </div>
 
-    <div class="col-md-3 col-sm-6 col-xs-12">
-        <div class="info-box bg-green">
-        <span class="info-box-icon">
-           <i class="fa fa-area-chart"></i>
-        </span>
-            <div class="info-box-content">
-                <span class="info-box-text">Budget</span>
-                <span class="info-box-number">{{$project->Budget}}</span>
-                <div class="progress">
-                    <div class="progress-bar" style="width: 100%" id="budget"></div>
+        <div class="box box-default collapsed-box">
+            <div class="box-header with-border">
+                <h3>Incomes</h3>
+                <div class="box-tools right">
+                    <button class="btn btn-box-tool" data-widget="collapse" onclick="getIncomes({{$project->Id}})"><i
+                                class="fa fa-plus fa-2x"></i></button>
                 </div>
+            </div>
+            <div class="box-body">
+                <table class="table table-bordered table-striped dataTable" id="incomes-table" role="grid">
+
+                </table>
+                <a class="btn btn-primary" href="{!! route('incomes.create') !!}">
+                    <i class="fa fa-plus fa-2x"></i>
+                </a>
+            </div>
+        </div>
+        <div class="box box-default collapsed-box">
+            <div class="box-header with-border">
+                <h3>Incomes</h3>
+                <div class="box-tools right">
+                    <button class="btn btn-box-tool" data-widget="collapse" onclick="getIncomes({{$project->Id}})"><i
+                                class="fa fa-plus fa-2x"></i></button>
+                </div>
+            </div>
+            <div class="box-body">
+                <table class="table table-bordered table-striped dataTable" id="incomes-table" role="grid">
+
+                </table>
+                <a class="btn btn-primary" href="{!! route('incomes.create') !!}">
+                    <i class="fa fa-plus fa-2x"></i>
+                </a>
             </div>
         </div>
     </div>
 
     <script>
-        getProject({{$project->Id}});
+        getIncomes({{$project->Id}});
     </script>
 
 
@@ -77,4 +146,6 @@
 @section('scripts')
     <script src="/js/worksOnProject.js"></script>
     <script src="/js/tasks.js"></script>
+    <script src="/js/incomes.js"></script>
+
 @endsection

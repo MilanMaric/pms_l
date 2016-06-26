@@ -30,6 +30,8 @@ Route::resource('worksOnTasks', 'WorksOnTaskAPIController');
 
 Route::resource('revisions', 'RevisionAPIController');
 
+Route::get('expense/{projectId}','ExpenseAPIController@project');
+
 Route::resource('expenses', 'ExpenseAPIController');
 
 Route::get('task/{projectId}', 'TaskAPIController@project');

@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\AppBaseController as InfyOmBaseController;
 use App\Http\Requests;
 use App\Http\Requests\CreateExpenseRequest;
 use App\Http\Requests\UpdateExpenseRequest;
 use App\Repositories\ExpenseRepository;
-use App\Http\Controllers\AppBaseController as InfyOmBaseController;
-use Illuminate\Http\Request;
 use Flash;
+use Illuminate\Http\Request;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
 
@@ -59,6 +59,8 @@ class ExpenseController extends InfyOmBaseController
         $input = $request->all();
 
         $expense = $this->expenseRepository->create($input);
+        if (empty($expense->activity_id))
+            $expense->activity_id = null;
 
         Flash::success('Expense saved successfully.');
 
@@ -108,7 +110,7 @@ class ExpenseController extends InfyOmBaseController
     /**
      * Update the specified Expense in storage.
      *
-     * @param  int              $id
+     * @param  int $id
      * @param UpdateExpenseRequest $request
      *
      * @return Response
