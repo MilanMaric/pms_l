@@ -1,4 +1,5 @@
 var sumDone = 0;
+var tasksCount = 0;
 function insertActivities(taskId, activities) {
     var table = "";
     if (activities && activities.length > 0) {
@@ -29,6 +30,7 @@ function tasksRow(row) {
         tableRow += "<td>" + row.ManHour + "</td>";
         tableRow += "<td>" + row.Hours + "</td>";
         sumDone += row.Done;
+        tasksCount++;
         tableRow += "<td>";
         tableRow += ' <div class="progress progress-xs"><div class="progress-bar progress-bar-yellow" style="width: ' + row.PercentageDone + '%"></div></div>';
         tableRow += "</td>";
@@ -53,7 +55,16 @@ function tasksToTable(data) {
 
 function getTasks(projectId) {
     $.get("/api/v1/task/" + projectId, "", function (data, status) {
+        sumDone = 0;
+        tasksCount = 0;
         var ttt = tasksToTable(data.data);
         $("#tasks-table").html(ttt);
+        var x = tasksCount ? sumDone / tasksCount : 0;
+        console.log(sumDone);
+        $("#tasksDiv").show(100);
+        $("#tasksHolder").html(sumDone);
+        $("#tasksProgress").width(x + "%");
+        $("#tasksProgressDescription").html("Average " + x.toPrecision(2) + " % done on the tasks");
+
     });
 }

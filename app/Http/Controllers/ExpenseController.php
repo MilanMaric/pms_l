@@ -6,9 +6,11 @@ use App\Http\Controllers\AppBaseController as InfyOmBaseController;
 use App\Http\Requests;
 use App\Http\Requests\CreateExpenseRequest;
 use App\Http\Requests\UpdateExpenseRequest;
+use App\Models\Project;
 use App\Repositories\ExpenseRepository;
 use Flash;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
 
@@ -44,7 +46,8 @@ class ExpenseController extends InfyOmBaseController
      */
     public function create()
     {
-        return view('expenses.create');
+        $project=Project::getProjectSelectArray(Session::get('projects'));
+        return view('expenses.create',['projects'=>$project]);
     }
 
     /**

@@ -12,8 +12,11 @@
                     <span class="info-box-text">Budget</span>
                     <span class="info-box-number">{{$project->Budget}}</span>
                     <div class="progress">
-                        <div class="progress-bar" style="width: 100%" id="budget"></div>
+                        <div class="progress-bar" style="width: 100%" id="budgetProgress"></div>
                     </div>
+                    <span class="progress-description" id="budgetProgressDescription">
+                     Increase in 30 Days
+                  </span>
                 </div>
             </div>
         </div>
@@ -27,8 +30,11 @@
                     <span class="info-box-text">Income</span>
                     <span class="info-box-number" id="incomeHolder"></span>
                     <div class="progress">
-                        <div class="progress-bar" style="width: 100%" id="budget"></div>
+                        <div class="progress-bar" style="width: 100%" id="incomeProgress"></div>
                     </div>
+                    <span class="progress-description" id="incomeProgressDescription">
+                     Increase in 30 Days
+                  </span>
                 </div>
             </div>
         </div>
@@ -38,15 +44,37 @@
            <i class="fa fa-area-chart"></i>
         </span>
                 <div class="info-box-content">
-                    <span class="info-box-text">Expense</span>
+                    <span class="info-box-text">Expenses</span>
                     <span class="info-box-number" id="expenseHolder"></span>
                     <div class="progress">
-                        <div class="progress-bar" style="width: 100%" id="budget"></div>
+                        <div class="progress-bar" style="width: 100%" id="expenseProcess"></div>
                     </div>
+                    <span class="progress-description" id="expenseProcessDescription">
+                     Increase in 30 Days
+                  </span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12 collapse" id="tasksDiv" >
+            <div class="info-box bg-yellow">
+        <span class="info-box-icon">
+           <i class="fa fa-calculator"></i>
+        </span>
+                <div class="info-box-content">
+                    <span class="info-box-text">Tasks</span>
+                    <span class="info-box-number" id="tasksHolder"></span>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 100%" id="tasksProgress"></div>
+                    </div>
+                    <span class="progress-description" id="tasksProgressDescription">
+                     Increase in 30 Days
+                  </span>
                 </div>
             </div>
         </div>
     </div>
+
+
     <div class="col-lg-4">
         <div class="box ">
             <div class="box-header with-border">
@@ -66,7 +94,7 @@
                 <h3>Persons</h3>
 
                 <div class="box-tools pull-right">
-                    <button class="btn btn-box-tool" data-widget="collapse" onclick="getTasks({{$project->Id}})"><i
+                    <button class="btn btn-box-tool" data-widget="collapse" onclick="getProject({{$project->Id}})"><i
                                 class="fa fa-plus fa-2x"></i></button>
                 </div>
             </div>
@@ -102,7 +130,8 @@
             <div class="box-header with-border">
                 <h3>Incomes</h3>
                 <div class="box-tools right">
-                    <button class="btn btn-box-tool" data-widget="collapse" onclick="getIncomes({{$project->Id}})"><i
+                    <button class="btn btn-box-tool" data-widget="collapse"
+                            onclick="getIncomes({{$project->Id}},{{$project->Budget}})"><i
                                 class="fa fa-plus fa-2x"></i></button>
                 </div>
             </div>
@@ -117,17 +146,17 @@
         </div>
         <div class="box box-default collapsed-box">
             <div class="box-header with-border">
-                <h3>Incomes</h3>
+                <h3>Expenses</h3>
                 <div class="box-tools right">
-                    <button class="btn btn-box-tool" data-widget="collapse" onclick="getIncomes({{$project->Id}})"><i
+                    <button class="btn btn-box-tool" data-widget="collapse" onclick="getExpenses({{$project->Id}})"><i
                                 class="fa fa-plus fa-2x"></i></button>
                 </div>
             </div>
             <div class="box-body">
-                <table class="table table-bordered table-striped dataTable" id="incomes-table" role="grid">
+                <table class="table table-bordered table-striped dataTable" id="expenses-table" role="grid">
 
                 </table>
-                <a class="btn btn-primary" href="{!! route('incomes.create') !!}">
+                <a class="btn btn-primary" href="{!! route('expenses.create') !!}">
                     <i class="fa fa-plus fa-2x"></i>
                 </a>
             </div>
@@ -136,6 +165,7 @@
 
     <script>
         getIncomes({{$project->Id}});
+        getExpenses({{$project->Id}});
     </script>
 
 
@@ -147,5 +177,6 @@
     <script src="/js/worksOnProject.js"></script>
     <script src="/js/tasks.js"></script>
     <script src="/js/incomes.js"></script>
-
+    <script src="/js/expenses.js"></script>
+    <script> var budget ={{$project->Budget}};</script>
 @endsection
