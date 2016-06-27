@@ -44,7 +44,7 @@
         <div class="title"><i class="fa fa-eye fa-3x"></i></div>
         <div class="title">PMS</div>
         <div>Project management system</div>
-        <a href="/login" class="btn btn-">Login</a> <a
+        <a href="{!! route('projects.index') !!}" class="btn btn-">Login</a> <a
                 href='register'>Register</a>
     </div>
 </div>

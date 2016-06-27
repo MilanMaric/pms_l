@@ -6,6 +6,7 @@ use App\Http\Controllers\AppBaseController as InfyOmBaseController;
 use App\Http\Requests;
 use App\Http\Requests\CreatePersonRequest;
 use App\Http\Requests\UpdatePersonRequest;
+use App\Models\Person;
 use App\Repositories\PersonRepository;
 use Flash;
 use Illuminate\Http\Request;
@@ -45,7 +46,8 @@ class PersonController extends InfyOmBaseController
     public function create()
     {
         $users = \App\User::where([])->get();
-        return view('people.create', ['users' => $users]);
+        $u=Person::usersToSelectValues($users);
+        return view('people.create', ['users' => $u]);
     }
 
     /**

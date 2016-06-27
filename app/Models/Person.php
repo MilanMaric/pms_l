@@ -115,4 +115,13 @@ class Person extends Model
         }
         return $s;
     }
+
+    public static function usersToSelectValues($users)
+    {
+        $s = [];
+        foreach ($users as $person) {
+            $s[$person->Id] = $person->Username . ' ' . $person->Name;
+        }
+        return $s;
+    }
 }
