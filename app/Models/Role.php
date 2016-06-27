@@ -27,7 +27,7 @@ class Role extends Model
     use SoftDeletes;
 
     public $table = 'project_roles';
-    
+
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
 
@@ -56,6 +56,15 @@ class Role extends Model
      * @var array
      */
     public static $rules = [
-        
+
     ];
+
+    public static function toSelectValues($roles)
+    {
+        $s = [];
+        foreach ($roles as $role) {
+            $s[$role->Id] = $role->Description;
+        }
+        return $s;
+    }
 }

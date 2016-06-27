@@ -55,7 +55,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3 col-sm-6 col-xs-12 collapse" id="tasksDiv" >
+        <div class="col-md-3 col-sm-6 col-xs-12 collapse" id="tasksDiv">
             <div class="info-box bg-yellow">
         <span class="info-box-icon">
            <i class="fa fa-calculator"></i>
@@ -178,5 +178,7 @@
     <script src="/js/tasks.js"></script>
     <script src="/js/incomes.js"></script>
     <script src="/js/expenses.js"></script>
-    <script> var budget ={{$project->Budget}};</script>
+    <script> var budget ={{$project->Budget}};
+
+        var project ={!! $project !!}</script>
 @endsection

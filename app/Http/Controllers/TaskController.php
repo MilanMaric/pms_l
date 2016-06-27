@@ -60,12 +60,12 @@ class TaskController extends InfyOmBaseController
     public function store(CreateTaskRequest $request)
     {
         $input = $request->all();
-
+        $projectID = $input['project_id'];
         $task = $this->taskRepository->create($input);
 
         Flash::success('Task saved successfully.');
 
-        return redirect(route('tasks.index'));
+        return redirect(route('projects.show', $projectID));
     }
 
     /**

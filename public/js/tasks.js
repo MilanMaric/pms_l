@@ -29,7 +29,7 @@ function tasksRow(row) {
         tableRow += "<td>" + new Date(row.End).toLocaleDateString() + "</td>";
         tableRow += "<td>" + row.ManHour + "</td>";
         tableRow += "<td>" + row.Hours + "</td>";
-        sumDone += row.Done;
+        sumDone += row.PercentageDone;
         tasksCount++;
         tableRow += "<td>";
         tableRow += ' <div class="progress progress-xs"><div class="progress-bar progress-bar-yellow" style="width: ' + row.PercentageDone + '%"></div></div>';
@@ -62,7 +62,7 @@ function getTasks(projectId) {
         var x = tasksCount ? sumDone / tasksCount : 0;
         console.log(sumDone);
         $("#tasksDiv").show(100);
-        $("#tasksHolder").html(sumDone);
+        $("#tasksHolder").html(tasksCount);
         $("#tasksProgress").width(x + "%");
         $("#tasksProgressDescription").html("Average " + x.toPrecision(2) + " % done on the tasks");
 

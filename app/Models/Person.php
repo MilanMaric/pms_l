@@ -53,7 +53,7 @@ class Person extends Model
     use SoftDeletes;
 
     public $table = 'Person';
-    
+
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
 
@@ -94,7 +94,7 @@ class Person extends Model
      * @var array
      */
     public static $rules = [
-        
+
     ];
 
     public function user()
@@ -104,6 +104,15 @@ class Person extends Model
 
     public function project()
     {
-        return $this->hasManyThrough('App\Models\Project','App\Models\Worsk_On_Project');
+        return $this->hasManyThrough('App\Models\Project', 'App\Models\Worsk_On_Project');
+    }
+
+    public static function toSelectValues($persons)
+    {
+        $s = [];
+        foreach ($persons as $person) {
+            $s[$person->Id] = $person->Name . ' ' . $person->LastName;
+        }
+        return $s;
     }
 }

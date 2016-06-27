@@ -8,9 +8,11 @@ use App\Http\Requests\CreateWorksOnProjectRequest;
 use App\Http\Requests\UpdateWorksOnProjectRequest;
 use App\Models\Person;
 use App\Models\Project;
+use App\Models\Role;
 use App\Repositories\WorksOnProjectRepository;
 use Flash;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
 
@@ -46,10 +48,11 @@ class WorksOnProjectController extends InfyOmBaseController
      */
     public function create()
     {
-        $persons = Person::where([])->select(['id', 'name', 'lastname'])->get();
-        $projects = Project::where([])->select(['id','title'])->get();
+        $persons = Person::toSelectValues(Person::where([])->get());
+        $projects = Project::getProjectSelectArray(Session::get('projects'));
+        $roles = Role::toSelectValues(Role::where([])->get());
 //        dd($persons);
-        return view('worksOnProjects.create')->with(['persons' => $persons, 'projects' => $projects]);
+        return view('worksOnProjects.create')->with(['persons' => $persons, 'projects' => $projects, 'roles' => $roles]);
     }
 
     /**
@@ -62,12 +65,13 @@ class WorksOnProjectController extends InfyOmBaseController
     public function store(CreateWorksOnProjectRequest $request)
     {
         $input = $request->all();
-
+//        dd($input);
+        $project_id = $input['project_id'];
         $worksOnProject = $this->worksOnProjectRepository->create($input);
 
         Flash::success('WorksOnProject saved successfully.');
         HomeController::projectSessionHelper();
-        return redirect(route('worksOnProjects.index'));
+        return redirect(route('projects.show', $project_id));
     }
 
     /**
@@ -107,7 +111,7 @@ class WorksOnProjectController extends InfyOmBaseController
             return redirect(route('worksOnProjects.index'));
         }
         $persons = Person::where([])->select(['id', 'name', 'lastname'])->get();
-        $projects = Project::where([])->select(['id','title'])->get();
+        $projects = Project::where([])->select(['id', 'title'])->get();
 
         return view('worksOnProjects.edit')->with(['worksOnProject', $worksOnProject, 'persons' => $persons, 'projects' => $projects]);
     }

@@ -33,6 +33,7 @@
                                 </a></li>
                         @endforeach
                     @endif
+                    <li><a href="{!! route('projects.create') !!}">Create new project</a></li>
                 </ul>
             </li>
 

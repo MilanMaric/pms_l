@@ -1,19 +1,19 @@
 <!-- Person Id Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('person_id', 'Person Id:') !!}
-    {!! Form::number('person_id', $persons, ['class' => 'form-control']) !!}
+    {!! Form::select('person_id', $persons, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Project Id Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('project_id', 'Project Id:') !!}
-    {!! Form::number('project_id', $projects, ['class' => 'form-control']) !!}
+    {!! Form::select('project_id', $projects, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Role Id Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('role_id', 'Role Id:') !!}
-    {!! Form::number('role_id', null, ['class' => 'form-control']) !!}
+    {!! Form::select('role_id', $roles, ['class' => 'form-control']) !!}
 </div>
 
 {{--<!-- Created At Field -->--}}

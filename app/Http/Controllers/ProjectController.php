@@ -69,7 +69,7 @@ class ProjectController extends InfyOmBaseController
         $wop->save();
         Flash::success('Project saved successfully.');
         HomeController::projectSessionHelper();
-        return redirect(route('projects.index'));
+        return redirect(route('projects.show', $project->Id));
     }
 
     /**
