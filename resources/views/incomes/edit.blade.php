@@ -7,7 +7,7 @@
             </div>
         </div>
 
-        @include('core-templates::common.errors')
+{{--        @include('core-templates::common.errors')--}}
 
         <div class="row">
             {!! Form::model($income, ['route' => ['incomes.update', $income->id], 'method' => 'patch']) !!}

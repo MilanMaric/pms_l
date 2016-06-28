@@ -59,6 +59,8 @@ class ProjectController extends InfyOmBaseController
     public function store(CreateProjectRequest $request)
     {
         $input = $request->all();
+       
+
         $project = $this->projectRepository->create($input);
         //TODO insert into works_on_project authentificated user and this project
 //        $wop;
@@ -70,6 +72,7 @@ class ProjectController extends InfyOmBaseController
         Flash::success('Project saved successfully.');
         HomeController::projectSessionHelper();
         return redirect(route('projects.show', $project->Id));
+
     }
 
     /**

@@ -34,6 +34,10 @@ function tasksRow(row) {
         tableRow += "<td>";
         tableRow += ' <div class="progress progress-xs"><div class="progress-bar progress-bar-yellow" style="width: ' + row.PercentageDone + '%"></div></div>';
         tableRow += "</td>";
+        tableRow += "<td>";
+        //buttons
+        tableRow += "<a href='/tasks/" + row.Id + "/edit' role='button' class='btn btn-primary'><i class='glyphicon glyphicon-edit'></i></a>"
+        tableRow += "</td>";
         // tableRow += "<td> <button class='btn btn-primary' data-toggle='toggle' data-target='act" + row.Id + "'>Activities</button></td> ";
     }
     tableRow += "</tr>";

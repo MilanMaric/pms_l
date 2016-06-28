@@ -25,6 +25,7 @@ class CreateProjectRequest extends Request
      */
     public function rules()
     {
+        
         return Project::$rules;
     }
 }

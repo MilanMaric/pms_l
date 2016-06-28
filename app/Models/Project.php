@@ -91,7 +91,9 @@ class Project extends Model
      * @var array
      */
     public static $rules = [
-
+        'Title' => 'required|min:5|max:255',
+        'StartDate'        => 'required|Date|after:tomorrow',
+        'EndDate'          => 'required|Date|after:start_date',
     ];
 
     public static function checkUser($project)

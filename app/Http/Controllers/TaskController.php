@@ -104,8 +104,10 @@ class TaskController extends InfyOmBaseController
 
             return redirect(route('tasks.index'));
         }
+        $projects = HomeController::projectSessionHelper();
+        $p = Project::getProjectSelectArray($projects);
 
-        return view('tasks.edit')->with('task', $task);
+        return view('tasks.edit')->with('task', $task)->with('projects', $p);
     }
 
     /**
