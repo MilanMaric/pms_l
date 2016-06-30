@@ -46,7 +46,7 @@ class PersonController extends InfyOmBaseController
     public function create()
     {
         $users = \App\User::where([])->get();
-        $u=Person::usersToSelectValues($users);
+        $u = Person::usersToSelectValues($users);
         return view('people.create', ['users' => $u]);
     }
 

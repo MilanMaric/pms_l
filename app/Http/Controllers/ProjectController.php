@@ -59,11 +59,11 @@ class ProjectController extends InfyOmBaseController
     public function store(CreateProjectRequest $request)
     {
         $input = $request->all();
-       
 
         $project = $this->projectRepository->create($input);
-        //TODO insert into works_on_project authentificated user and this project
+//        TODO insert into works_on_project authentificated user and this project
 //        $wop;
+//        dd($project);
         $wop = new WorksOnProject();
         $wop->project_id = $project->Id;
         $wop->person_id = HomeController::getPerson()->Id;
@@ -96,6 +96,7 @@ class ProjectController extends InfyOmBaseController
                 Flash::error('Project not found');
                 return redirect(route('projects.index'));
             }
+            
             return view('projects.show')->with('project', $project);
         } else {
             return redirect('projects');

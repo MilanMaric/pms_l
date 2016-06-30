@@ -8,6 +8,7 @@
         </div>
 
 {{--        @include('core-templates::common.errors')--}}
+        @include('errors.errors')
 
         <div class="row">
             {!! Form::model($revision, ['route' => ['revisions.update', $revision->id], 'method' => 'patch']) !!}

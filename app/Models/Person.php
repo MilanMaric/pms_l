@@ -119,8 +119,8 @@ class Person extends Model
     public static function usersToSelectValues($users)
     {
         $s = [];
-        foreach ($users as $person) {
-            $s[$person->Id] = $person->Username . ' ' . $person->Name;
+        foreach ($users as $user) {
+            $s[$user->id] = $user->username . ' ' . $user->name;
         }
         return $s;
     }

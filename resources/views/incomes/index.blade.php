@@ -7,6 +7,7 @@
         <div class="clearfix"></div>
 
         @include('flash::message')
+        @include('errors.errors')
 
         <div class="clearfix"></div>
 

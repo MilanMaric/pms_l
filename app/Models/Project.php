@@ -92,8 +92,8 @@ class Project extends Model
      */
     public static $rules = [
         'Title' => 'required|min:5|max:255',
-        'StartDate'        => 'required|Date|after:tomorrow',
-        'EndDate'          => 'required|Date|after:start_date',
+//        'StartDate' => 'required|Date|after:tomorrow',
+//        'EndDate' => 'required|Date|after:StartDate',
     ];
 
     public static function checkUser($project)
@@ -129,8 +129,10 @@ class Project extends Model
     public static function getProjectSelectArray($projects)
     {
         $p = [];
-        foreach ($projects as $project) {
-            $p[$project->Id] = $project->Title;
+        if (!empty($projects)) {
+            foreach ($projects as $project) {
+                $p[$project->Id] = $project->Title;
+            }
         }
         return $p;
     }

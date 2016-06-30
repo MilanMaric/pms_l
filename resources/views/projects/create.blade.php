@@ -8,6 +8,7 @@
     </div>
 
 {{--    @include('::common.errors')--}}
+    @include('errors.errors')
 
     <div class="row">
         {!! Form::open(['route' => 'projects.store']) !!}

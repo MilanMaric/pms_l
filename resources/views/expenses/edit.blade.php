@@ -8,7 +8,7 @@
         </div>
 
 {{--        @include('core-templates::common.errors')--}}
-
+        @include('errors.errors')
         <div class="row">
             {!! Form::model($expense, ['route' => ['expenses.update', $expense->id], 'method' => 'patch']) !!}
 

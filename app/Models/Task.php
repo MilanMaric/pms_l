@@ -104,6 +104,10 @@ class Task extends Model
      * @var array
      */
     public static $rules = [
+        'Start' => 'required|Date',
+        'Title' => 'required',
+        'PercentageDone' => 'required|min:0|max:100',
+        'End' => 'required|Date|after:Start',
 
     ];
 
