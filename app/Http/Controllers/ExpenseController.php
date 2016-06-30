@@ -46,8 +46,8 @@ class ExpenseController extends InfyOmBaseController
      */
     public function create()
     {
-        $project=Project::getProjectSelectArray(Session::get('projects'));
-        return view('expenses.create',['projects'=>$project]);
+        $project = Project::getProjectSelectArray(Session::get('projects'));
+        return view('expenses.create', ['projects' => $project]);
     }
 
     /**
@@ -67,7 +67,7 @@ class ExpenseController extends InfyOmBaseController
 
         Flash::success('Expense saved successfully.');
 
-        return redirect(route('expenses.index'));
+        return redirect(route('projects.show', $expense->project_id));
     }
 
     /**

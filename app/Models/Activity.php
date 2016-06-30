@@ -33,7 +33,7 @@ class Activity extends Model
     use SoftDeletes;
 
     public $table = 'Activity';
-    
+
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
 
@@ -46,6 +46,7 @@ class Activity extends Model
         'Description',
         'Date',
         'task_id',
+        'hours',
         'deleted_at'
     ];
 
@@ -68,6 +69,6 @@ class Activity extends Model
      * @var array
      */
     public static $rules = [
-        
+
     ];
 }

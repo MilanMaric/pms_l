@@ -88,8 +88,10 @@ class ProjectController extends InfyOmBaseController
         $project = $this->projectRepository->findWithoutFail($id);
 
         $worksOnProject = WorksOnProject::where(['project_id' => $project->Id])->get();
+        $persons = [];
         foreach ($worksOnProject as $wop) {
-            $worksOnProject->person = Person::find($wop->person_id);
+            $wop->person = Person::find($wop->person_id);
+            $persons[] = $wop->person;
         }
         if (Project::checkUser($project)) {
             if (empty($project)) {
@@ -97,7 +99,7 @@ class ProjectController extends InfyOmBaseController
                 return redirect(route('projects.index'));
             }
             
-            return view('projects.show')->with('project', $project);
+            return view('projects.show')->with('project', $project)->with('persons', Person::toSelectValues($persons));
         } else {
             return redirect('projects');
         }

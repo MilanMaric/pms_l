@@ -170,6 +170,8 @@
         getExpenses({{$project->Id}});
     </script>
 
+    @include('tasks.modal')
+    @include('worksOnTasks.modal')
 
 
 @endsection

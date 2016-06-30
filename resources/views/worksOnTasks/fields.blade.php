@@ -1,8 +1,8 @@
-{{--<!-- Task Id Field -->--}}
-{{--<div class="form-group col-sm-6">--}}
-    {{--{!! Form::label('task_id', 'Task Id:') !!}--}}
-    {{--{!! Form::number('task_id', null, ['class' => 'form-control']) !!}--}}
-{{--</div>--}}
+<!-- Task Id Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('task_id', 'Task Id:') !!}
+    {!! Form::number('task_id', null, ['class' => 'form-control']) !!}
+</div>
 
 <!-- Person Id Field -->
 <div class="form-group col-sm-6">

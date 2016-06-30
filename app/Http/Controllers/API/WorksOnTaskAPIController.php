@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Requests\API\CreateWorksOnTaskAPIRequest;
 use App\Http\Requests\API\UpdateWorksOnTaskAPIRequest;
+use App\Models\Person;
 use App\Models\WorksOnTask;
 use App\Repositories\WorksOnTaskRepository;
 use Illuminate\Http\Request;
@@ -157,7 +158,10 @@ class WorksOnTaskAPIController extends InfyOmBaseController
     public function show($id)
     {
         /** @var WorksOnTask $worksOnTask */
-        $worksOnTask = $this->worksOnTaskRepository->find($id);
+        $worksOnTask = WorksOnTask::where(['task_id'=>$id])->get();
+        foreach ($worksOnTask as $item) {
+            $item->person=Person::find($item->person_id);
+        }
 
         if (empty($worksOnTask)) {
             return Response::json(ResponseUtil::makeError('WorksOnTask not found'), 404);

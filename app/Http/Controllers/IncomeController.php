@@ -65,7 +65,7 @@ class IncomeController extends InfyOmBaseController
 
         Flash::success('Income saved successfully.');
 
-        return redirect(route('incomes.index'));
+        return redirect(route('projects.show',$income->project_id));
     }
 
     /**

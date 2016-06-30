@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Http\Controllers\AppBaseController as InfyOmBaseController;
 use App\Http\Requests\API\CreateActivityAPIRequest;
 use App\Http\Requests\API\UpdateActivityAPIRequest;
 use App\Models\Activity;
 use App\Repositories\ActivityRepository;
 use Illuminate\Http\Request;
-use App\Http\Controllers\AppBaseController as InfyOmBaseController;
 use InfyOm\Generator\Criteria\LimitOffsetCriteria;
 use InfyOm\Generator\Utils\ResponseUtil;
 use Prettus\Repository\Criteria\RequestCriteria;
@@ -17,7 +17,6 @@ use Response;
  * Class ActivityController
  * @package App\Http\Controllers\API
  */
-
 class ActivityAPIController extends InfyOmBaseController
 {
     /** @var  ActivityRepository */
@@ -110,9 +109,8 @@ class ActivityAPIController extends InfyOmBaseController
     public function store(CreateActivityAPIRequest $request)
     {
         $input = $request->all();
-
+//        dd($input);
         $activities = $this->activityRepository->create($input);
-
         return $this->sendResponse($activities->toArray(), 'Activity saved successfully');
     }
 

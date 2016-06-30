@@ -3,20 +3,51 @@ var tasksCount = 0;
 function insertActivities(taskId, activities) {
     var table = "";
     if (activities && activities.length > 0) {
-        table += "<tr>";
-
-        table += "<td id=act" + taskId + " colspan='7' >";
-        table += "<h4>Activities</h4>";
-        table += "<table class='table table-bordered'>"
-        table += "<tr><td>Description</td><td>Date</td></tr>";
+        // table += "<tr>";
+        //
+        // table += "<td id=act" + taskId + " colspan='7' >";
+        // table += "<h4>Activities</h4>";
+        // table += "<table class='table table-bordered'>"
+        table += "<tr><td>Description</td><td>Date</td><td>Hours</td></tr>";
         for (var i = 0; i < activities.length; i++) {
-            table += "<tr><td>" + activities[i].Description + "</td><td>" + new Date(activities[i].Date).toLocaleDateString() + "</td></tr>";
+            table += "<tr><td>" + activities[i].Description + "</td><td>" + new Date(activities[i].Date).toLocaleDateString() + "</td>" +
+                "<td>" + activities[i].hours + "</td></tr>";
+
         }
-        table += "</table>";
-        table += "</td>";
-        table += "</tr>";
+        // table += "</table>";
+        // table += "</td>";
+        // table += "</tr>";
     }
     return table;
+}
+
+
+function openModal(task) {
+    $("#taskModal").modal({show: true});
+    $("#taskModalTitle").html(task.Title);
+    $("#taskModalDescription").html(task.Description);
+    $("#modalActivitiesTable").html(insertActivities(task.Id, task.activities));
+    $("#taskIdField").val(task.Id);
+}
+
+function saveActivity() {
+    var task_id = $("#taskIdField").val();
+    var description = $("#aDescription").val();
+    var Date = $("#aDate").val();
+    var activity = {task_id: task_id, Description: description, Date: Date};
+    $.post("/api/v1/activities", activity).success(function (data) {
+        $("#taskModal").modal({show: false});
+        getTasks();
+    }).error(function (err) {
+        $("#taskModal").modal({show: false});
+        getTasks();
+    });
+
+}
+
+function openPeopleModal(task) {
+    $("#worksOnTaskModal").modal({show: true});
+    
 }
 
 function tasksRow(row) {
@@ -37,11 +68,15 @@ function tasksRow(row) {
         tableRow += "<td>";
         //buttons
         tableRow += "<a href='/tasks/" + row.Id + "/edit' role='button' class='btn btn-primary'><i class='glyphicon glyphicon-edit'></i></a>"
+        tableRow += "<button  class='btn btn-info' role='button' onclick='openModal(" + JSON.stringify(row) + ")'" +
+            "><i class='fa fa-tasks'></i> </button> " +
+            "<button class='btn btn-info' onclick='openPeopleModal(" + JSON.stringify(row) + ")'>" +
+            "<i class='fa fa-user'></i></button>";
         tableRow += "</td>";
         // tableRow += "<td> <button class='btn btn-primary' data-toggle='toggle' data-target='act" + row.Id + "'>Activities</button></td> ";
     }
     tableRow += "</tr>";
-    tableRow += insertActivities(row.Id, row.activities);
+    // tableRow += insertActivities(row.Id, row.activities);
     return tableRow;
 }
 
@@ -69,6 +104,5 @@ function getTasks(projectId) {
         $("#tasksHolder").html(tasksCount);
         $("#tasksProgress").width(x + "%");
         $("#tasksProgressDescription").html("Average " + x.toPrecision(2) + " % done on the tasks");
-
     });
 }
