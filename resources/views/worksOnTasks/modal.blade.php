@@ -16,33 +16,31 @@
                 <div id="peopleFields" class="collapse">
                     <!-- Person Id Field -->
                     <div class="form-group col-sm-6">
-                        {!! Form::label('person_id', 'Person Id:') !!}
-                        {!! Form::number('person_id', null, ['class' => 'form-control','id'=>'wModalPersonId']) !!}
+                        {!! Form::label('person_id', 'Person:') !!}
+                        {!! Form::select('person_id', [0=>"Select one"], ['class' => 'form-control col-xs-12','id'=>'wModalPersonId']) !!}
                     </div>
 
                     <div class="form-group col-sm-6">
                         {!! Form::hidden('task_id', null, ['class' => 'form-control','id'=>'wModalTaskId']) !!}
                     </div>
 
-                    {{--<!-- Activity Id Field -->--}}
-                    {{--<div class="form-group col-sm-6">--}}
-                    {{--{!! Form::label('activity_id', 'Activity Id:') !!}--}}
-                    {{--{!! Form::number('activity_id', null, ['class' => 'form-control']) !!}--}}
-                    {{--</div>--}}
+                    <!-- Activity Id Field -->
+                    <div class="form-group col-sm-6">
+                        {!! Form::label('activity_id', 'Activity Id:') !!}
+                        {!! Form::select('activity_id', [0=>"Select one"], ['class' => 'form-control col-xs-12','id'=>'wModalActivities']) !!}
+                    </div>
 
-                            <!-- Startdate Field -->
+                    <!-- Startdate Field -->
                     <div class="form-group col-sm-6">
                         {!! Form::label('StartDate', 'Start date:') !!}
                         {!! Form::date('Start date', null, ['class' => 'form-control','id'=>'wModalStartDate']) !!}
                     </div>
 
                     <div class="form-group">
-                        <button class="btn btn-primary btn-group-justified" onclick="saveWotrkOnTask()">Save new
-                            activity
+                        <button class="btn btn-primary btn-group-justified" onclick="saveWorkOnTask()">Assign to people
                         </button>
                     </div>
                 </div>
-                <h4>People</h4>
 
             </div>
             <div class="modal-footer">

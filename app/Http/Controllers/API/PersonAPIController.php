@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Http\Controllers\AppBaseController as InfyOmBaseController;
 use App\Http\Requests\API\CreatePersonAPIRequest;
 use App\Http\Requests\API\UpdatePersonAPIRequest;
 use App\Models\Person;
+use App\Models\Project;
+use App\Models\WorksOnProject;
 use App\Repositories\PersonRepository;
 use Illuminate\Http\Request;
-use App\Http\Controllers\AppBaseController as InfyOmBaseController;
 use InfyOm\Generator\Criteria\LimitOffsetCriteria;
 use InfyOm\Generator\Utils\ResponseUtil;
 use Prettus\Repository\Criteria\RequestCriteria;
@@ -17,7 +19,6 @@ use Response;
  * Class PersonController
  * @package App\Http\Controllers\API
  */
-
 class PersonAPIController extends InfyOmBaseController
 {
     /** @var  PersonRepository */
@@ -114,6 +115,16 @@ class PersonAPIController extends InfyOmBaseController
         $people = $this->personRepository->create($input);
 
         return $this->sendResponse($people->toArray(), 'Person saved successfully');
+    }
+
+    public function project(Request $request, $projectId)
+    {
+        $project=Project::find($projectId);
+        $worksOnProject=WorksOnProject::where(['project_id'=>$projectId])->get();
+        foreach ($worksOnProject as $wop){
+            $wop->person=Person::find($wop->person_id);
+        }
+        return $this->sendResponse($worksOnProject->toArray(), 'Persons get success');
     }
 
     /**

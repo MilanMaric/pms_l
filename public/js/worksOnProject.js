@@ -1,7 +1,16 @@
 function roleToString(role) {
+    console.log("Role: "+role);
     switch (role) {
         case 1:
-            return "admin";
+            return "Creator";
+        case 2:
+            return "Manager";
+        case 3:
+            return "Administration";
+        case 4:
+            return "Worker";
+        case 5:
+            return "Customer";
         default:
             return "admin";
     }
@@ -14,7 +23,7 @@ function dataRow(row) {
         tableRow += "<th>" + row.person.LastName + "</th>";
         tableRow += "<th>" + row.person.MobileNumber + "</th>";
         tableRow += "<th>" + row.person.PhoneNumber + "</th>";
-        tableRow += "<th>" + roleToString(row.person.role) + "</th>";
+        tableRow += "<th>" + roleToString(row.role_id) + "</th>";
     }
     tableRow += "</tr>";
     return tableRow;

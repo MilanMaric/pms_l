@@ -42,12 +42,61 @@ function saveActivity() {
         $("#taskModal").modal({show: false});
         getTasks();
     });
+}
 
+function getPeopleTable(wot) {
+    var table = "";
+    table += "<tr><td>Name</td><td>LastName</td><td>Start date</td></tr>";
+
+    for (var i = 0; i < wot.length; i++) {
+        table += "<tr>";
+        table += "<td>";
+        table += wot[i].person.Name;
+        table += "</td>";
+        table += "<td>";
+        table += wot[i].person.LastName;
+        table += "</td>";
+        table += "<td>";
+        table += wot[i].StartDate;
+        table += "<td>";
+    }
+    return table;
 }
 
 function openPeopleModal(task) {
     $("#worksOnTaskModal").modal({show: true});
-    
+    $.get('/api/v1/worksOnTasks/' + task.Id).success(function (data) {
+        $("#modalPeopleTable").html(getPeopleTable(data.data));
+    });
+    var options = [];
+    for (var i = 0; i < task.activities.length; i++) {
+        var option = $("<option>");
+        option.attr('value', task.activities[i].Id).text(task.activities[i].Description);
+        options.push(option);
+    }
+    $("#activity_id").html(options);
+    $.get('/api/v1/personas/' + project.Id).success(function (data) {
+        var options = [];
+        for (var i = 0; i < data.data.length; i++) {
+            var option = $("<option>");
+            option.attr('value', data.data[i].person.Id).text(data.data[i].person.Name + data.data[i].person.LastName);
+            options.push(option);
+        }
+        $("#person_id").html(options);
+    });
+
+}
+
+function saveWorkOnTask() {
+    var personId = $("#wModalPersonId").val();
+    var taskId = $("#wModalTaskId").val();
+    var activityId = $("#wModalActivities").val();
+    var start = $("#wModalStartDate").val();
+    var wot = {person_id: personId, task_id: taskId, activity_id: activityId, StartDate: start};
+    console.log(wot);
+    $.post("/api/v1/worksOnTasks", wot).success(function (data) {
+        console.log(data);
+    });
 }
 
 function tasksRow(row) {

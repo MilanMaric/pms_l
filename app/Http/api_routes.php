@@ -14,9 +14,11 @@ Route::resource('activities', 'ActivityAPIController');
 
 Route::resource('documents', 'DocumentAPIController');
 
+Route::get('personas/{projectId}', 'PersonAPIController@project');
+
 Route::resource('people', 'PersonAPIController');
 
-Route::get('income/{projectId}','IncomeAPIController@project');
+Route::get('income/{projectId}', 'IncomeAPIController@project');
 
 Route::resource('incomes', 'IncomeAPIController');
 
@@ -26,11 +28,13 @@ Route::get('worksOnProject/{projectId}', 'WorksOnProjectAPIController@project');
 
 Route::resource('worksOnProjects', 'WorksOnProjectAPIController@index');
 
+//Route::get('worksOnTask/{taskId}', 'WorksOnTaskAPIController@task');
+
 Route::resource('worksOnTasks', 'WorksOnTaskAPIController');
 
 Route::resource('revisions', 'RevisionAPIController');
 
-Route::get('expense/{projectId}','ExpenseAPIController@project');
+Route::get('expense/{projectId}', 'ExpenseAPIController@project');
 
 Route::resource('expenses', 'ExpenseAPIController');
 
