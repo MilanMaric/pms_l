@@ -14,11 +14,9 @@
             margin: 0;
             padding: 0;
             width: 100%;
-            color: #FFFFFF;
-            background-color: #ff0000;
             display: table;
-            font-weight: 800;
-            font-family: 'Lato';
+            /*font-weight: 300;*/
+            font-family: 'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;
         }
 
         .container {
@@ -44,8 +42,9 @@
         <div class="title"><i class="fa fa-eye fa-3x"></i></div>
         <div class="title">PMS</div>
         <div>Project management system</div>
-        <a href="{!! route('projects.index') !!}" class="btn btn-">Login</a> <a
-                href='register'>Register</a>
+        <hr style='width:100%;'>
+        <a href="{!! route('projects.index') !!}" class="btn" style="padding-top: 80px">Login</a>
+        {{--<a                href='register'>Register</a>--}}
     </div>
 </div>
 </body>
