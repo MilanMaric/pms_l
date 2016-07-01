@@ -44,26 +44,37 @@ function saveActivity() {
     });
 }
 
+function getPeopleRow(wot) {
+    var table = "";
+    table += "<tr>";
+    table += "<td>";
+    table += wot.person.Name;
+    table += "</td>";
+    table += "<td>";
+    table += wot.person.LastName;
+    table += "</td>";
+    table += "<td>";
+    table += wot.activity.Description;
+    table += "</td>";
+    table += "<td>";
+    table += wot.StartDate;
+    table += "<td>";
+    return table;
+}
 function getPeopleTable(wot) {
     var table = "";
-    table += "<tr><td>Name</td><td>LastName</td><td>Start date</td></tr>";
+    table += "<tr><td>Name</td><td>LastName</td><td>Activity description</td><td>Start date</td></tr>";
 
     for (var i = 0; i < wot.length; i++) {
-        table += "<tr>";
-        table += "<td>";
-        table += wot[i].person.Name;
-        table += "</td>";
-        table += "<td>";
-        table += wot[i].person.LastName;
-        table += "</td>";
-        table += "<td>";
-        table += wot[i].StartDate;
-        table += "<td>";
+        table += getPeopleRow(wot[i]);
     }
     return table;
 }
 
+var gtask;
+
 function openPeopleModal(task) {
+    gtask = task;
     $("#worksOnTaskModal").modal({show: true});
     $.get('/api/v1/worksOnTasks/' + task.Id).success(function (data) {
         $("#modalPeopleTable").html(getPeopleTable(data.data));
@@ -88,21 +99,22 @@ function openPeopleModal(task) {
 }
 
 function saveWorkOnTask() {
-    var personId = $("#wModalPersonId").val();
-    var taskId = $("#wModalTaskId").val();
-    var activityId = $("#wModalActivities").val();
+    var taskId = gtask.Id;
+    var personId = $("#person_id").val();
+    // var taskId = $("#wModalTaskId").val();
+    var activityId = $("#activity_id").val();
     var start = $("#wModalStartDate").val();
-    var wot = {person_id: personId, task_id: taskId, activity_id: activityId, StartDate: start};
-    console.log(wot);
+    var wot = {person_id: personId, task_id: taskId, activity_id: activityId, StartDate: start, task_id: taskId};
     $.post("/api/v1/worksOnTasks", wot).success(function (data) {
-        console.log(data);
+        if (data.data && data.success) {
+            $("#modalPeopleTable").append(getPeopleRow(data.data));
+        }
     });
 }
 
 function tasksRow(row) {
     var tableRow = "<tr >";
     if (row) {
-        console.log(row);
         tableRow += "<td>" + row.Title + "</td>";
         tableRow += "<td>" + row.Description + "</td>";
         tableRow += "<td>" + new Date(row.Start).toLocaleDateString() + "</td>";

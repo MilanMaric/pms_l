@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Http\Controllers\AppBaseController as InfyOmBaseController;
 use App\Http\Requests\API\CreateWorksOnTaskAPIRequest;
 use App\Http\Requests\API\UpdateWorksOnTaskAPIRequest;
+use App\Models\Activity;
 use App\Models\Person;
 use App\Models\WorksOnTask;
 use App\Repositories\WorksOnTaskRepository;
 use Illuminate\Http\Request;
-use App\Http\Controllers\AppBaseController as InfyOmBaseController;
 use InfyOm\Generator\Criteria\LimitOffsetCriteria;
 use InfyOm\Generator\Utils\ResponseUtil;
 use Prettus\Repository\Criteria\RequestCriteria;
@@ -18,7 +19,6 @@ use Response;
  * Class WorksOnTaskController
  * @package App\Http\Controllers\API
  */
-
 class WorksOnTaskAPIController extends InfyOmBaseController
 {
     /** @var  WorksOnTaskRepository */
@@ -113,7 +113,10 @@ class WorksOnTaskAPIController extends InfyOmBaseController
         $input = $request->all();
 
         $worksOnTasks = $this->worksOnTaskRepository->create($input);
-
+//        foreach ($worksOnTasks as $item) {
+        $worksOnTasks->person = Person::find($worksOnTasks->person_id);
+        $worksOnTasks->activity = Activity::find($worksOnTasks->activity_id);
+//        }
         return $this->sendResponse($worksOnTasks->toArray(), 'WorksOnTask saved successfully');
     }
 
@@ -158,9 +161,10 @@ class WorksOnTaskAPIController extends InfyOmBaseController
     public function show($id)
     {
         /** @var WorksOnTask $worksOnTask */
-        $worksOnTask = WorksOnTask::where(['task_id'=>$id])->get();
+        $worksOnTask = WorksOnTask::where(['task_id' => $id])->get();
         foreach ($worksOnTask as $item) {
-            $item->person=Person::find($item->person_id);
+            $item->person = Person::find($item->person_id);
+            $item->activity = Activity::find($item->activity_id);
         }
 
         if (empty($worksOnTask)) {
