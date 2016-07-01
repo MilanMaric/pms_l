@@ -109,7 +109,7 @@
                 </a>
             </div>
         </div>
-
+        @if($role->Id>0 && $role->Id<5)
         <div class="box box-default collapsed-box">
             <div class="box-header with-border">
                 <h3>Tasks</h3>
@@ -127,47 +127,49 @@
                 </a>
             </div>
         </div>
+            <div class="box box-default collapsed-box">
+                <div class="box-header with-border">
+                    <h3>Incomes</h3>
+                    <div class="box-tools right">
+                        <button class="btn btn-box-tool" data-widget="collapse"
+                                onclick="getIncomes({{$project->Id}},{{$project->Budget}})"><i
+                                    class="fa fa-plus fa-2x"></i></button>
+                    </div>
+                </div>
+                <div class="box-body">
+                    <table class="table table-bordered table-striped dataTable" id="incomes-table" role="grid">
 
-        <div class="box box-default collapsed-box">
-            <div class="box-header with-border">
-                <h3>Incomes</h3>
-                <div class="box-tools right">
-                    <button class="btn btn-box-tool" data-widget="collapse"
-                            onclick="getIncomes({{$project->Id}},{{$project->Budget}})"><i
-                                class="fa fa-plus fa-2x"></i></button>
+                    </table>
+                    <a class="btn btn-primary" href="{!! route('incomes.create') !!}">
+                        <i class="fa fa-plus fa-2x"></i>
+                    </a>
                 </div>
             </div>
-            <div class="box-body">
-                <table class="table table-bordered table-striped dataTable" id="incomes-table" role="grid">
+            <div class="box box-default collapsed-box">
+                <div class="box-header with-border">
+                    <h3>Expenses</h3>
+                    <div class="box-tools right">
+                        <button class="btn btn-box-tool" data-widget="collapse" onclick="getExpenses({{$project->Id}})">
+                            <i
+                                    class="fa fa-plus fa-2x"></i></button>
+                    </div>
+                </div>
+                <div class="box-body">
+                    <table class="table table-bordered table-striped dataTable" id="expenses-table" role="grid">
 
-                </table>
-                <a class="btn btn-primary" href="{!! route('incomes.create') !!}">
-                    <i class="fa fa-plus fa-2x"></i>
-                </a>
-            </div>
-        </div>
-        <div class="box box-default collapsed-box">
-            <div class="box-header with-border">
-                <h3>Expenses</h3>
-                <div class="box-tools right">
-                    <button class="btn btn-box-tool" data-widget="collapse" onclick="getExpenses({{$project->Id}})"><i
-                                class="fa fa-plus fa-2x"></i></button>
+                    </table>
+                    <a class="btn btn-primary" href="{!! route('expenses.create') !!}">
+                        <i class="fa fa-plus fa-2x"></i>
+                    </a>
                 </div>
             </div>
-            <div class="box-body">
-                <table class="table table-bordered table-striped dataTable" id="expenses-table" role="grid">
-
-                </table>
-                <a class="btn btn-primary" href="{!! route('expenses.create') !!}">
-                    <i class="fa fa-plus fa-2x"></i>
-                </a>
-            </div>
-        </div>
+        @endif
     </div>
 
     <script>
         getIncomes({{$project->Id}});
         getExpenses({{$project->Id}});
+        getTasks({{$project->Id}});
     </script>
 
     @include('tasks.modal')

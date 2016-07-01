@@ -8,6 +8,7 @@ use App\Http\Requests\CreateProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 use App\Models\Person;
 use App\Models\Project;
+use App\Models\Role;
 use App\Models\WorksOnProject;
 use App\Repositories\ProjectRepository;
 use Flash;
@@ -86,8 +87,11 @@ class ProjectController extends InfyOmBaseController
     {
 
         $project = $this->projectRepository->findWithoutFail($id);
-
+        $person = HomeController::getPerson();
         $worksOnProject = WorksOnProject::where(['project_id' => $project->Id])->get();
+        $wopRole = WorksOnProject::where(['project_id' => $project->Id, 'person_id' => $person->Id])->get();
+//        dd($wopRole[0]->role_id);
+        $role = Role::find($wopRole[0]->role_id);
         $persons = [];
         foreach ($worksOnProject as $wop) {
             $wop->person = Person::find($wop->person_id);
@@ -98,8 +102,8 @@ class ProjectController extends InfyOmBaseController
                 Flash::error('Project not found');
                 return redirect(route('projects.index'));
             }
-            
-            return view('projects.show')->with('project', $project)->with('persons', Person::toSelectValues($persons));
+
+            return view('projects.show')->with('project', $project)->with('persons', Person::toSelectValues($persons))->with('role', $role);
         } else {
             return redirect('projects');
         }
