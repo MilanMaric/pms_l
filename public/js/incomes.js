@@ -32,11 +32,11 @@ function getIncomes(projectId) {
         $("#incomeHolder").html(incomeSum);
         $("#incomes-table").html(ttt);
         console.log(budget);
-        var p = 100 * incomeSum / (incomeSum + budget);
+        var p = 100 * incomeSum / (budget);
         $("#incomeProgress").width(p + "%");
         $("#budgetProgress").width((100 - p) + "%");
-        $("#incomeProgressDescription").html(p.toPrecision(2) + "% of all incomes");
-        $("#budgetProgressDescription").html((100 - p).toPrecision(2) + "% of all incomes");
+        $("#incomeProgressDescription").html(p.toLocaleString()+ "% of all incomes");
+        $("#budgetProgressDescription").html((100 - p).toLocaleString()+ "% of all incomes");
         // $("#incomeProgressDescription").html()
     });
 }

@@ -5,23 +5,23 @@
     @include('flash::message')
     <h1>{{$project->Title}}</h1>
     <div class="col-xs-12">
-        <div class="col-md-3 col-sm-6 col-xs-12">
-            <div class="info-box bg-aqua">
-        <span class="info-box-icon">
-           <i class="fa fa-money"></i>
-        </span>
-                <div class="info-box-content">
-                    <span class="info-box-text">Budget</span>
-                    <span class="info-box-number">{{$project->Budget}}</span>
-                    <div class="progress">
-                        <div class="progress-bar" style="width: 100%" id="budgetProgress"></div>
-                    </div>
-                    <span class="progress-description" id="budgetProgressDescription">
-                     Increase in 30 Days
-                  </span>
-                </div>
-            </div>
-        </div>
+        {{--<div class="col-md-3 col-sm-6 col-xs-12">--}}
+        {{--<div class="info-box bg-aqua">--}}
+        {{--<span class="info-box-icon">--}}
+        {{--<i class="fa fa-money"></i>--}}
+        {{--</span>--}}
+        {{--<div class="info-box-content">--}}
+        {{--<span class="info-box-text">Budget</span>--}}
+        {{--<span class="info-box-number">{{$project->Budget}}</span>--}}
+        {{--<div class="progress">--}}
+        {{--<div class="progress-bar" style="width: 100%" id="budgetProgress"></div>--}}
+        {{--</div>--}}
+        {{--<span class="progress-description" id="budgetProgressDescription">--}}
+        {{--Increase in 30 Days--}}
+        {{--</span>--}}
+        {{--</div>--}}
+        {{--</div>--}}
+        {{--</div>--}}
 
         <div class="col-md-3 col-sm-6 col-xs-12">
             <div class="info-box bg-green">
@@ -93,7 +93,7 @@
     <div class="col-lg-7">
         <div class="box box-default collapsed-box">
             <div class="box-header with-border">
-                <h3>Persons</h3>
+                <h3>Works on project</h3>
 
                 <div class="box-tools pull-right">
                     <button class="btn btn-box-tool" data-widget="collapse" onclick="getProject({{$project->Id}})"><i
@@ -104,29 +104,32 @@
                 <table class="table table-bordered table-striped dataTable" id="worksOnProjects-table" role="grid">
 
                 </table>
-                <a class="btn btn-primary" href="{!! route('worksOnProjects.create') !!}">
-                    <i class="fa fa-plus fa-2x"></i>
-                </a>
+                @if($role->Id>0 && $role->Id<=3)
+                    <a class="btn btn-primary" href="{!! route('worksOnProjects.create') !!}">
+                        <i class="fa fa-plus fa-2x"></i>
+                    </a>
+                @endif
+                {{--{{$role}}--}}
             </div>
         </div>
         @if($role->Id>0 && $role->Id<5)
-        <div class="box box-default collapsed-box">
-            <div class="box-header with-border">
-                <h3>Tasks</h3>
-                <div class="box-tools right">
-                    <button class="btn btn-box-tool" data-widget="collapse" onclick="getTasks({{$project->Id}})"><i
-                                class="fa fa-plus fa-2x"></i></button>
+            <div class="box box-default collapsed-box">
+                <div class="box-header with-border">
+                    <h3>Tasks</h3>
+                    <div class="box-tools right">
+                        <button class="btn btn-box-tool" data-widget="collapse" onclick="getTasks({{$project->Id}})"><i
+                                    class="fa fa-plus fa-2x"></i></button>
+                    </div>
+                </div>
+                <div class="box-body">
+                    <table class="table table-bordered table-striped dataTable" id="tasks-table" role="grid">
+
+                    </table>
+                    <a class="btn btn-primary" href="{!! route('tasks.create') !!}">
+                        <i class="fa fa-plus fa-2x"></i>
+                    </a>
                 </div>
             </div>
-            <div class="box-body">
-                <table class="table table-bordered table-striped dataTable" id="tasks-table" role="grid">
-
-                </table>
-                <a class="btn btn-primary" href="{!! route('tasks.create') !!}">
-                    <i class="fa fa-plus fa-2x"></i>
-                </a>
-            </div>
-        </div>
             <div class="box box-default collapsed-box">
                 <div class="box-header with-border">
                     <h3>Incomes</h3>

@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Http\Controllers\HomeController;
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
 /**
@@ -135,5 +136,35 @@ class Project extends Model
             }
         }
         return $p;
+    }
+
+    public static function getWritableProjects($projects)
+    {
+        $p = [];
+        $person = HomeController::getPerson();
+        foreach ($projects as $project) {
+            $wop = WorksOnProject::where(['project_id' => $project->Id, 'person_id' => $person->Id])->get();
+            if (!empty($wop)) {
+                $wop = $wop[0];
+                if ($wop->role_id > 0 && $wop->role_id < 4)
+                    $p[] = $project;
+            }
+        }
+        return $p;
+    }
+
+    public static function checkWritable($projectId)
+    {
+        $person = HomeController::getPerson();
+        $wop = WorksOnProject::where(['project_id' => $projectId, 'person_id' => $person->Id])->get();
+        if (!empty($wop)) {
+            $wop = $wop[0];
+            if ($wop->role_id > 0 && $wop->role_id < 4)
+                return true;
+            else
+                return false;
+        } else {
+            return false;
+        }
     }
 }

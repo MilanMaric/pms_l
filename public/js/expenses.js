@@ -31,8 +31,8 @@ function getExpenses(projectId) {
         var ttt = expensesToTable(data.data);
         $("#expenseHolder").html(expenseSum);
         $("#expenses-table").html(ttt);
-        var t = 100 * expenseSum / (incomeSum + budget);
+        var t = 100 * expenseSum / (incomeSum);
         $("#expenseProcess").width(t + "%");
-        $("#expenseProcessDescription").html(t.toPrecision(2) + " % money spent");
+        $("#expenseProcessDescription").html(t.toLocaleString() + " % money spent");
     });
 }

@@ -33,7 +33,7 @@ class PersonController extends InfyOmBaseController
     {
         $this->personRepository->pushCriteria(new RequestCriteria($request));
         $people = $this->personRepository->all();
-
+        
         return view('people.index')
             ->with('people', $people);
     }

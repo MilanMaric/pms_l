@@ -164,6 +164,6 @@ function getTasks(projectId) {
         $("#tasksDiv").show(100);
         $("#tasksHolder").html(tasksCount);
         $("#tasksProgress").width(x + "%");
-        $("#tasksProgressDescription").html("Average " + x.toPrecision(2) + " % done on the tasks");
+        $("#tasksProgressDescription").html("Average " + x.toLocaleString() + " % done on the tasks");
     });
 }

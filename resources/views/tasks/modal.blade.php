@@ -8,7 +8,7 @@
                 <h4 class="modal-title" id="taskModalTitle"></h4>
             </div>
             <div class="modal-body">
-                <p var="taskModalDescription">.</p>
+                <p var="taskModalDescription"></p>
 
                 <h4>Activities</h4>
                 <table class="table table-bordered" id="modalActivitiesTable">
@@ -33,6 +33,11 @@
                         {!! Form::hidden('task_id', null, ['class' => 'form-control','id'=>'taskIdField','hidden'=>'true']) !!}
                     </div>
 
+
+                    <div class="form-group col-sm-6">
+                        {!! Form::label('hours','Hours:') !!}
+                        {!! Form::number('hours',null,['class'=>'form-control','id'=>'aHours']) !!}
+                    </div>
                     <div class="form-group">
                         <button class="btn btn-primary btn-group-justified" onclick="saveActivity()">Save new activity
                         </button>

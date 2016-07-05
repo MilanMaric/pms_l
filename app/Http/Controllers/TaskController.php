@@ -46,7 +46,8 @@ class TaskController extends InfyOmBaseController
     public function create()
     {
         $projects = HomeController::projectSessionHelper();
-        $p = Project::getProjectSelectArray($projects);
+        $pp = Project::getWritableProjects($projects);
+        $p = Project::getProjectSelectArray($pp);
         return view('tasks.create', ['projects' => $p]);
     }
 
@@ -61,11 +62,17 @@ class TaskController extends InfyOmBaseController
     {
         $input = $request->all();
         $projectID = $input['project_id'];
-        $task = $this->taskRepository->create($input);
+        if (Project::checkWritable($projectID)) {
+            $task = $this->taskRepository->create($input);
 
-        Flash::success('Task saved successfully.');
+            Flash::success('Task saved successfully.');
 
-        return redirect(route('projects.show', $projectID));
+            return redirect(route('projects.show', $projectID));
+        } else {
+            Flash::error("You don't have access to do that");
+            return redirect('back');
+        }
+
     }
 
     /**
