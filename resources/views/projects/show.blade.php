@@ -5,23 +5,6 @@
     @include('flash::message')
     <h1>{{$project->Title}}</h1>
     <div class="col-xs-12">
-        {{--<div class="col-md-3 col-sm-6 col-xs-12">--}}
-        {{--<div class="info-box bg-aqua">--}}
-        {{--<span class="info-box-icon">--}}
-        {{--<i class="fa fa-money"></i>--}}
-        {{--</span>--}}
-        {{--<div class="info-box-content">--}}
-        {{--<span class="info-box-text">Budget</span>--}}
-        {{--<span class="info-box-number">{{$project->Budget}}</span>--}}
-        {{--<div class="progress">--}}
-        {{--<div class="progress-bar" style="width: 100%" id="budgetProgress"></div>--}}
-        {{--</div>--}}
-        {{--<span class="progress-description" id="budgetProgressDescription">--}}
-        {{--Increase in 30 Days--}}
-        {{--</span>--}}
-        {{--</div>--}}
-        {{--</div>--}}
-        {{--</div>--}}
 
         <div class="col-md-3 col-sm-6 col-xs-12">
             <div class="info-box bg-green">
@@ -105,9 +88,9 @@
 
                 </table>
                 @if($role->Id>0 && $role->Id<=3)
-                    <a class="btn btn-primary" href="{!! route('worksOnProjects.create') !!}">
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#worksOnProjectCreateModal">
                         <i class="fa fa-plus fa-2x"></i>
-                    </a>
+                    </button>
                 @endif
                 {{--{{$role}}--}}
             </div>
@@ -143,9 +126,9 @@
                     <table class="table table-bordered table-striped dataTable" id="incomes-table" role="grid">
 
                     </table>
-                    <a class="btn btn-primary" href="{!! route('incomes.create') !!}">
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#incomesCreateModal">
                         <i class="fa fa-plus fa-2x"></i>
-                    </a>
+                    </button>
                 </div>
             </div>
             <div class="box box-default collapsed-box">
@@ -177,7 +160,8 @@
 
     @include('activities.modal')
     @include('worksOnTasks.modal')
-
+    @include('worksOnProjects.createModal')
+    @include('incomes.createModal')
 
 @endsection
 
@@ -188,6 +172,7 @@
     <script src="/js/tasks.js"></script>
     <script src="/js/incomes.js"></script>
     <script src="/js/expenses.js"></script>
+
     <script> var budget ={{$project->Budget}};
         var project ={!! $project !!}</script>
 @endsection

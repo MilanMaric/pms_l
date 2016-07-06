@@ -97,13 +97,16 @@ class ProjectController extends InfyOmBaseController
             $wop->person = Person::find($wop->person_id);
             $persons[] = $wop->person;
         }
+        $personsA = Person::toSelectValues(Person::where([])->get());
+        $rolesA = Role::toSelectValues(Role::where([])->get());
         if (Project::checkUser($project)) {
             if (empty($project)) {
                 Flash::error('Project not found');
                 return redirect(route('projects.index'));
             }
 
-            return view('projects.show')->with('project', $project)->with('persons', Person::toSelectValues($persons))->with('role', $role);
+            return view('projects.show')->with('project', $project)->with('persons', Person::toSelectValues($persons))
+                ->with('role', $role)->with('personsA',$personsA)->with('rolesA',$rolesA);
         } else {
             return redirect('projects');
         }
