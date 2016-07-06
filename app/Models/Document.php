@@ -48,7 +48,7 @@ class Document extends Model
 {
     use SoftDeletes;
 
-    public $table = 'Document';
+    public $table = 'document';
     
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';

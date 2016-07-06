@@ -26,7 +26,7 @@ function incomesToTable(data) {
 }
 
 function getIncomes(projectId) {
-    $.get("/api/v1/income/" + projectId, "", function (data, status) {
+    $.get(apiURL+"income/" + projectId, "", function (data, status) {
         incomeSum = 0;
         var ttt = incomesToTable(data.data);
         $("#incomeHolder").html(incomeSum);
@@ -35,8 +35,8 @@ function getIncomes(projectId) {
         var p = 100 * incomeSum / (budget);
         $("#incomeProgress").width(p + "%");
         $("#budgetProgress").width((100 - p) + "%");
-        $("#incomeProgressDescription").html(p.toLocaleString()+ "% of all incomes");
-        $("#budgetProgressDescription").html((100 - p).toLocaleString()+ "% of all incomes");
+        $("#incomeProgressDescription").html(p.toLocaleString()+ "% of budget");
+        $("#budgetProgressDescription").html((100 - p).toLocaleString()+ "% budget remaning");
         // $("#incomeProgressDescription").html()
     });
 }

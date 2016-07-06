@@ -22,11 +22,11 @@
             {{--            <td>{!! $project->updated_at !!}</td>--}}
             {{--            <td>{!! $project->deleted_at !!}</td>--}}
             <td>
-                {!! Form::open(['route' => ['projects.destroy', $project->id], 'method' => 'delete']) !!}
+                {!! Form::open(['route' => ['projects.destroy', $project->Id], 'method' => 'delete']) !!}
                 <div class='btn-group'>
-                    <a href="{!! route('projects.show', [$project->id]) !!}" class='btn btn-default btn-xs'><i
+                    <a href="{!! route('projects.show', [$project->Id]) !!}" class='btn btn-default btn-xs'><i
                                 class="glyphicon glyphicon-eye-open"></i></a>
-                    <a href="{!! route('projects.edit', [$project->id]) !!}" class='btn btn-default btn-xs'><i
+                    <a href="{!! route('projects.edit', [$project->Id]) !!}" class='btn btn-default btn-xs'><i
                                 class="glyphicon glyphicon-edit"></i></a>
                     {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure?')"]) !!}
                 </div>

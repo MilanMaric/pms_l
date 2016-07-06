@@ -76,7 +76,7 @@ var gtask;
 function openPeopleModal(task) {
     gtask = task;
     $("#worksOnTaskModal").modal({show: true});
-    $.get('/api/v1/worksOnTasks/' + task.Id).success(function (data) {
+    $.get(apiURL+'worksOnTasks/' + task.Id).success(function (data) {
         $("#modalPeopleTable").html(getPeopleTable(data.data));
     });
     var options = [];
@@ -86,7 +86,7 @@ function openPeopleModal(task) {
         options.push(option);
     }
     $("#activity_id").html(options);
-    $.get('/api/v1/personas/' + project.Id).success(function (data) {
+    $.get(apiURL+'personas/' + project.Id).success(function (data) {
         var options = [];
         for (var i = 0; i < data.data.length; i++) {
             var option = $("<option>");
@@ -105,7 +105,7 @@ function saveWorkOnTask() {
     var activityId = $("#activity_id").val();
     var start = $("#wModalStartDate").val();
     var wot = {person_id: personId, task_id: taskId, activity_id: activityId, StartDate: start, task_id: taskId};
-    $.post("/api/v1/worksOnTasks", wot).success(function (data) {
+    $.post(apiURL+"worksOnTasks", wot).success(function (data) {
         if (data.data && data.success) {
             $("#modalPeopleTable").append(getPeopleRow(data.data));
         }
@@ -154,7 +154,7 @@ function tasksToTable(data) {
 }
 
 function getTasks(projectId) {
-    $.get("/api/v1/task/" + projectId, "", function (data, status) {
+    $.get(apiURL+"task/" + projectId, "", function (data, status) {
         sumDone = 0;
         tasksCount = 0;
         var ttt = tasksToTable(data.data);

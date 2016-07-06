@@ -51,7 +51,7 @@ class Works_On_Task extends Model
 {
     use SoftDeletes;
 
-    public $table = 'Works_On_Task';
+    public $table = 'works_on_task';
     
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';

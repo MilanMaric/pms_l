@@ -62,6 +62,20 @@
                 <div class="navbar-custom-menu">
                     <ul class="nav navbar-nav">
                         <!-- User Account Menu -->
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Projects
+                            </a>
+                            <ul class="dropdown-menu">
+                                @if(!empty(Session::get('projects')))
+                                    @foreach(Session::get('projects') as $project)
+                                        <li><a href={{"/projects/".$project->Id}}>
+                                                {{$project->Title}}
+                                            </a></li>
+                                    @endforeach
+                                @endif
+                            </ul>
+                        </li>
                         <li class="dropdown user user-menu">
                             <!-- Menu Toggle Button -->
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -84,20 +98,23 @@
                                          class="img-circle" alt="User Image"/>
                                     <p>
                                         @if (Auth::guest())
-                                            InfyOm
+                                            Register
                                         @else
                                             {!! Auth::user()->name !!}
                                         @endif
-                                        <small>Member since {!! Auth::user()->created_at->format('M. Y') !!}</small>
+                                        <small>Member
+                                            since {!! Auth::user()->created_at->format('M. Y') !!}</small>
                                     </p>
                                 </li>
+
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
                                     <div class="pull-left">
                                         <a href="#" class="btn btn-default btn-flat">Profile</a>
                                     </div>
                                     <div class="pull-right">
-                                        <a href="{!! url('/logout') !!}" class="btn btn-default btn-flat">Sign out</a>
+                                        <a href="{!! url('/logout') !!}" class="btn btn-default btn-flat">Sign
+                                            out</a>
                                     </div>
                                 </li>
                             </ul>

@@ -5,11 +5,14 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title" id="taskTitleInModal"></h4>
+                <h4 class="modal-title" id="taskModalTitle"></h4>
             </div>
             <div class="modal-body">
-                <p var="taskDescriptionInModal"></p>
+                <p var="taskModalDescription"></p>
 
+                <h4>Activities</h4>
+                <table class="table table-bordered" id="modalActivitiesTable">
+                </table>
                 <div class="btn btn-primary" data-toggle="collapse" data-target="#activityFields"><i
                             class="fa fa-plus"></i></div>
                 <div id="activityFields" class="collapse">

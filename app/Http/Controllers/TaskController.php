@@ -21,6 +21,7 @@ class TaskController extends InfyOmBaseController
     public function __construct(TaskRepository $taskRepo)
     {
         $this->taskRepository = $taskRepo;
+        $this->middleware('auth');
     }
 
     /**

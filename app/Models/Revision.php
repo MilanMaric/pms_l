@@ -49,7 +49,7 @@ class Revision extends Model
 {
     use SoftDeletes;
 
-    public $table = 'Revision';
+    public $table = 'revision';
     
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';

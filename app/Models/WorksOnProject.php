@@ -33,7 +33,7 @@ class WorksOnProject extends Model
 {
     use SoftDeletes;
 
-    public $table = 'Works_On_Project';
+    public $table = 'works_on_project';
     
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';

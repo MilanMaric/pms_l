@@ -175,7 +175,7 @@
         getTasks({{$project->Id}});
     </script>
 
-    @include('tasks.modal')
+    @include('activities.modal')
     @include('worksOnTasks.modal')
 
 
@@ -183,11 +183,11 @@
 
 
 @section('scripts')
+    <script src="/js/config.js"></script>
     <script src="/js/worksOnProject.js"></script>
     <script src="/js/tasks.js"></script>
     <script src="/js/incomes.js"></script>
     <script src="/js/expenses.js"></script>
     <script> var budget ={{$project->Budget}};
-
         var project ={!! $project !!}</script>
 @endsection
