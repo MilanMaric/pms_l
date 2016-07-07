@@ -38,7 +38,7 @@ function dataToTable(data) {
 }
 
 function getProject(projectId) {
-    $.get("/api/v1/worksOnProject/" + projectId, "", function (data, status) {
+    $.get(apiURL+"worksOnProject/" + projectId, "", function (data, status) {
         $("#worksOnProjects-table").html(dataToTable(data.data));
     });
 }
