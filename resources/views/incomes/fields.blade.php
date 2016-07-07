@@ -28,11 +28,11 @@
     {{--{!! Form::number('activity_id', null, ['class' => 'form-control']) !!}--}}
 {{--</div>--}}
 
-{{--<!-- Date Field -->--}}
-{{--<div class="form-group col-sm-6">--}}
-    {{--{!! Form::label('Date', 'Date:') !!}--}}
-    {{--{!! Form::date('Date', null, ['class' => 'form-control']) !!}--}}
-{{--</div>--}}
+<!-- Date Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('Date', 'Date:') !!}
+    {!! Form::date('Date', null, ['class' => 'form-control']) !!}
+</div>
 
 {{--<!-- Created At Field -->--}}
 {{--<div class="form-group col-sm-6">--}}

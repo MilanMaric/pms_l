@@ -6,13 +6,16 @@ use App\Http\Controllers\AppBaseController as InfyOmBaseController;
 use App\Http\Requests;
 use App\Http\Requests\CreateProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
+use App\Models\Income;
 use App\Models\Person;
 use App\Models\Project;
 use App\Models\Role;
+use App\Models\Task;
 use App\Models\WorksOnProject;
 use App\Repositories\ProjectRepository;
 use Flash;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use Response;
 
 class ProjectController extends InfyOmBaseController
@@ -106,7 +109,7 @@ class ProjectController extends InfyOmBaseController
             }
 
             return view('projects.show')->with('project', $project)->with('persons', Person::toSelectValues($persons))
-                ->with('role', $role)->with('personsA',$personsA)->with('rolesA',$rolesA);
+                ->with('role', $role)->with('personsA', $personsA)->with('rolesA', $rolesA);
         } else {
             return redirect('projects');
         }
@@ -177,5 +180,15 @@ class ProjectController extends InfyOmBaseController
         Flash::success('Project deleted successfully.');
 
         return redirect(route('projects.index'));
+    }
+
+    public function pdf($id)
+    {
+        $pdf = App::make('dompdf.wrapper');
+        $project=Project::getFullProject($id);
+
+        
+        $pdf->loadView('projects.pdf', ["project" => $project]);
+        return $pdf->stream();
     }
 }

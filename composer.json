@@ -15,7 +15,10 @@
     "infyomlabs/metronic-templates": "dev-master",
     "doctrine/dbal": "~2.3",
     "infyomlabs/swagger-generator": "dev-master",
-    "jlapp/swaggervel": "dev-master"
+    "jlapp/swaggervel": "dev-master",
+    "barryvdh/laravel-snappy": "^0.3.0",
+    "dompdf/dompdf": "^0.6.0",
+    "barryvdh/laravel-dompdf": "^0.6.1"
   },
   "require-dev": {
     "fzaninotto/faker": "~1.4",

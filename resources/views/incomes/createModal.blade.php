@@ -28,12 +28,17 @@
                     {!! Form::number('Amount', null, ['class' => 'form-control']) !!}
                 </div>
 
+                <!-- Date Field -->
+                <div class="form-group col-sm-6">
+                    {!! Form::label('Date', 'Date:') !!}
+                    {!! Form::date('Date', null, ['class' => 'form-control']) !!}
+                </div>
+
 
             </div>
             <div class="modal-footer">
                 <div class="form-group col-sm-12">
                     {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
-                    <a href="{!! route('incomes.index') !!}" class="btn btn-default">Cancel</a>
                 </div>
             </div>
             {!! Form::close() !!}

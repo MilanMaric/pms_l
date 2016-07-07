@@ -167,4 +167,32 @@ class Project extends Model
             return false;
         }
     }
+
+    public static function getFullProject($id)
+    {
+        $project = Project::findOrFail($id);
+        $persons = [];
+
+        $worksOnProjects = WorksOnProject::where(['project_id' => $project->Id])->get();
+        foreach ($worksOnProjects as $wop) {
+            $person = Person::find($wop->person_id);
+            $person->role = Role::find($wop->role_id)->Description;
+            $persons[] = $person;
+        }
+
+        $project->persons = $persons;
+
+        $project->incomes = Income::where(['project_id' => $project->Id])->get();
+        $project->expenses = Expense::where(['project_id' => $project->Id])->get();
+
+        $tasks = Task::where(['project_id' => $project->Id])->get();
+        foreach ($tasks as $task) {
+            $activities = Activity::where(['task_id' => $task->Id])->get();
+            $task->activities = $activities;
+        }
+        $project->tasks = $tasks;
+
+        
+        return $project;
+    }
 }

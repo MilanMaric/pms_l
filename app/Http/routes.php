@@ -57,6 +57,8 @@ Route::resource('people', 'PersonController');
 
 Route::resource('incomes', 'IncomeController');
 
+Route::get('projects/{id}/pdf', 'ProjectController@pdf');
+
 Route::resource('projects', 'ProjectController');
 
 Route::resource('worksOnProjects', 'Works_On_ProjectController');
