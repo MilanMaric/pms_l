@@ -11,7 +11,7 @@
         @include('errors.errors')
 
         <div class="row">
-            {!! Form::model($income, ['route' => ['incomes.update', $income->id], 'method' => 'patch']) !!}
+            {!! Form::model($income, ['route' => ['incomes.update', $income->Id], 'method' => 'patch']) !!}
 
             @include('incomes.fields')
 

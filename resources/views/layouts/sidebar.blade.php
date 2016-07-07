@@ -28,7 +28,7 @@
                 <ul class="treeview-menu">
                     @if(!empty(Session::get('projects')))
                         @foreach(Session::get('projects') as $project)
-                            <li><a href={{"/projects/".$project->Id}}>
+                            <li><a href={!! route('projects.show',$project->Id)!!}>
                                     {{$project->Title}}
                                 </a></li>
                         @endforeach
@@ -36,20 +36,18 @@
                     <li><a href="{!! route('projects.create') !!}">Create new project</a></li>
                 </ul>
             </li>
+            <li>
+                @if(Auth::user()->email=='admin@admin.admin')
+                    <a href={!! route('people.index') !!}>People</a>
+                @endif
+            </li>
+            <li>
+                <a href={!! route('tasks.index') !!}>Tasks</a>
+            </li>
+
 
         </ul>
 
-        <!-- search form (Optional) -->
-        {{--<form action="#" method="get" class="sidebar-form">--}}
-        {{--<div class="input-group">--}}
-        {{--<input type="text" name="q" class="form-control" placeholder="Search..."/>--}}
-        {{--<span class="input-group-btn">--}}
-        {{--<button type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i>--}}
-        {{--</button>--}}
-        {{--</span>--}}
-        {{--</div>--}}
-        {{--</form>--}}
-                <!-- Sidebar Menu -->
 
         <ul class="sidebar-menu">
             @include('layouts.menu')

@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\AppBaseController as InfyOmBaseController;
 use App\Http\Requests;
 use App\Http\Requests\CreateIncomeRequest;
 use App\Http\Requests\UpdateIncomeRequest;
 use App\Models\Project;
 use App\Repositories\IncomeRepository;
-use App\Http\Controllers\AppBaseController as InfyOmBaseController;
-use Illuminate\Http\Request;
 use Flash;
+use Illuminate\Http\Request;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
 use Session;
@@ -22,6 +22,7 @@ class IncomeController extends InfyOmBaseController
     public function __construct(IncomeRepository $incomeRepo)
     {
         $this->incomeRepository = $incomeRepo;
+        $this->middleware('auth');
     }
 
     /**
@@ -46,8 +47,8 @@ class IncomeController extends InfyOmBaseController
      */
     public function create()
     {
-        $project=Project::getProjectSelectArray(Session::get('projects'));
-        return view('incomes.create',['projects'=>$project]);
+        $project = Project::getProjectSelectArray(Session::get('projects'));
+        return view('incomes.create', ['projects' => $project]);
     }
 
     /**
@@ -65,7 +66,7 @@ class IncomeController extends InfyOmBaseController
 
         Flash::success('Income saved successfully.');
 
-        return redirect(route('projects.show',$income->project_id));
+        return redirect(route('projects.show', $income->project_id));
     }
 
     /**
@@ -98,6 +99,7 @@ class IncomeController extends InfyOmBaseController
     public function edit($id)
     {
         $income = $this->incomeRepository->findWithoutFail($id);
+        $project = Project::getProjectSelectArray(Session::get('projects'));
 
         if (empty($income)) {
             Flash::error('Income not found');
@@ -105,13 +107,13 @@ class IncomeController extends InfyOmBaseController
             return redirect(route('incomes.index'));
         }
 
-        return view('incomes.edit')->with('income', $income);
+        return view('incomes.edit')->with('income', $income)->with('projects', $project);
     }
 
     /**
      * Update the specified Income in storage.
      *
-     * @param  int              $id
+     * @param  int $id
      * @param UpdateIncomeRequest $request
      *
      * @return Response

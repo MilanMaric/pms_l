@@ -31,7 +31,7 @@
 <!-- Mobilenumber Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('MobileNumber', 'Mobilenumber:') !!}
-    {!! Form::text('MobileNumber', null, ['class' => 'form-control']) !!}
+    {!! Form::phone('MobileNumber', null, ['class' => 'form-control']) !!}
 </div>
 
 {{--<!-- Created At Field -->--}}

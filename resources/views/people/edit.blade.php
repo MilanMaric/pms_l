@@ -11,7 +11,7 @@
         @include('errors.errors')
 
         <div class="row">
-            {!! Form::model($person, ['route' => ['people.update', $person->id], 'method' => 'patch']) !!}
+            {!! Form::model($person, ['route' => ['people.update', $person->Id], 'method' => 'patch']) !!}
 
             @include('people.fields')
 

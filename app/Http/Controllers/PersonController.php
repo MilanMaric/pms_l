@@ -10,6 +10,7 @@ use App\Models\Person;
 use App\Repositories\PersonRepository;
 use Flash;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
 
@@ -21,6 +22,7 @@ class PersonController extends InfyOmBaseController
     public function __construct(PersonRepository $personRepo)
     {
         $this->personRepository = $personRepo;
+        $this->middleware('auth');
     }
 
     /**
@@ -31,11 +33,16 @@ class PersonController extends InfyOmBaseController
      */
     public function index(Request $request)
     {
-        $this->personRepository->pushCriteria(new RequestCriteria($request));
-        $people = $this->personRepository->all();
-        
-        return view('people.index')
-            ->with('people', $people);
+        if(Auth::user()->email=="admin@admin.admin") {
+            $this->personRepository->pushCriteria(new RequestCriteria($request));
+            $people = $this->personRepository->all();
+
+            return view('people.index')
+                ->with('people', $people);
+        }else{
+            Flash::error("You don't have access to that");
+            return redirect('/');
+        }
     }
 
     /**

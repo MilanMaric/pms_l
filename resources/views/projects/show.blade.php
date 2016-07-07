@@ -60,7 +60,7 @@
     </div>
 
 
-    <div class="col-lg-4">
+    <div class="col-lg-3">
         <div class="box ">
             <div class="box-header with-border">
                 <h3>Project</h3>
@@ -73,7 +73,7 @@
 
 
 
-    <div class="col-lg-7">
+    <div class="col-lg-8">
         <div class="box box-default collapsed-box">
             <div class="box-header with-border">
                 <h3>Works on project</h3>
