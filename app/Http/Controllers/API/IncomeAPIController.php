@@ -25,6 +25,7 @@ class IncomeAPIController extends InfyOmBaseController
     public function __construct(IncomeRepository $incomeRepo)
     {
         $this->incomeRepository = $incomeRepo;
+        
     }
 
     /**

@@ -67,6 +67,9 @@
             </div>
             <div class="box-body">
                 @include('projects.show_fields')
+                <button class="col-xs-12">
+                    <span class="fa fa-pdf"></span>
+                </button>
             </div>
         </div>
     </div>

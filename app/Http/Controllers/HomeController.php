@@ -57,22 +57,32 @@ class HomeController extends Controller
         }
     }
 
+
     public static function tasksSessionHelper()
     {
         if (Auth::check()) {
             $person = Person::where(['user_id' => Auth::user()->id])->get();
             if ($person != null && $person->count() > 0) {
-                $worksOnTask = WorksOnTask::where(['person_id' => $person[0]->id])->get();
+                $worksOnTask = WorksOnTask::where(['person_id' => $person[0]->Id])->get();
                 if (!empty($worksOnTask)) {
                     $tasks = [];
                     foreach ($worksOnTask as $item) {
-                        $tasks[] = Task::find($item->task_id);
+                        $k = 0;
+                        foreach ($tasks as $task)
+                            if ($task->Id == $item->task_id) {
+                                $k++;
+                            }
+                        if ($k == 0)
+                            $tasks[] = Task::find($item->task_id);
+
                     }
+
                     Session::put('tasks', $tasks);
                     return $tasks;
                 }
             }
         }
+        return [];
     }
 
     public static function getPerson()

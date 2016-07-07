@@ -32,9 +32,7 @@ class TaskController extends InfyOmBaseController
      */
     public function index(Request $request)
     {
-        $this->taskRepository->pushCriteria(new RequestCriteria($request));
-        $tasks = $this->taskRepository->all();
-
+        $tasks = HomeController::tasksSessionHelper();
         return view('tasks.index')
             ->with('tasks', $tasks);
     }
@@ -86,7 +84,6 @@ class TaskController extends InfyOmBaseController
     public function show($id)
     {
         $task = $this->taskRepository->findWithoutFail($id);
-
         if (empty($task)) {
             Flash::error('Task not found');
 
