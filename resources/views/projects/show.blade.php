@@ -144,9 +144,9 @@
                     <table class="table table-bordered table-striped dataTable" id="expenses-table" role="grid">
 
                     </table>
-                    <a class="btn btn-primary" href="{!! route('expenses.create') !!}">
-                        <i class="fa fa-plus fa-2x"></i>
-                    </a>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#expensesCreateModal">
+                    <i class="fa fa-plus fa-2x"></i>
+                    </button>
                 </div>
             </div>
         @endif
@@ -162,6 +162,7 @@
     @include('worksOnTasks.modal')
     @include('worksOnProjects.createModal')
     @include('incomes.createModal')
+    @include('expenses.createModal')
 
 @endsection
 

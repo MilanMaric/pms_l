@@ -1,5 +1,5 @@
 function roleToString(role) {
-    console.log("Role: "+role);
+    console.log("Role: " + role);
     switch (role) {
         case 1:
             return "Creator";
@@ -38,7 +38,7 @@ function dataToTable(data) {
 }
 
 function getProject(projectId) {
-    $.get(apiURL+"worksOnProject/" + projectId, "", function (data, status) {
+    $.get(apiURL + "worksOnProject/" + projectId, "", function (data, status) {
         $("#worksOnProjects-table").html(dataToTable(data.data));
     });
 }

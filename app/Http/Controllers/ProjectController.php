@@ -184,6 +184,7 @@ class ProjectController extends InfyOmBaseController
 
     public function pdf($id)
     {
+        
         $pdf = App::make('dompdf.wrapper');
         $project=Project::getFullProject($id);
 
