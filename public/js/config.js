@@ -1,1 +1,1 @@
-var apiURL="http://pms_l/api/v1/";
+var apiURL="http://pisio.etfbl.net/~milanm/pms_l/public/index.php/api/v1/";

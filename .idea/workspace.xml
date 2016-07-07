@@ -5,16 +5,46 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5609f5db-8e6a-44aa-bb60-8192c226c417" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/IncomeController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/IncomeController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/PersonController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/PersonController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/incomes/edit.blade.php" afterPath="$PROJECT_DIR$/resources/views/incomes/edit.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/incomes/table.blade.php" afterPath="$PROJECT_DIR$/resources/views/incomes/table.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/people/edit.blade.php" afterPath="$PROJECT_DIR$/resources/views/people/edit.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/people/fields.blade.php" afterPath="$PROJECT_DIR$/resources/views/people/fields.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/people/table.blade.php" afterPath="$PROJECT_DIR$/resources/views/people/table.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/app.php" afterPath="$PROJECT_DIR$/config/app.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/infyom/laravel_generator.php" afterPath="$PROJECT_DIR$/config/infyom/laravel_generator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generating_script.sh" afterPath="$PROJECT_DIR$/generating_script.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pms_l.sql" afterPath="$PROJECT_DIR$/pms_l.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/config.js" afterPath="$PROJECT_DIR$/public/js/config.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/expenses.js" afterPath="$PROJECT_DIR$/public/js/expenses.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/projects/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/projects/show.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/worksOnProjects/table.blade.php" afterPath="$PROJECT_DIR$/resources/views/worksOnProjects/table.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/ActivityApiTest.php" afterPath="$PROJECT_DIR$/tests/ActivityApiTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/ActivityRepositoryTest.php" afterPath="$PROJECT_DIR$/tests/ActivityRepositoryTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/ApiTestTrait.php" afterPath="$PROJECT_DIR$/tests/ApiTestTrait.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/DocumentApiTest.php" afterPath="$PROJECT_DIR$/tests/DocumentApiTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/DocumentRepositoryTest.php" afterPath="$PROJECT_DIR$/tests/DocumentRepositoryTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/ExpenseApiTest.php" afterPath="$PROJECT_DIR$/tests/ExpenseApiTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/ExpenseRepositoryTest.php" afterPath="$PROJECT_DIR$/tests/ExpenseRepositoryTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/IncomeApiTest.php" afterPath="$PROJECT_DIR$/tests/IncomeApiTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/IncomeRepositoryTest.php" afterPath="$PROJECT_DIR$/tests/IncomeRepositoryTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/PersonApiTest.php" afterPath="$PROJECT_DIR$/tests/PersonApiTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/PersonRepositoryTest.php" afterPath="$PROJECT_DIR$/tests/PersonRepositoryTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/ProjectApiTest.php" afterPath="$PROJECT_DIR$/tests/ProjectApiTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/ProjectRepositoryTest.php" afterPath="$PROJECT_DIR$/tests/ProjectRepositoryTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/RevisionApiTest.php" afterPath="$PROJECT_DIR$/tests/RevisionApiTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/RevisionRepositoryTest.php" afterPath="$PROJECT_DIR$/tests/RevisionRepositoryTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/TaskApiTest.php" afterPath="$PROJECT_DIR$/tests/TaskApiTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/TaskRepositoryTest.php" afterPath="$PROJECT_DIR$/tests/TaskRepositoryTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/WorksOnProjectApiTest.php" afterPath="$PROJECT_DIR$/tests/WorksOnProjectApiTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/WorksOnProjectRepositoryTest.php" afterPath="$PROJECT_DIR$/tests/WorksOnProjectRepositoryTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/WorksOnTaskApiTest.php" afterPath="$PROJECT_DIR$/tests/WorksOnTaskApiTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/WorksOnTaskRepositoryTest.php" afterPath="$PROJECT_DIR$/tests/WorksOnTaskRepositoryTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/traits/MakeActivityTrait.php" afterPath="$PROJECT_DIR$/tests/traits/MakeActivityTrait.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/traits/MakeDocumentTrait.php" afterPath="$PROJECT_DIR$/tests/traits/MakeDocumentTrait.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/traits/MakeExpenseTrait.php" afterPath="$PROJECT_DIR$/tests/traits/MakeExpenseTrait.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/traits/MakeIncomeTrait.php" afterPath="$PROJECT_DIR$/tests/traits/MakeIncomeTrait.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/traits/MakePersonTrait.php" afterPath="$PROJECT_DIR$/tests/traits/MakePersonTrait.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/traits/MakeProjectTrait.php" afterPath="$PROJECT_DIR$/tests/traits/MakeProjectTrait.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/traits/MakeRevisionTrait.php" afterPath="$PROJECT_DIR$/tests/traits/MakeRevisionTrait.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/traits/MakeTaskTrait.php" afterPath="$PROJECT_DIR$/tests/traits/MakeTaskTrait.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/traits/MakeWorksOnProjectTrait.php" afterPath="$PROJECT_DIR$/tests/traits/MakeWorksOnProjectTrait.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/traits/MakeWorksOnTaskTrait.php" afterPath="$PROJECT_DIR$/tests/traits/MakeWorksOnTaskTrait.php" />
     </list>
     <ignored path="pms_l.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -65,28 +95,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="sidebar.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="79">
-              <caret line="32" column="41" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="show.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="show.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/projects/show.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+            <state relative-caret-position="181">
+              <caret line="172" column="52" selection-start-line="172" selection-start-column="52" selection-end-line="172" selection-end-column="52" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="show_fields.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/people/show_fields.blade.php">
+      <file leaf-file-name="config.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/config.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="44" selection-start-line="0" selection-start-column="44" selection-end-line="0" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="expenses.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/js/expenses.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="30" column="22" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="robots.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/robots.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -95,72 +135,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="table.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/people/table.blade.php">
+      <file leaf-file-name=".htaccess" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/.htaccess">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="28" column="40" selection-start-line="28" selection-start-column="40" selection-end-line="28" selection-end-column="51" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="table.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/projects/table.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="28" column="68" selection-start-line="28" selection-start-column="68" selection-end-line="28" selection-end-column="68" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="table.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/tasks/table.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="36" column="62" selection-start-line="36" selection-start-column="62" selection-end-line="36" selection-end-column="62" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="table.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/worksOnProjects/table.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="24" column="32" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="register.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/auth/register.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="125" column="17" selection-start-line="125" selection-start-column="17" selection-end-line="125" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PersonController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PersonController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="43" column="33" selection-start-line="43" selection-start-column="33" selection-end-line="43" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="292">
+              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+              <folding>
+                <marker date="1467860317595" expanded="true" signature="0:552" placeholder="&lt;IfModule mod_rewrite.c&gt;" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -173,7 +155,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/worksOnTasks/edit.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ExpenseController.php" />
         <option value="$PROJECT_DIR$/resources/views/activities/fields.blade.php" />
         <option value="$PROJECT_DIR$/vendor/prettus/l5-repository/src/Prettus/Repository/Eloquent/BaseRepository.php" />
@@ -187,7 +168,6 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/WorksOnTaskAPIController.php" />
         <option value="$PROJECT_DIR$/readme.md" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/public/js/expenses.js" />
         <option value="$PROJECT_DIR$/resources/views/worksOnTasks/modal.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
@@ -204,7 +184,6 @@
         <option value="$PROJECT_DIR$/app/Models/WorksOnProject.php" />
         <option value="$PROJECT_DIR$/app/Models/WorksOnTask.php" />
         <option value="$PROJECT_DIR$/public/js/incomes.js" />
-        <option value="$PROJECT_DIR$/public/js/config.js" />
         <option value="$PROJECT_DIR$/resources/views/projects/table.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/tasks/table.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/TaskController.php" />
@@ -223,7 +202,10 @@
         <option value="$PROJECT_DIR$/resources/views/worksOnProjects/table.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/PersonController.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" />
+        <option value="$PROJECT_DIR$/public/.htaccess" />
         <option value="$PROJECT_DIR$/resources/views/projects/show.blade.php" />
+        <option value="$PROJECT_DIR$/public/js/config.js" />
+        <option value="$PROJECT_DIR$/public/js/expenses.js" />
       </list>
     </option>
   </component>
@@ -488,6 +470,38 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pms_l" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pms_l" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pms_l" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pms_l" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -505,7 +519,7 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="SearchEverywhereHistoryKey" value="project&#9;null&#9;null" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.env" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/storage/framework" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -566,12 +580,12 @@
       <workItem from="1467616896351" duration="34000" />
       <workItem from="1467617462284" duration="6729000" />
       <workItem from="1467772795784" duration="57000" />
-      <workItem from="1467794442590" duration="13193000" />
+      <workItem from="1467794442590" duration="15872000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="146698000" />
+    <option name="totallyTimeSpent" value="149377000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -620,54 +634,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/js/worksOnProject.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="28" column="18" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/TaskAPIController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-153">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/TaskRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/incomes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="38" column="28" selection-start-line="38" selection-start-column="28" selection-end-line="38" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="34" selection-start-line="0" selection-start-column="34" selection-end-line="0" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/projects/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -1048,10 +1014,57 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-595">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/favicon.ico">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/robots.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/.htaccess">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding>
+            <marker date="1467860317595" expanded="true" signature="0:552" placeholder="&lt;IfModule mod_rewrite.c&gt;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/projects/show.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+        <state relative-caret-position="181">
+          <caret line="172" column="52" selection-start-line="172" selection-start-column="52" selection-end-line="172" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="44" selection-start-line="0" selection-start-column="44" selection-end-line="0" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/expenses.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="30" column="22" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
           <folding />
         </state>
       </provider>

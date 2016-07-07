@@ -26,7 +26,7 @@ function expensesToTable(data) {
 }
 
 function getExpenses(projectId) {
-    $.get("/api/v1/expense/" + projectId, "", function (data, status) {
+    $.get(apiURL+"expense/" + projectId, "", function (data, status) {
         expenseSum = 0;
         var ttt = expensesToTable(data.data);
         $("#expenseHolder").html(expenseSum);

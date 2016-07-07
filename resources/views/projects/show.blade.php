@@ -167,11 +167,11 @@
 
 
 @section('scripts')
-    <script src="/js/config.js"></script>
-    <script src="/js/worksOnProject.js"></script>
-    <script src="/js/tasks.js"></script>
-    <script src="/js/incomes.js"></script>
-    <script src="/js/expenses.js"></script>
+    <script src="http://pisio.etfbl.net/~milanm/pms_l/public/js/config.js"></script>
+    <script src="http://pisio.etfbl.net/~milanm/pms_l/public/js/worksOnProject.js"></script>
+    <script src="http://pisio.etfbl.net/~milanm/pms_l/public/js/tasks.js"></script>
+    <script src="http://pisio.etfbl.net/~milanm/pms_l/public/js/incomes.js"></script>
+    <script src="http://pisio.etfbl.net/~milanm/pms_l/public/js/expenses.js"></script>
 
     <script> var budget ={{$project->Budget}};
         var project ={!! $project !!}</script>
