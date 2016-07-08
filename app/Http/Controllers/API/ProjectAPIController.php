@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Http\Controllers\AppBaseController as InfyOmBaseController;
+use App\Http\Controllers\HomeController;
 use App\Http\Requests\API\CreateProjectAPIRequest;
 use App\Http\Requests\API\UpdateProjectAPIRequest;
 use App\Models\Project;
 use App\Repositories\ProjectRepository;
 use Illuminate\Http\Request;
-use App\Http\Controllers\AppBaseController as InfyOmBaseController;
+use Illuminate\Support\Facades\Auth;
 use InfyOm\Generator\Criteria\LimitOffsetCriteria;
 use InfyOm\Generator\Utils\ResponseUtil;
 use Prettus\Repository\Criteria\RequestCriteria;
@@ -17,7 +19,6 @@ use Response;
  * Class ProjectController
  * @package App\Http\Controllers\API
  */
-
 class ProjectAPIController extends InfyOmBaseController
 {
     /** @var  ProjectRepository */
@@ -63,11 +64,11 @@ class ProjectAPIController extends InfyOmBaseController
      */
     public function index(Request $request)
     {
-        $this->projectRepository->pushCriteria(new RequestCriteria($request));
-        $this->projectRepository->pushCriteria(new LimitOffsetCriteria($request));
-        $projects = $this->projectRepository->all();
-
-        return $this->sendResponse($projects->toArray(), 'Projects retrieved successfully');
+//        $this->projectRepository->pushCriteria(new RequestCriteria($request));
+//        $this->projectRepository->pushCriteria(new LimitOffsetCriteria($request));
+//        $projects = $this->projectRepository->all();
+       $projects=HomeController::projectSessionHelper();
+        return $this->sendResponse($projects, 'Projects retrieved successfully');
     }
 
     /**
@@ -158,7 +159,7 @@ class ProjectAPIController extends InfyOmBaseController
     public function show($id)
     {
         /** @var Project $project */
-        $project = $this->projectRepository->find($id);
+        $project = Project::getFullProject($id);
 
         if (empty($project)) {
             return Response::json(ResponseUtil::makeError('Project not found'), 404);
