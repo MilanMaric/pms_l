@@ -67,9 +67,11 @@
             </div>
             <div class="box-body">
                 @include('projects.show_fields')
-                <button class="col-xs-12">
-                    <span class="fa fa-pdf"></span>
-                </button>
+                <div>
+                    <a href="{{$project->Id."/pdf"}}" class="btn btn-primary">
+                        <span class="fa fa-file-pdf-o"></span>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
@@ -148,7 +150,7 @@
 
                     </table>
                     <button class="btn btn-primary" data-toggle="modal" data-target="#expensesCreateModal">
-                    <i class="fa fa-plus fa-2x"></i>
+                        <i class="fa fa-plus fa-2x"></i>
                     </button>
                 </div>
             </div>
