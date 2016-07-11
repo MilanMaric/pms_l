@@ -19,11 +19,12 @@ function roleToString(role) {
 function dataRow(row) {
     var tableRow = "<tr>";
     if (row.person) {
-        tableRow += "<th>" + row.person.Name + "</th>";
-        tableRow += "<th>" + row.person.LastName + "</th>";
-        tableRow += "<th>" + row.person.MobileNumber + "</th>";
-        tableRow += "<th>" + row.person.PhoneNumber + "</th>";
-        tableRow += "<th>" + roleToString(row.role_id) + "</th>";
+        tableRow += "<td>" + row.person.Name + "</td>";
+        tableRow += "<td>" + row.person.LastName + "</td>";
+        tableRow += "<td>" + row.person.MobileNumber + "</td>";
+        tableRow += "<td>" + row.person.PhoneNumber + "</td>";
+        tableRow += "<td>" + roleToString(row.role_id) + "</td>";
+        tableRow += "<td><a href='../people/" + row.person.Id + "'><i class='fa fa-eye'></i></a></td>"
     }
     tableRow += "</tr>";
     return tableRow;
