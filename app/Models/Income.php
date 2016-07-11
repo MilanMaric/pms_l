@@ -51,7 +51,7 @@ class Income extends Model
     use SoftDeletes;
 
     public $table = 'income';
-    
+
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
 
@@ -90,6 +90,7 @@ class Income extends Model
      * @var array
      */
     public static $rules = [
-        
+        'Amount' => 'required|min:0',
+        'project_id' => 'required'
     ];
 }
