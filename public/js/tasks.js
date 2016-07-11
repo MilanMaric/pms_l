@@ -128,7 +128,7 @@ function tasksRow(row) {
         tableRow += "</td>";
         tableRow += "<td>";
         //buttons
-        tableRow += "<a href='/tasks/" + row.Id + "/edit' role='button' class='btn btn-primary'><i class='glyphicon glyphicon-edit'></i></a>"
+        tableRow += "<a href='../tasks/" + row.Id + "/edit' role='button' class='btn btn-primary'><i class='glyphicon glyphicon-edit'></i></a>"
         tableRow += "<button  class='btn btn-info' role='button' onclick='openModal(" + JSON.stringify(row) + ")'" +
             "><i class='fa fa-tasks'></i> </button> " +
             "<button class='btn btn-info' onclick='openPeopleModal(" + JSON.stringify(row) + ")'>" +
