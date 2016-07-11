@@ -20,25 +20,25 @@
         background-color: #f1f1f1;
     }
 
-    .project-details {
-        background-color: #aaa;
-    }
+    /*.project-details {*/
+    /*background-color: #aaa;*/
+    /*}*/
 
-    .wop {
-        background-color: #bbb;
-    }
+    /*.wop {*/
+    /*background-color: #bbb;*/
+    /*}*/
 
-    .in {
-        background-color: #ccc;
-    }
+    /*.in {*/
+    /*background-color: #ccc;*/
+    /*}*/
 
-    .ex {
-        background-color: #ddd;
-    }
+    /*.ex {*/
+    /*background-color: #ddd;*/
+    /*}*/
 
-    .tasks{
-        background-color: #ddd;
-    }
+    /*.tasks{*/
+    /*background-color: #ddd;*/
+    /*}*/
 </style>
 
 <body>
@@ -50,149 +50,155 @@
     <p>Budget: {{$project->Budget}}</p>
 </div>
 <hr>
-<div class="wop">
-    <h2>Works on project</h2>
-    <table>
-        <thead>
-        <tr>
-            <td>
-                Name
-            </td>
-            <td>
-                Last name
-            </td>
-            <td>
-                Address
-            </td>
-            <td>
-                Phone number
-            </td>
-            <td>
-                Mobile number
-            </td>
-            <td>
-                Role
-            </td>
-        </tr>
-        </thead>
-        <tbody>
-        @foreach($project->persons as $person)
-            <tr>
-                <td>
-                    {{ $person->Name}}
-                </td>
-                <td>
-                    {{ $person->LastName}}
-                </td>
-                <td>
-                    {{ $person->Address}}
-                </td>
-                <td>
-                    {{ $person->PhoneNumber}}
-                </td>
-                <td>
-                    {{ $person->MobileNumber}}
-                </td>
-                <td>
-                    {{$person->role}}
-                </td>
-            </tr>
-        @endforeach
-        </tbody>
-    </table>
-</div>
-
-<hr>
-<div class="in">
-    {{--Incomes--}}
-    <h2>Incomes</h2>
-
-    <table>
-        <thead>
-        <tr>
-            <td>Description</td>
-            <td>Amount</td>
-            <td>Date</td>
-        </tr>
-        </thead>
-        <tbody>
-        @foreach($project->incomes as $income)
-            <tr>
-                <td>{{$income->Description}}</td>
-                <td>{{$income->Amount}}</td>
-                <td>{{$income->Date}}</td>
-            </tr>
-        @endforeach
-        </tbody>
-    </table>
-</div>
-<hr>
-
-<div class="ex">
-    <h2>Expenses</h2>
-
-    <table>
-        <thead>
-        <tr>
-            <td>Description</td>
-            <td>Amount</td>
-            <td>Date</td>
-        </tr>
-        </thead>
-        <tbody>
-        @foreach($project->expenses as $income)
-            <tr>
-                <td>{{$income->Description}}</td>
-                <td>{{$income->Amount}}</td>
-                <td>{{$income->Date}}</td>
-            </tr>
-        @endforeach
-        </tbody>
-    </table>
-</div>
-
-<hr>
-<div class="tasks">
-    <h2> Tasks</h2>
-
-    @foreach($project->tasks as $task)
-        <h3>{{$task->Title}}</h3>
-        <p>Start: {{$task->Start}}</p>
-        <p>End: {{$task->End}}</p>
-        <p>Deadline: {{$task->Deadline}}</p>
-        <p>Percentage done: {{$task->PercentageDone}}</p>
+@if(!empty($project->persons))
+    <div class="wop">
+        <h2>Works on project</h2>
         <table>
             <thead>
             <tr>
                 <td>
-                    Description
+                    Name
                 </td>
                 <td>
-                    Date
+                    Last name
                 </td>
                 <td>
-                    Hours
+                    Address
+                </td>
+                <td>
+                    Phone number
+                </td>
+                <td>
+                    Mobile number
+                </td>
+                <td>
+                    Role
                 </td>
             </tr>
             </thead>
             <tbody>
-            @foreach($task->activities as $activity)
+            @foreach($project->persons as $person)
                 <tr>
                     <td>
-                        {{$activity->Description}}
+                        {{ $person->Name}}
                     </td>
                     <td>
-                        {{$activity->Date}}
+                        {{ $person->LastName}}
                     </td>
                     <td>
-                        {{$activity->hours}}
+                        {{ $person->Address}}
+                    </td>
+                    <td>
+                        {{ $person->PhoneNumber}}
+                    </td>
+                    <td>
+                        {{ $person->MobileNumber}}
+                    </td>
+                    <td>
+                        {{$person->role}}
                     </td>
                 </tr>
             @endforeach
             </tbody>
         </table>
-    @endforeach
-</div>
+    </div>
+    <hr>
+@endif
+@if(!empty($project->incomes))
+    <div class="in">
+        {{--Incomes--}}
+        <h2>Incomes</h2>
 
+        <table>
+            <thead>
+            <tr>
+                <td>Description</td>
+                <td>Amount</td>
+                <td>Date</td>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach($project->incomes as $income)
+                <tr>
+                    <td>{{$income->Description}}</td>
+                    <td>{{$income->Amount}}</td>
+                    <td>{{$income->Date}}</td>
+                </tr>
+            @endforeach
+            </tbody>
+        </table>
+    </div>
+    <hr>
+@endif
+@if(!empty($project->expenses))
+    <div class="ex">
+        <h2>Expenses</h2>
+
+        <table>
+            <thead>
+            <tr>
+                <td>Description</td>
+                <td>Amount</td>
+                <td>Date</td>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach($project->expenses as $income)
+                <tr>
+                    <td>{{$income->Description}}</td>
+                    <td>{{$income->Amount}}</td>
+                    <td>{{$income->Date}}</td>
+                </tr>
+            @endforeach
+            </tbody>
+        </table>
+    </div>
+    <hr>
+@endif
+@if(!empty($project->tasks))
+    <div class="tasks">
+        <h2> Tasks</h2>
+
+        @foreach($project->tasks as $task)
+            <h3>{{$task->Title}}</h3>
+            <p>Start: {{$task->Start}}</p>
+            <p>End: {{$task->End}}</p>
+            <p>Deadline: {{$task->Deadline}}</p>
+            <p>Percentage done: {{$task->PercentageDone}}</p>
+            @if(!empty($task->activities))
+                <table>
+                    <thead>
+                    <tr>
+                        <td>
+                            Description
+                        </td>
+                        <td>
+                            Date
+                        </td>
+                        <td>
+                            Hours
+                        </td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach($task->activities as $activity)
+                        <tr>
+                            <td>
+                                {{$activity->Description}}
+                            </td>
+                            <td>
+                                {{$activity->Date}}
+                            </td>
+                            <td>
+                                {{$activity->hours}}
+                            </td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+            @endif
+        @endforeach
+    </div>
+@endif
 </body>
 </html>
