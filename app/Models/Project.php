@@ -95,6 +95,7 @@ class Project extends Model
         'Title' => 'required|min:5|max:255',
 //        'StartDate' => 'required|Date|after:tomorrow',
 //        'EndDate' => 'required|Date|after:StartDate',
+
     ];
 
     public static function checkUser($project)
@@ -172,27 +173,29 @@ class Project extends Model
     {
         $project = Project::findOrFail($id);
         $persons = [];
-
+        $roleObj = Project::getUserRole($project);
+        $role=$roleObj->role_id;
         $worksOnProjects = WorksOnProject::where(['project_id' => $project->Id])->get();
-        foreach ($worksOnProjects as $wop) {
-            $person = Person::find($wop->person_id);
-            $person->role = Role::find($wop->role_id)->Description;
-            $persons[] = $person;
+        if ($role > 0 && $role < 5) {
+            foreach ($worksOnProjects as $wop) {
+                $person = Person::find($wop->person_id);
+                $person->role = Role::find($wop->role_id)->Description;
+                $persons[] = $person;
+            }
+
+            $project->persons = $persons;
+            if ($role < 4) {
+                $project->incomes = Income::where(['project_id' => $project->Id])->get();
+                $project->expenses = Expense::where(['project_id' => $project->Id])->get();
+            }
+                $tasks = Task::where(['project_id' => $project->Id])->get();
+                foreach ($tasks as $task) {
+                    $activities = Activity::where(['task_id' => $task->Id])->get();
+                    $task->activities = $activities;
+                }
+                $project->tasks = $tasks;
+
         }
-
-        $project->persons = $persons;
-
-        $project->incomes = Income::where(['project_id' => $project->Id])->get();
-        $project->expenses = Expense::where(['project_id' => $project->Id])->get();
-
-        $tasks = Task::where(['project_id' => $project->Id])->get();
-        foreach ($tasks as $task) {
-            $activities = Activity::where(['task_id' => $task->Id])->get();
-            $task->activities = $activities;
-        }
-        $project->tasks = $tasks;
-
-        
         return $project;
     }
 }
